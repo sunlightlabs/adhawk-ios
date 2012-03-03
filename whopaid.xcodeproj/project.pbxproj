@@ -20,6 +20,10 @@
 		C36B400315023E5400937C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE415023E5400937C3F /* Foundation.framework */; };
 		C36B400B15023E5400937C3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C36B400915023E5400937C3F /* InfoPlist.strings */; };
 		C36B400E15023E5400937C3F /* whopaidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36B400D15023E5400937C3F /* whopaidTests.m */; };
+		C3D6DD8315027D37003F8F6B /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */; };
+		C3D6DD8A15027FD2003F8F6B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8715027FD2003F8F6B /* icon.png */; };
+		C3D6DD8B15027FD2003F8F6B /* money_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8815027FD2003F8F6B /* money_trans.png */; };
+		C3D6DD8C15027FD2003F8F6B /* president_crop.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8915027FD2003F8F6B /* president_crop.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +41,26 @@
 		C36B3FE215023E5400937C3F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C36B3FE415023E5400937C3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C36B3FE615023E5400937C3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C36B3FEA15023E5400937C3F /* whopaid-Info.plist */ = {isa = PBXFileReference; path = "whopaid-Info.plist"; sourceTree = "<group>"; };
+		C36B3FEA15023E5400937C3F /* whopaid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "whopaid-Info.plist"; sourceTree = "<group>"; };
 		C36B3FEC15023E5400937C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C36B3FEE15023E5400937C3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C36B3FF015023E5400937C3F /* whopaid-Prefix.pch */ = {isa = PBXFileReference; path = "whopaid-Prefix.pch"; sourceTree = "<group>"; };
-		C36B3FF115023E5400937C3F /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C36B3FF015023E5400937C3F /* whopaid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "whopaid-Prefix.pch"; sourceTree = "<group>"; };
+		C36B3FF115023E5400937C3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C36B3FF215023E5400937C3F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C36B3FF515023E5400937C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C36B3FF715023E5400937C3F /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		C36B3FF715023E5400937C3F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C36B3FF815023E5400937C3F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C36B3FFF15023E5400937C3F /* whopaidTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whopaidTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36B400015023E5400937C3F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C36B400815023E5400937C3F /* whopaidTests-Info.plist */ = {isa = PBXFileReference; path = "whopaidTests-Info.plist"; sourceTree = "<group>"; };
+		C36B400815023E5400937C3F /* whopaidTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "whopaidTests-Info.plist"; sourceTree = "<group>"; };
 		C36B400A15023E5400937C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C36B400C15023E5400937C3F /* whopaidTests.h */ = {isa = PBXFileReference; path = whopaidTests.h; sourceTree = "<group>"; };
+		C36B400C15023E5400937C3F /* whopaidTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whopaidTests.h; sourceTree = "<group>"; };
 		C36B400D15023E5400937C3F /* whopaidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whopaidTests.m; sourceTree = "<group>"; };
+		C3D6DD8115027D37003F8F6B /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
+		C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDetailViewController.m; sourceTree = "<group>"; };
+		C3D6DD8715027FD2003F8F6B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C3D6DD8815027FD2003F8F6B /* money_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_trans.png; sourceTree = "<group>"; };
+		C3D6DD8915027FD2003F8F6B /* president_crop.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = president_crop.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +120,15 @@
 		C36B3FE815023E5400937C3F /* whopaid */ = {
 			isa = PBXGroup;
 			children = (
+				C3D6DD8615027FBB003F8F6B /* Resources */,
 				C36B3FF115023E5400937C3F /* AppDelegate.h */,
 				C36B3FF215023E5400937C3F /* AppDelegate.m */,
 				C36B3FF415023E5400937C3F /* MainStoryboard.storyboard */,
 				C36B3FF715023E5400937C3F /* ViewController.h */,
 				C36B3FF815023E5400937C3F /* ViewController.m */,
 				C36B3FE915023E5400937C3F /* Supporting Files */,
+				C3D6DD8115027D37003F8F6B /* AdDetailViewController.h */,
+				C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */,
 			);
 			path = whopaid;
 			sourceTree = "<group>";
@@ -149,6 +161,16 @@
 				C36B400915023E5400937C3F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3D6DD8615027FBB003F8F6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C3D6DD8715027FD2003F8F6B /* icon.png */,
+				C3D6DD8815027FD2003F8F6B /* money_trans.png */,
+				C3D6DD8915027FD2003F8F6B /* president_crop.jpeg */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +245,9 @@
 			files = (
 				C36B3FED15023E5400937C3F /* InfoPlist.strings in Resources */,
 				C36B3FF615023E5400937C3F /* MainStoryboard.storyboard in Resources */,
+				C3D6DD8A15027FD2003F8F6B /* icon.png in Resources */,
+				C3D6DD8B15027FD2003F8F6B /* money_trans.png in Resources */,
+				C3D6DD8C15027FD2003F8F6B /* president_crop.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +285,7 @@
 				C36B3FEF15023E5400937C3F /* main.m in Sources */,
 				C36B3FF315023E5400937C3F /* AppDelegate.m in Sources */,
 				C36B3FF915023E5400937C3F /* ViewController.m in Sources */,
+				C3D6DD8315027D37003F8F6B /* AdDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +455,7 @@
 				C36B401315023E5400937C3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "whopaidTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +464,7 @@
 				C36B401615023E5400937C3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
