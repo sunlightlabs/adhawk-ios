@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Recorder View Controller - WhoPaid-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="RecorderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -48,17 +49,21 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pN2-4G-2Oe" kind="push" id="ZX6-XV-eab"/>
+                                    <action selector="recordAudio" destination="4" eventType="touchUpInside" id="Sb3-Gi-UxP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="WhoPaid" id="JEH-qS-Xi1"/>
+                    <connections>
+                        <outlet property="recordButton" destination="hFV-xK-5PI" id="mam-dF-WmJ"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="799" y="99"/>
         </scene>
+        <!--Table View Controller - Menu-->
         <scene sceneID="bhV-ED-9B7">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzE-Rp-UcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,12 +305,13 @@
             </objects>
             <point key="canvasLocation" x="1293" y="99"/>
         </scene>
+        <!--Table View Controller-->
         <scene sceneID="OCC-3s-Ytg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4Y-TN-oZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="pN2-4G-2Oe" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="CRe-XN-SGM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -409,16 +415,17 @@
             </objects>
             <point key="canvasLocation" x="1020" y="762"/>
         </scene>
+        <!--View Controller - Article Title-->
         <scene sceneID="ODI-Ts-BFU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AW8-7q-HKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="OhG-d8-01w" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deL-sx-TvF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="8Oa-CP-NE2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -430,6 +437,7 @@
             </objects>
             <point key="canvasLocation" x="1406" y="796"/>
         </scene>
+        <!--Table View Controller - Articles-->
         <scene sceneID="3qm-H6-SyM">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Q0-iM-Xyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,6 +467,7 @@
             </objects>
             <point key="canvasLocation" x="2152" y="-299"/>
         </scene>
+        <!--Table View Controller - Ads-->
         <scene sceneID="OXQ-rt-pb6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qN-2O-feq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,6 +497,7 @@
             </objects>
             <point key="canvasLocation" x="1759" y="-299"/>
         </scene>
+        <!--Table View Controller - Funders-->
         <scene sceneID="iRU-Lv-67n">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ot5-77-o1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -517,6 +527,7 @@
             </objects>
             <point key="canvasLocation" x="2517" y="-299"/>
         </scene>
+        <!--Table View Controller - WhoPaid Partners-->
         <scene sceneID="bHR-a0-qgw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3la-RG-X9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -636,6 +647,7 @@
             </objects>
             <point key="canvasLocation" x="2152" y="352"/>
         </scene>
+        <!--View Controller - About WhoPaid-->
         <scene sceneID="Bes-Zj-hy4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JM-Np-BUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -665,6 +677,7 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
             </objects>
             <point key="canvasLocation" x="1759" y="352"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="2c9-T8-WGe">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9np-MC-2Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -688,11 +701,6 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
         <image name="money_trans.png" width="1386" height="1385"/>
         <image name="president_crop.jpeg" width="480" height="640"/>
     </resources>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

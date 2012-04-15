@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C357D971153A7E3A00A2AA55 /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C357D970153A7E3A00A2AA55 /* RecorderViewController.m */; };
+		C357D972153A7E3A00A2AA55 /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C357D970153A7E3A00A2AA55 /* RecorderViewController.m */; };
 		C36B3FE315023E5400937C3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE215023E5400937C3F /* UIKit.framework */; };
 		C36B3FE515023E5400937C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE415023E5400937C3F /* Foundation.framework */; };
 		C36B3FE715023E5400937C3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE615023E5400937C3F /* CoreGraphics.framework */; };
@@ -20,6 +22,7 @@
 		C36B400315023E5400937C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE415023E5400937C3F /* Foundation.framework */; };
 		C36B400B15023E5400937C3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C36B400915023E5400937C3F /* InfoPlist.strings */; };
 		C36B400E15023E5400937C3F /* whopaidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36B400D15023E5400937C3F /* whopaidTests.m */; };
+		C3C01699153A80F700D56553 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C01697153A80EB00D56553 /* AVFoundation.framework */; };
 		C3D6DD8315027D37003F8F6B /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */; };
 		C3D6DD8A15027FD2003F8F6B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8715027FD2003F8F6B /* icon.png */; };
 		C3D6DD8B15027FD2003F8F6B /* money_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8815027FD2003F8F6B /* money_trans.png */; };
@@ -37,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C357D96F153A7E3A00A2AA55 /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderViewController.h; sourceTree = "<group>"; };
+		C357D970153A7E3A00A2AA55 /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderViewController.m; sourceTree = "<group>"; };
 		C36B3FDE15023E5400937C3F /* whopaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whopaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36B3FE215023E5400937C3F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C36B3FE415023E5400937C3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,6 +61,7 @@
 		C36B400A15023E5400937C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C36B400C15023E5400937C3F /* whopaidTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whopaidTests.h; sourceTree = "<group>"; };
 		C36B400D15023E5400937C3F /* whopaidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whopaidTests.m; sourceTree = "<group>"; };
+		C3C01697153A80EB00D56553 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C3D6DD8115027D37003F8F6B /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
 		C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDetailViewController.m; sourceTree = "<group>"; };
 		C3D6DD8715027FD2003F8F6B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C01699153A80F700D56553 /* AVFoundation.framework in Frameworks */,
 				C36B3FE315023E5400937C3F /* UIKit.framework in Frameworks */,
 				C36B3FE515023E5400937C3F /* Foundation.framework in Frameworks */,
 				C36B3FE715023E5400937C3F /* CoreGraphics.framework in Frameworks */,
@@ -109,6 +116,7 @@
 		C36B3FE115023E5400937C3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3C01697153A80EB00D56553 /* AVFoundation.framework */,
 				C36B3FE215023E5400937C3F /* UIKit.framework */,
 				C36B3FE415023E5400937C3F /* Foundation.framework */,
 				C36B3FE615023E5400937C3F /* CoreGraphics.framework */,
@@ -120,15 +128,10 @@
 		C36B3FE815023E5400937C3F /* whopaid */ = {
 			isa = PBXGroup;
 			children = (
+				C3C01695153A80C700D56553 /* classes */,
 				C3D6DD8615027FBB003F8F6B /* Resources */,
-				C36B3FF115023E5400937C3F /* AppDelegate.h */,
-				C36B3FF215023E5400937C3F /* AppDelegate.m */,
 				C36B3FF415023E5400937C3F /* MainStoryboard.storyboard */,
-				C36B3FF715023E5400937C3F /* ViewController.h */,
-				C36B3FF815023E5400937C3F /* ViewController.m */,
 				C36B3FE915023E5400937C3F /* Supporting Files */,
-				C3D6DD8115027D37003F8F6B /* AdDetailViewController.h */,
-				C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */,
 			);
 			path = whopaid;
 			sourceTree = "<group>";
@@ -161,6 +164,21 @@
 				C36B400915023E5400937C3F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3C01695153A80C700D56553 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				C3D6DD8115027D37003F8F6B /* AdDetailViewController.h */,
+				C3D6DD8215027D37003F8F6B /* AdDetailViewController.m */,
+				C36B3FF715023E5400937C3F /* ViewController.h */,
+				C36B3FF815023E5400937C3F /* ViewController.m */,
+				C36B3FF115023E5400937C3F /* AppDelegate.h */,
+				C36B3FF215023E5400937C3F /* AppDelegate.m */,
+				C357D96F153A7E3A00A2AA55 /* RecorderViewController.h */,
+				C357D970153A7E3A00A2AA55 /* RecorderViewController.m */,
+			);
+			name = classes;
 			sourceTree = "<group>";
 		};
 		C3D6DD8615027FBB003F8F6B /* Resources */ = {
@@ -286,6 +304,7 @@
 				C36B3FF315023E5400937C3F /* AppDelegate.m in Sources */,
 				C36B3FF915023E5400937C3F /* ViewController.m in Sources */,
 				C3D6DD8315027D37003F8F6B /* AdDetailViewController.m in Sources */,
+				C357D971153A7E3A00A2AA55 /* RecorderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36B400E15023E5400937C3F /* whopaidTests.m in Sources */,
+				C357D972153A7E3A00A2AA55 /* RecorderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
