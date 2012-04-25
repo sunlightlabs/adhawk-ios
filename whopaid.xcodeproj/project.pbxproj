@@ -39,8 +39,9 @@
 		C39941BB153FAAD000E64F82 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941BA153FAAD000E64F82 /* CFNetwork.framework */; };
 		C39941BD153FAAD900E64F82 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941BC153FAAD900E64F82 /* MobileCoreServices.framework */; };
 		C39941BF153FAADF00E64F82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941BE153FAADF00E64F82 /* SystemConfiguration.framework */; };
-		C39941C8153FB20600E64F82 /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941C7153FB20600E64F82 /* libechoprint-codegen-ios.a */; };
 		C3C01699153A80F700D56553 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C01697153A80EB00D56553 /* AVFoundation.framework */; };
+		C3CE65EC154237DA00F998E6 /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
+		C3CE65ED154237DA00F998E6 /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; };
 		C3D6DD8A15027FD2003F8F6B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8715027FD2003F8F6B /* icon.png */; };
 		C3D6DD8B15027FD2003F8F6B /* money_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8815027FD2003F8F6B /* money_trans.png */; };
 		C3D6DD8C15027FD2003F8F6B /* president_crop.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C3D6DD8915027FD2003F8F6B /* president_crop.jpeg */; };
@@ -96,8 +97,9 @@
 		C39941BA153FAAD000E64F82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C39941BC153FAAD900E64F82 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C39941BE153FAADF00E64F82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C39941C7153FB20600E64F82 /* libechoprint-codegen-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libechoprint-codegen-ios.a"; path = "Frameworks/libechoprint-codegen-ios.a"; sourceTree = "<group>"; };
 		C3C01697153A80EB00D56553 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libechoprint-codegen-ios.a"; path = "Frameworks/libechoprint-codegen-ios.a"; sourceTree = "<group>"; };
+		C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libechoprint-codegen-ios.sim.a"; path = "Frameworks/libechoprint-codegen-ios.sim.a"; sourceTree = "<group>"; };
 		C3D6DD8715027FD2003F8F6B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C3D6DD8815027FD2003F8F6B /* money_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = money_trans.png; sourceTree = "<group>"; };
 		C3D6DD8915027FD2003F8F6B /* president_crop.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = president_crop.jpeg; sourceTree = "<group>"; };
@@ -108,7 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C39941C8153FB20600E64F82 /* libechoprint-codegen-ios.a in Frameworks */,
+				C3CE65EC154237DA00F998E6 /* libechoprint-codegen-ios.a in Frameworks */,
+				C3CE65ED154237DA00F998E6 /* libechoprint-codegen-ios.sim.a in Frameworks */,
 				C39941BF153FAADF00E64F82 /* SystemConfiguration.framework in Frameworks */,
 				C39941BD153FAAD900E64F82 /* MobileCoreServices.framework in Frameworks */,
 				C39941BB153FAAD000E64F82 /* CFNetwork.framework in Frameworks */,
@@ -157,7 +160,8 @@
 		C36B3FE115023E5400937C3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C39941C7153FB20600E64F82 /* libechoprint-codegen-ios.a */,
+				C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */,
+				C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */,
 				C39941BE153FAADF00E64F82 /* SystemConfiguration.framework */,
 				C39941BC153FAAD900E64F82 /* MobileCoreServices.framework */,
 				C39941BA153FAAD000E64F82 /* CFNetwork.framework */,

@@ -7,6 +7,8 @@
 //
 
 #import "RecorderViewController.h"
+extern const char * GetPCMFromFile(char * filename);
+
 
 @implementation RecorderViewController
 
@@ -21,20 +23,25 @@
     return self;
 }
 
+
+- (NSString*) getAudioFilePath {
+
+    NSArray * dirPaths = NSSearchPathForDirectoriesInDomains(
+                                                   NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = [dirPaths objectAtIndex:0];
+    NSString *soundFilePath = [docsDir
+                               stringByAppendingPathComponent:@"sound.caf"];
+    return soundFilePath;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     playButton.enabled = NO;
     stopButton.enabled = NO;
+        
     
-    NSArray *dirPaths;
-    NSString *docsDir;
-    
-    dirPaths = NSSearchPathForDirectoriesInDomains(
-                                                   NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = [dirPaths objectAtIndex:0];
-    NSString *soundFilePath = [docsDir
-                               stringByAppendingPathComponent:@"sound.caf"];
-    
+    NSString *soundFilePath = [self getAudioFilePath];
+                                
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
     NSDictionary *recordSettings = [NSDictionary 
@@ -84,9 +91,16 @@
     {
         playButton.enabled = NO;
         stopButton.enabled = YES;
+        [NSTimer scheduledTimerWithTimeInterval:15.0
+                                         target:self
+                                       selector:@selector(stop)
+                                       userInfo:nil
+                                        repeats:NO];
         [audioRecorder record];
+        [recordButton setTitle:@"Recording..." forState:UIControlStateNormal];
     }
 }
+
 -(void)stop
 {
     stopButton.enabled = NO;
@@ -96,10 +110,19 @@
     if (audioRecorder.recording)
     {
         [audioRecorder stop];
+        [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
+        //add codegen in here
+        NSString *soundFilePath = [self getAudioFilePath];
+        const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
+        
+        NSLog(@"fpcode: %s", fpCode);
+
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
     }
 }
+
+
 -(void) playAudio
 {
     if (!audioRecorder.recording)
@@ -107,8 +130,6 @@
         stopButton.enabled = YES;
         recordButton.enabled = NO;
         
-//        if (audioPlayer)
- //           [audioPlayer release];
         NSError *error;
         
         audioPlayer = [[AVAudioPlayer alloc] 
