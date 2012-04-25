@@ -111,11 +111,34 @@ extern const char * GetPCMFromFile(char * filename);
     {
         [audioRecorder stop];
         [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
-        //add codegen in here
         NSString *soundFilePath = [self getAudioFilePath];
         const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
         
         NSLog(@"fpcode: %s", fpCode);
+        
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        dispatch_async(queue, ^{
+            NSError *error = nil;
+            
+            NSString *base_url = @"http://whopaidapp.org/api/ad/";
+            NSString *urlStr = [base_url stringByAppendingFormat:@"%s",fpCode];
+            NSURL *url = [NSURL URLWithString:urlStr];
+            NSString *json = [NSString stringWithContentsOfURL:url
+                                                      encoding:NSASCIIStringEncoding
+                                                         error:&error];
+            NSLog(@"\nJSON: %@ \n Error: %@", json, error);
+            
+            if(!error) {
+                NSData *jsonData = [json dataUsingEncoding:NSASCIIStringEncoding];
+                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                         options:kNilOptions
+                                                                           error:&error];
+                NSLog(@"JSON: %@", jsonDict);
+            }
+            
+        });
+
 
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
