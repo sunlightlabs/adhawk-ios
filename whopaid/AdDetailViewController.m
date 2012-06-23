@@ -14,8 +14,6 @@
 
 @implementation AdDetailViewController
 
-@synthesize webView, targetURL;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,10 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    NSURL *url = [NSURL URLWithString:targetURL];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:req];    
 }
 
 - (void)viewDidUnload
