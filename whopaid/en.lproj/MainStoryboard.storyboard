@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -58,6 +59,7 @@
                     <navigationItem key="navigationItem" title="WhoPaid" id="JEH-qS-Xi1"/>
                     <connections>
                         <outlet property="recordButton" destination="hFV-xK-5PI" id="mam-dF-WmJ"/>
+                        <segue destination="OhG-d8-01w" kind="push" identifier="adSegue" id="q4Z-7a-U2P"/>
                     </connections>
                 </viewController>
             </objects>
@@ -305,127 +307,17 @@
             </objects>
             <point key="canvasLocation" x="1293" y="99"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="OCC-3s-Ytg">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B4Y-TN-oZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="pN2-4G-2Oe" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="CRe-XN-SGM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Ad Funded By:" id="c4Q-A3-PR4">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="lFa-YD-3dK" detailTextLabel="cfY-lb-oAv" style="IBUITableViewCellStyleSubtitle" id="zII-Al-qsT">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Crossroads GPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lFa-YD-3dK">
-                                                    <rect key="frame" x="10" y="2" width="144" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="PAC started by Karl Rove" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cfY-lb-oAv">
-                                                    <rect key="frame" x="10" y="24" width="160" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="dgP-OF-p9m" detailTextLabel="CSJ-xJ-T0K" style="IBUITableViewCellStyleSubtitle" id="Ova-Di-wEf">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="American Crossroads" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dgP-OF-p9m">
-                                                    <rect key="frame" x="10" y="2" width="188" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="SuperPAC started by Karl Rove" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CSJ-xJ-T0K">
-                                                    <rect key="frame" x="10" y="24" width="197" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Journalistic Coverage" id="anT-zw-4bM">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gR1-tN-DCe" detailTextLabel="Ynl-q7-2ij" style="IBUITableViewCellStyleSubtitle" id="cXg-Fx-dJl">
-                                        <rect key="frame" x="0.0" y="182" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="The Fall TV Senate Air Wars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gR1-tN-DCe">
-                                                    <rect key="frame" x="10" y="2" width="240" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="FactCheck.org" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ynl-q7-2ij">
-                                                    <rect key="frame" x="10" y="24" width="92" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="OhG-d8-01w" kind="push" id="UMd-tU-WeP"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="pN2-4G-2Oe" id="02B-QP-5Ps"/>
-                            <outlet property="delegate" destination="pN2-4G-2Oe" id="D0P-LO-GbX"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Sa2-j0-2Vd"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="1020" y="762"/>
-        </scene>
-        <!--View Controller - Article Title-->
+        <!--Ad Detail View Controller - Article Title-->
         <scene sceneID="ODI-Ts-BFU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AW8-7q-HKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="OhG-d8-01w" sceneMemberID="viewController">
+                <viewController id="OhG-d8-01w" customClass="AdDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deL-sx-TvF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="8Oa-CP-NE2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -433,9 +325,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Article Title" id="6mf-Z3-af6"/>
+                    <connections>
+                        <outlet property="webView" destination="8Oa-CP-NE2" id="zoS-dq-1gc"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1406" y="796"/>
+            <point key="canvasLocation" x="1293" y="718"/>
         </scene>
         <!--Table View Controller - Articles-->
         <scene sceneID="3qm-H6-SyM">
@@ -645,7 +540,7 @@
                     <navigationItem key="navigationItem" title="WhoPaid Partners" id="BYT-fC-I8v"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2152" y="352"/>
+            <point key="canvasLocation" x="2678" y="352"/>
         </scene>
         <!--View Controller - About WhoPaid-->
         <scene sceneID="Bes-Zj-hy4">
@@ -675,7 +570,7 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
                     <navigationItem key="navigationItem" title="About WhoPaid" id="tto-RI-J6O"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1759" y="352"/>
+            <point key="canvasLocation" x="2285" y="352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2c9-T8-WGe">
@@ -701,6 +596,25 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
         <image name="money_trans.png" width="1386" height="1385"/>
         <image name="president_crop.jpeg" width="480" height="640"/>
     </resources>
+    <classes>
+        <class className="AdDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="RecorderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecorderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playAudio"/>
+                <relationship kind="action" name="recordAudio"/>
+                <relationship kind="action" name="stop"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
