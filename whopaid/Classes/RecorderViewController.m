@@ -7,6 +7,8 @@
 //
 
 #import "RecorderViewController.h"
+#import "AdDetailViewController.h"
+
 extern const char * GetPCMFromFile(char * filename);
 
 
@@ -101,6 +103,20 @@ extern const char * GetPCMFromFile(char * filename);
     }
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"adSegue"])
+    {
+        // Get reference to the destination view controller
+        AdDetailViewController *vc = [segue destinationViewController];
+
+        
+        // Pass any objects to the view controller here, like...
+        [vc setTargetURL:@"http://news.google.com"];
+    }
+}
+
 -(void)stop
 {
     stopButton.enabled = NO;
@@ -136,6 +152,11 @@ extern const char * GetPCMFromFile(char * filename);
                                                                            error:&error];
                 NSLog(@"JSON: %@", jsonDict);
             }
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"adSegue" sender:self];
+            });
+            
             
         });
 
