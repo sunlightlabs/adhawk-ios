@@ -1,6 +1,6 @@
 //
 //  RecorderViewController.m
-//  whopaid
+//  adhawk
 //
 //  Created by Jim Snavely on 4/14/12.
 //  Copyright (c) 2012 Cuibono 
@@ -137,7 +137,7 @@ extern const char * GetPCMFromFile(char * filename);
         dispatch_async(queue, ^{
             NSError *error = nil;
             
-            NSString *base_url = @"http://whopaidapp.org/api/ad/";
+            NSString *base_url = @"http://adhawkapp.org/api/ad/";
             NSString *urlStr = [base_url stringByAppendingFormat:@"%s",fpCode];
             NSURL *url = [NSURL URLWithString:urlStr];
             NSString *json = [NSString stringWithContentsOfURL:url

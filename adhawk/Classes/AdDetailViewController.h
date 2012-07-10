@@ -1,6 +1,6 @@
 //
 //  AdDetailViewController.h
-//  whopaid
+//  adhawk
 //
 //  Created by Jim Snavely on 6/22/12.
 //  Copyright (c) 2012 Thomsonreuters. All rights reserved.

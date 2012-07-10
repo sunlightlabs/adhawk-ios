@@ -1,14 +1,14 @@
 //
-//  whopaidTests.m
-//  whopaidTests
+//  adhawkTests.m
+//  adhawkTests
 //
 //  Created by James Snavely on 3/3/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "whopaidTests.h"
+#import "adhawkTests.h"
 
-@implementation whopaidTests
+@implementation adhawkTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in whopaidTests");
+    STFail(@"Unit tests are not implemented yet in adhawkTests");
 }
 
 @end
