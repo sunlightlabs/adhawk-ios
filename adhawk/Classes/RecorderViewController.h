@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "Settings.h"
+#import "GSAPI.h"
 
 @interface RecorderViewController : UIViewController
 <AVAudioRecorderDelegate, AVAudioPlayerDelegate>

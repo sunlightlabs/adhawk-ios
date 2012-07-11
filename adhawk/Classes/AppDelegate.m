@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "Settings.h"
 
 @implementation AppDelegate
 
@@ -20,6 +19,7 @@
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
 #endif
+        
     return YES;
 }
 							

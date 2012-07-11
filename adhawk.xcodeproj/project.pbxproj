@@ -23,7 +23,7 @@
 		2F4B987C15ACCC5000C5AB4C /* adhawkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */; };
 		2F4B988615ACCDDB00C5AB4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */; };
 		2F4B988B15ACD34400C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
-		2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; };
+		2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		2F4B988D15ACD34D00C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
 		2F4B988E15ACD35000C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; };
 		2F4B98AF15ACD95A00C5AB4C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4B98AB15ACD95A00C5AB4C /* libTestFlight.a */; };
@@ -33,6 +33,30 @@
 		2F4B98B515ACD99700C5AB4C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941A5153FA9A100E64F82 /* libz.dylib */; };
 		2F4B98E515ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
 		2F4B98E615ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
+		2F93476F15AE111500FE5749 /* Ad Hawk-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */; };
+		2FFB536215ADDBE20069A722 /* GSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533715ADDBE20069A722 /* GSAPI.m */; };
+		2FFB536315ADDBE20069A722 /* GSAPI_Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533915ADDBE20069A722 /* GSAPI_Internal.m */; };
+		2FFB536415ADDBE20069A722 /* GSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533B15ADDBE20069A722 /* GSContext.m */; };
+		2FFB536515ADDBE20069A722 /* GSFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533E15ADDBE20069A722 /* GSFacebook.m */; };
+		2FFB536615ADDBE20069A722 /* GSFBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FFB534015ADDBE20069A722 /* GSFBDialog.bundle */; };
+		2FFB536715ADDBE20069A722 /* GSFBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534215ADDBE20069A722 /* GSFBDialog.m */; };
+		2FFB536815ADDBE20069A722 /* GSFBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534415ADDBE20069A722 /* GSFBLoginDialog.m */; };
+		2FFB536915ADDBE20069A722 /* GSFBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534615ADDBE20069A722 /* GSFBRequest.m */; };
+		2FFB536A15ADDBE20069A722 /* GSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534815ADDBE20069A722 /* GSLogger.m */; };
+		2FFB536B15ADDBE20069A722 /* GSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534A15ADDBE20069A722 /* GSObject.m */; };
+		2FFB536C15ADDBE20069A722 /* GSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534C15ADDBE20069A722 /* GSRequest.m */; };
+		2FFB536D15ADDBE20069A722 /* GSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB534E15ADDBE20069A722 /* GSResponse.m */; };
+		2FFB536E15ADDBE20069A722 /* GSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535015ADDBE20069A722 /* GSSession.m */; };
+		2FFB536F15ADDBE20069A722 /* GSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535215ADDBE20069A722 /* GSWebViewController.m */; };
+		2FFB537015ADDBE20069A722 /* GSWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FFB535315ADDBE20069A722 /* GSWebViewController.xib */; };
+		2FFB537115ADDBE20069A722 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535715ADDBE20069A722 /* NSObject+SBJSON.m */; };
+		2FFB537215ADDBE20069A722 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535915ADDBE20069A722 /* NSString+SBJSON.m */; };
+		2FFB537315ADDBE20069A722 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535B15ADDBE20069A722 /* SBJSON.m */; };
+		2FFB537415ADDBE20069A722 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535D15ADDBE20069A722 /* SBJsonBase.m */; };
+		2FFB537515ADDBE20069A722 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB535F15ADDBE20069A722 /* SBJsonParser.m */; };
+		2FFB537615ADDBE20069A722 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB536115ADDBE20069A722 /* SBJsonWriter.m */; };
+		2FFB537D15ADF6DC0069A722 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFB537C15ADF6DC0069A722 /* Twitter.framework */; };
+		2FFB537F15ADF7200069A722 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFB537E15ADF7200069A722 /* Accounts.framework */; };
 		C36B3FE315023E5400937C3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE215023E5400937C3F /* UIKit.framework */; };
 		C36B3FE515023E5400937C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE415023E5400937C3F /* Foundation.framework */; };
 		C36B3FE715023E5400937C3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE615023E5400937C3F /* CoreGraphics.framework */; };
@@ -82,12 +106,10 @@
 		2F4B985F15ACC80E00C5AB4C /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = echoprint_Prefix.pch; path = adhawk/echoprint_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		2F4B986B15ACC84800C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = adhawk/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		2F4B986E15ACC8A700C5AB4C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = adhawk/Classes/main.m; sourceTree = SOURCE_ROOT; };
-		2F4B987215ACCC1900C5AB4C /* adhawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "adhawk-Info.plist"; path = "adhawk/adhawk-Info.plist"; sourceTree = SOURCE_ROOT; };
-		2F4B987315ACCC1900C5AB4C /* adhawk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "adhawk-Prefix.pch"; path = "adhawk/adhawk-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		2F4B987715ACCC3500C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = adhawk/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2F4B987A15ACCC5000C5AB4C /* adhawkTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adhawkTests.h; path = adhawkTests/adhawkTests.h; sourceTree = SOURCE_ROOT; };
 		2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = adhawkTests.m; path = adhawkTests/adhawkTests.m; sourceTree = SOURCE_ROOT; };
-		2F4B987E15ACCC6A00C5AB4C /* adhawkTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "adhawkTests-Info.plist"; path = "adhawkTests/adhawkTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2F4B987E15ACCC6A00C5AB4C /* Ad HawkTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "Ad HawkTests-Info.plist"; path = "Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist"; sourceTree = SDKROOT; };
 		2F4B988215ACCC7900C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = adhawkTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2F4B98AB15ACD95A00C5AB4C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		2F4B98AC15ACD95A00C5AB4C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -95,11 +117,57 @@
 		2F4B98AE15ACD95A00C5AB4C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = adhawk/Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
 		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = adhawk/Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
-		C36B3FDE15023E5400937C3F /* adhawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adhawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Ad Hawk-Info.plist"; path = "adhawk/Ad Hawk-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ad Hawk-Prefix.pch"; path = "adhawk/Ad Hawk-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		2FFB533615ADDBE20069A722 /* GSAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPI.h; sourceTree = "<group>"; };
+		2FFB533715ADDBE20069A722 /* GSAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAPI.m; sourceTree = "<group>"; };
+		2FFB533815ADDBE20069A722 /* GSAPI_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPI_Internal.h; sourceTree = "<group>"; };
+		2FFB533915ADDBE20069A722 /* GSAPI_Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAPI_Internal.m; sourceTree = "<group>"; };
+		2FFB533A15ADDBE20069A722 /* GSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSContext.h; sourceTree = "<group>"; };
+		2FFB533B15ADDBE20069A722 /* GSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSContext.m; sourceTree = "<group>"; };
+		2FFB533D15ADDBE20069A722 /* GSFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFacebook.h; sourceTree = "<group>"; };
+		2FFB533E15ADDBE20069A722 /* GSFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFacebook.m; sourceTree = "<group>"; };
+		2FFB533F15ADDBE20069A722 /* GSFBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFBConnect.h; sourceTree = "<group>"; };
+		2FFB534015ADDBE20069A722 /* GSFBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GSFBDialog.bundle; sourceTree = "<group>"; };
+		2FFB534115ADDBE20069A722 /* GSFBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFBDialog.h; sourceTree = "<group>"; };
+		2FFB534215ADDBE20069A722 /* GSFBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFBDialog.m; sourceTree = "<group>"; };
+		2FFB534315ADDBE20069A722 /* GSFBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFBLoginDialog.h; sourceTree = "<group>"; };
+		2FFB534415ADDBE20069A722 /* GSFBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFBLoginDialog.m; sourceTree = "<group>"; };
+		2FFB534515ADDBE20069A722 /* GSFBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFBRequest.h; sourceTree = "<group>"; };
+		2FFB534615ADDBE20069A722 /* GSFBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFBRequest.m; sourceTree = "<group>"; };
+		2FFB534715ADDBE20069A722 /* GSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLogger.h; sourceTree = "<group>"; };
+		2FFB534815ADDBE20069A722 /* GSLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLogger.m; sourceTree = "<group>"; };
+		2FFB534915ADDBE20069A722 /* GSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSObject.h; sourceTree = "<group>"; };
+		2FFB534A15ADDBE20069A722 /* GSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSObject.m; sourceTree = "<group>"; };
+		2FFB534B15ADDBE20069A722 /* GSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSRequest.h; sourceTree = "<group>"; };
+		2FFB534C15ADDBE20069A722 /* GSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSRequest.m; sourceTree = "<group>"; };
+		2FFB534D15ADDBE20069A722 /* GSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSResponse.h; sourceTree = "<group>"; };
+		2FFB534E15ADDBE20069A722 /* GSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSResponse.m; sourceTree = "<group>"; };
+		2FFB534F15ADDBE20069A722 /* GSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSSession.h; sourceTree = "<group>"; };
+		2FFB535015ADDBE20069A722 /* GSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSSession.m; sourceTree = "<group>"; };
+		2FFB535115ADDBE20069A722 /* GSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSWebViewController.h; sourceTree = "<group>"; };
+		2FFB535215ADDBE20069A722 /* GSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSWebViewController.m; sourceTree = "<group>"; };
+		2FFB535315ADDBE20069A722 /* GSWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSWebViewController.xib; sourceTree = "<group>"; };
+		2FFB535515ADDBE20069A722 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		2FFB535615ADDBE20069A722 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		2FFB535715ADDBE20069A722 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		2FFB535815ADDBE20069A722 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		2FFB535915ADDBE20069A722 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		2FFB535A15ADDBE20069A722 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		2FFB535B15ADDBE20069A722 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		2FFB535C15ADDBE20069A722 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		2FFB535D15ADDBE20069A722 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		2FFB535E15ADDBE20069A722 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		2FFB535F15ADDBE20069A722 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		2FFB536015ADDBE20069A722 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		2FFB536115ADDBE20069A722 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		2FFB537C15ADF6DC0069A722 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		2FFB537E15ADF7200069A722 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		C36B3FDE15023E5400937C3F /* Ad Hawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ad Hawk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36B3FE215023E5400937C3F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C36B3FE415023E5400937C3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C36B3FE615023E5400937C3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C36B3FFF15023E5400937C3F /* adhawkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adhawkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36B3FFF15023E5400937C3F /* Ad HawkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ad HawkTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36B400015023E5400937C3F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C39941A5153FA9A100E64F82 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C39941B4153FAA7400E64F82 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -117,9 +185,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C39941A6153FA9A100E64F82 /* libz.dylib in Frameworks */,
 				2F4B988B15ACD34400C5AB4C /* libechoprint-codegen-ios.a in Frameworks */,
 				2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */,
+				C39941A6153FA9A100E64F82 /* libz.dylib in Frameworks */,
 				C39941BF153FAADF00E64F82 /* SystemConfiguration.framework in Frameworks */,
 				C39941BD153FAAD900E64F82 /* MobileCoreServices.framework in Frameworks */,
 				C39941BB153FAAD000E64F82 /* CFNetwork.framework in Frameworks */,
@@ -129,6 +197,8 @@
 				C3C01699153A80F700D56553 /* AVFoundation.framework in Frameworks */,
 				C36B3FE515023E5400937C3F /* Foundation.framework in Frameworks */,
 				C36B3FE715023E5400937C3F /* CoreGraphics.framework in Frameworks */,
+				2FFB537F15ADF7200069A722 /* Accounts.framework in Frameworks */,
+				2FFB537D15ADF6DC0069A722 /* Twitter.framework in Frameworks */,
 				2F4B98AF15ACD95A00C5AB4C /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +223,7 @@
 		2F4B98A915ACD92300C5AB4C /* SDKs */ = {
 			isa = PBXGroup;
 			children = (
+				2FFB533515ADDBE20069A722 /* GSSDK */,
 				2F4B98AA15ACD95A00C5AB4C /* TestFlightSDK */,
 			);
 			name = SDKs;
@@ -179,6 +250,72 @@
 			name = config;
 			sourceTree = "<group>";
 		};
+		2FFB533515ADDBE20069A722 /* GSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				2FFB533615ADDBE20069A722 /* GSAPI.h */,
+				2FFB533715ADDBE20069A722 /* GSAPI.m */,
+				2FFB533815ADDBE20069A722 /* GSAPI_Internal.h */,
+				2FFB533915ADDBE20069A722 /* GSAPI_Internal.m */,
+				2FFB533A15ADDBE20069A722 /* GSContext.h */,
+				2FFB533B15ADDBE20069A722 /* GSContext.m */,
+				2FFB533C15ADDBE20069A722 /* GSFBConnect */,
+				2FFB534715ADDBE20069A722 /* GSLogger.h */,
+				2FFB534815ADDBE20069A722 /* GSLogger.m */,
+				2FFB534915ADDBE20069A722 /* GSObject.h */,
+				2FFB534A15ADDBE20069A722 /* GSObject.m */,
+				2FFB534B15ADDBE20069A722 /* GSRequest.h */,
+				2FFB534C15ADDBE20069A722 /* GSRequest.m */,
+				2FFB534D15ADDBE20069A722 /* GSResponse.h */,
+				2FFB534E15ADDBE20069A722 /* GSResponse.m */,
+				2FFB534F15ADDBE20069A722 /* GSSession.h */,
+				2FFB535015ADDBE20069A722 /* GSSession.m */,
+				2FFB535115ADDBE20069A722 /* GSWebViewController.h */,
+				2FFB535215ADDBE20069A722 /* GSWebViewController.m */,
+				2FFB535315ADDBE20069A722 /* GSWebViewController.xib */,
+				2FFB535415ADDBE20069A722 /* JSON */,
+			);
+			name = GSSDK;
+			path = SDKs/GSSDK;
+			sourceTree = "<group>";
+		};
+		2FFB533C15ADDBE20069A722 /* GSFBConnect */ = {
+			isa = PBXGroup;
+			children = (
+				2FFB533D15ADDBE20069A722 /* GSFacebook.h */,
+				2FFB533E15ADDBE20069A722 /* GSFacebook.m */,
+				2FFB533F15ADDBE20069A722 /* GSFBConnect.h */,
+				2FFB534015ADDBE20069A722 /* GSFBDialog.bundle */,
+				2FFB534115ADDBE20069A722 /* GSFBDialog.h */,
+				2FFB534215ADDBE20069A722 /* GSFBDialog.m */,
+				2FFB534315ADDBE20069A722 /* GSFBLoginDialog.h */,
+				2FFB534415ADDBE20069A722 /* GSFBLoginDialog.m */,
+				2FFB534515ADDBE20069A722 /* GSFBRequest.h */,
+				2FFB534615ADDBE20069A722 /* GSFBRequest.m */,
+			);
+			path = GSFBConnect;
+			sourceTree = "<group>";
+		};
+		2FFB535415ADDBE20069A722 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2FFB535515ADDBE20069A722 /* JSON.h */,
+				2FFB535615ADDBE20069A722 /* NSObject+SBJSON.h */,
+				2FFB535715ADDBE20069A722 /* NSObject+SBJSON.m */,
+				2FFB535815ADDBE20069A722 /* NSString+SBJSON.h */,
+				2FFB535915ADDBE20069A722 /* NSString+SBJSON.m */,
+				2FFB535A15ADDBE20069A722 /* SBJSON.h */,
+				2FFB535B15ADDBE20069A722 /* SBJSON.m */,
+				2FFB535C15ADDBE20069A722 /* SBJsonBase.h */,
+				2FFB535D15ADDBE20069A722 /* SBJsonBase.m */,
+				2FFB535E15ADDBE20069A722 /* SBJsonParser.h */,
+				2FFB535F15ADDBE20069A722 /* SBJsonParser.m */,
+				2FFB536015ADDBE20069A722 /* SBJsonWriter.h */,
+				2FFB536115ADDBE20069A722 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		C36B3FD315023E5400937C3F = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +330,8 @@
 		C36B3FDF15023E5400937C3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C36B3FDE15023E5400937C3F /* adhawk.app */,
-				C36B3FFF15023E5400937C3F /* adhawkTests.octest */,
+				C36B3FDE15023E5400937C3F /* Ad Hawk.app */,
+				C36B3FFF15023E5400937C3F /* Ad HawkTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +339,8 @@
 		C36B3FE115023E5400937C3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FFB537E15ADF7200069A722 /* Accounts.framework */,
+				2FFB537C15ADF6DC0069A722 /* Twitter.framework */,
 				C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */,
 				C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */,
 				C39941BE153FAADF00E64F82 /* SystemConfiguration.framework */,
@@ -235,8 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				2F4B986E15ACC8A700C5AB4C /* main.m */,
-				2F4B987215ACCC1900C5AB4C /* adhawk-Info.plist */,
-				2F4B987315ACCC1900C5AB4C /* adhawk-Prefix.pch */,
+				2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */,
+				2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */,
 				2F4B987615ACCC3500C5AB4C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -256,7 +395,7 @@
 		C36B400715023E5400937C3F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2F4B987E15ACCC6A00C5AB4C /* adhawkTests-Info.plist */,
+				2F4B987E15ACCC6A00C5AB4C /* Ad HawkTests-Info.plist */,
 				2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -309,10 +448,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C36B3FDD15023E5400937C3F /* adhawk */ = {
+		C36B3FDD15023E5400937C3F /* Ad Hawk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C36B401115023E5400937C3F /* Build configuration list for PBXNativeTarget "adhawk" */;
+			buildConfigurationList = C36B401115023E5400937C3F /* Build configuration list for PBXNativeTarget "Ad Hawk" */;
 			buildPhases = (
+				2F41957115AE06790038B0CA /* ShellScript */,
 				C36B3FDA15023E5400937C3F /* Sources */,
 				C36B3FDB15023E5400937C3F /* Frameworks */,
 				C36B3FDC15023E5400937C3F /* Resources */,
@@ -321,14 +461,14 @@
 			);
 			dependencies = (
 			);
-			name = adhawk;
+			name = "Ad Hawk";
 			productName = whopaid;
-			productReference = C36B3FDE15023E5400937C3F /* adhawk.app */;
+			productReference = C36B3FDE15023E5400937C3F /* Ad Hawk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C36B3FFE15023E5400937C3F /* adhawkTests */ = {
+		C36B3FFE15023E5400937C3F /* Ad HawkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "adhawkTests" */;
+			buildConfigurationList = C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "Ad HawkTests" */;
 			buildPhases = (
 				C36B3FFA15023E5400937C3F /* Sources */,
 				C36B3FFB15023E5400937C3F /* Frameworks */,
@@ -340,9 +480,9 @@
 			dependencies = (
 				C36B400515023E5400937C3F /* PBXTargetDependency */,
 			);
-			name = adhawkTests;
+			name = "Ad HawkTests";
 			productName = whopaidTests;
-			productReference = C36B3FFF15023E5400937C3F /* adhawkTests.octest */;
+			productReference = C36B3FFF15023E5400937C3F /* Ad HawkTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -365,8 +505,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C36B3FDD15023E5400937C3F /* adhawk */,
-				C36B3FFE15023E5400937C3F /* adhawkTests */,
+				C36B3FDD15023E5400937C3F /* Ad Hawk */,
+				C36B3FFE15023E5400937C3F /* Ad HawkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -381,6 +521,9 @@
 				2F4B985215ACC7DB00C5AB4C /* president_crop.jpeg in Resources */,
 				2F4B986C15ACC84800C5AB4C /* MainStoryboard.storyboard in Resources */,
 				2F4B987815ACCC3500C5AB4C /* InfoPlist.strings in Resources */,
+				2FFB536615ADDBE20069A722 /* GSFBDialog.bundle in Resources */,
+				2FFB537015ADDBE20069A722 /* GSWebViewController.xib in Resources */,
+				2F93476F15AE111500FE5749 /* Ad Hawk-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +540,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F41957115AE06790038B0CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n#\ngit=`sh /etc/profile; which git`\n## For the App Store, instead use: git describe –abbrev=0 –tags\nversion=`$git describe --abbrev=0 --tags --always`\ncount=`$git rev-list --all | wc -l`\nrevision=`$git rev-parse --short HEAD`\necho -e \"#define GIT_VERSION $version\\n#define GIT_COMMIT_COUNT $count\\n#define GIT_SHORT_REVISION $revision\" > Resources/InfoPlist.h";
+		};
 		C36B3FFD15023E5400937C3F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +582,25 @@
 				2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */,
 				2F4B986F15ACC8A700C5AB4C /* main.m in Sources */,
 				2F4B98E515ACDC5500C5AB4C /* Settings.m in Sources */,
+				2FFB536215ADDBE20069A722 /* GSAPI.m in Sources */,
+				2FFB536315ADDBE20069A722 /* GSAPI_Internal.m in Sources */,
+				2FFB536415ADDBE20069A722 /* GSContext.m in Sources */,
+				2FFB536515ADDBE20069A722 /* GSFacebook.m in Sources */,
+				2FFB536715ADDBE20069A722 /* GSFBDialog.m in Sources */,
+				2FFB536815ADDBE20069A722 /* GSFBLoginDialog.m in Sources */,
+				2FFB536915ADDBE20069A722 /* GSFBRequest.m in Sources */,
+				2FFB536A15ADDBE20069A722 /* GSLogger.m in Sources */,
+				2FFB536B15ADDBE20069A722 /* GSObject.m in Sources */,
+				2FFB536C15ADDBE20069A722 /* GSRequest.m in Sources */,
+				2FFB536D15ADDBE20069A722 /* GSResponse.m in Sources */,
+				2FFB536E15ADDBE20069A722 /* GSSession.m in Sources */,
+				2FFB536F15ADDBE20069A722 /* GSWebViewController.m in Sources */,
+				2FFB537115ADDBE20069A722 /* NSObject+SBJSON.m in Sources */,
+				2FFB537215ADDBE20069A722 /* NSString+SBJSON.m in Sources */,
+				2FFB537315ADDBE20069A722 /* SBJSON.m in Sources */,
+				2FFB537415ADDBE20069A722 /* SBJsonBase.m in Sources */,
+				2FFB537515ADDBE20069A722 /* SBJsonParser.m in Sources */,
+				2FFB537615ADDBE20069A722 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +618,7 @@
 /* Begin PBXTargetDependency section */
 		C36B400515023E5400937C3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C36B3FDD15023E5400937C3F /* adhawk */;
+			target = C36B3FDD15023E5400937C3F /* Ad Hawk */;
 			targetProxy = C36B400415023E5400937C3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -496,6 +671,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Ad Hawk";
 				SDKROOT = iphoneos;
@@ -516,6 +692,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "Ad Hawk";
@@ -528,16 +705,20 @@
 		C36B401215023E5400937C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "adhawk/adhawk-Info.plist";
+				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "adhawk/Ad Hawk-Info.plist";
+				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
-				PRODUCT_NAME = adhawk;
+				PRODUCT_NAME = "Ad Hawk";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,16 +727,20 @@
 		C36B401315023E5400937C3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "adhawk/adhawk-Info.plist";
+				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "adhawk/Ad Hawk-Info.plist";
+				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
-				PRODUCT_NAME = adhawk;
+				PRODUCT_NAME = "Ad Hawk";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -571,7 +756,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "adhawkTests/adhawkTests-Info.plist";
+				INFOPLIST_FILE = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -579,7 +764,7 @@
 					"\"$(SRCROOT)/Frameworks/TestFlightSDK\"",
 					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
-				PRODUCT_NAME = adhawkTests;
+				PRODUCT_NAME = "Ad HawkTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -595,7 +780,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "adhawkTests/adhawkTests-Info.plist";
+				INFOPLIST_FILE = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -603,7 +788,7 @@
 					"\"$(SRCROOT)/Frameworks/TestFlightSDK\"",
 					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
-				PRODUCT_NAME = adhawkTests;
+				PRODUCT_NAME = "Ad HawkTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -621,7 +806,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C36B401115023E5400937C3F /* Build configuration list for PBXNativeTarget "adhawk" */ = {
+		C36B401115023E5400937C3F /* Build configuration list for PBXNativeTarget "Ad Hawk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36B401215023E5400937C3F /* Debug */,
@@ -630,7 +815,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "adhawkTests" */ = {
+		C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "Ad HawkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36B401515023E5400937C3F /* Debug */,
