@@ -52,21 +52,6 @@ extern const char * GetPCMFromFile(char * filename);
                                 
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
-    NSMutableDictionary* birdIsTheWord = [NSMutableDictionary dictionaryWithCapacity:0];
-    [birdIsTheWord setObject:TEST_FINGERPRINT forKey:@"fingerprint"];
-    [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
-    [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
-
-    RKObjectManager* manager = [RKObjectManager sharedManager];
-        [manager loadObjectsAtResourcePath:@"/ad/" usingBlock:^(RKObjectLoader * loader) {
-            loader.serializationMIMEType = RKMIMETypeJSON;
-            loader.objectMapping = [manager.mappingProvider objectMappingForClass:[AdHawkAd class]];
-            loader.resourcePath = @"/ad/";
-            loader.method = RKRequestMethodPOST;
-            [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
-        }];
-
-    
     NSDictionary *recordSettings = [NSDictionary 
                                     dictionaryWithObjectsAndKeys:
                                     [NSNumber numberWithInt:AVAudioQualityMin],
@@ -134,7 +119,7 @@ extern const char * GetPCMFromFile(char * filename);
 
         
         // Pass any objects to the view controller here, like...
-        [vc setTargetURL:@"http://news.google.com"];
+        [vc setTargetURL:[[AdHawkAPI sharedInstance].currentAd.ad_profile_url absoluteString]];
     }
 }
 
@@ -149,9 +134,25 @@ extern const char * GetPCMFromFile(char * filename);
         [audioRecorder stop];
         [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
         NSString *soundFilePath = [self getAudioFilePath];
-//        const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
-        
+        const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
+        NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
         NSLog(@"fpcode generated");
+        
+        NSMutableDictionary* birdIsTheWord = [NSMutableDictionary dictionaryWithCapacity:0];
+        [birdIsTheWord setObject:fpCodeString forKey:@"fingerprint"];
+        [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
+        [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
+        
+        RKObjectManager* manager = [RKObjectManager sharedManager];
+        [manager loadObjectsAtResourcePath:@"/ad/" usingBlock:^(RKObjectLoader * loader) {
+            loader.serializationMIMEType = RKMIMETypeJSON;
+            loader.objectMapping = [manager.mappingProvider objectMappingForClass:[AdHawkAd class]];
+            loader.resourcePath = @"/ad/";
+            loader.method = RKRequestMethodPOST;
+            loader.delegate = self;
+            [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
+        }];
+
 
 //        [self.recorderDelegate recorderDidGenerateFingerPrint:[NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding]];
 
@@ -213,7 +214,12 @@ extern const char * GetPCMFromFile(char * filename);
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
-    NSLog(@"LOADED OBJECT!!!!");
+    NSLog(@"Loaded Object");
+    if ([object isKindOfClass:[AdHawkAd class]]) {
+        NSLog(@"Got back an AdHawk ad object!");
+        [AdHawkAPI sharedInstance].currentAd = (AdHawkAd *)object;
+        [self performSegueWithIdentifier:@"adSegue" sender:self];
+    }
 }
 
 

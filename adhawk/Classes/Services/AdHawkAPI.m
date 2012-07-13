@@ -13,16 +13,14 @@
 
 @implementation AdHawkAPI
 
-//+ (AdHawkAPI *) sharedInstance
-//{
-//    static dispatch_once_t pred = 0;
-//    
-//    __strong static id _sharedObject = nil;
-//    dispatch_once(&pred, ^{
-//        _sharedObject = [[self alloc] init]; // or some other init method
-//    });
-//    return _sharedObject;
-//}
+@synthesize currentAd;
+
++ (AdHawkAPI *) sharedInstance
+{
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
+    });
+}
 
 + (RKObjectManager *)registerMappings
 {
