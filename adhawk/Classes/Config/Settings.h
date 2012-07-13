@@ -19,3 +19,5 @@ extern NSString* const TESTFLIGHT_TEAM_TOKEN;
 extern NSString* const ADHAWK_API_BASE_URL;
 
 extern NSString* const GIGYA_API_KEY;
+
+extern NSString* const TEST_FINGERPRINT;

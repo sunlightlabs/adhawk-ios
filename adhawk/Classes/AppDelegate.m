@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AdHawkAPI.h"
+#import "AdHawkQuery.h"
 
 @implementation AppDelegate
 
@@ -19,10 +21,12 @@
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
 #endif
-        
+    
+    [AdHawkAPI registerMappings];
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

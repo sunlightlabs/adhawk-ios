@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "Settings.h"
-#import "GSAPI.h"
+
+//@protocol RecorderViewDelegate <NSObject>
+//@required
+//- (void) recorderDidGenerateFingerPrint:(NSString *)fingerprint;
+//@end
 
 @interface RecorderViewController : UIViewController
-<AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+<AVAudioRecorderDelegate, AVAudioPlayerDelegate, RKObjectLoaderDelegate>
 {
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
@@ -20,6 +23,7 @@
     UIButton *recordButton;
     UIButton *stopButton;
 }
+//@property (nonatomic, retain) id <RecorderViewDelegate> recorderDelegate;
 @property (nonatomic, strong) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
 @property (nonatomic, strong) IBOutlet UIButton *stopButton;

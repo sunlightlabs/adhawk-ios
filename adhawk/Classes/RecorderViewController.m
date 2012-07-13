@@ -8,19 +8,26 @@
 
 #import "RecorderViewController.h"
 #import "AdDetailViewController.h"
+#import "Settings.h"
+#import "AdHawkAPI.h"
+#import "AdHawkAd.h"
+#import "AdHawkQuery.h"
 
 extern const char * GetPCMFromFile(char * filename);
 
 
 @implementation RecorderViewController
 
+//@synthesize recorderDelegate;
 @synthesize playButton, stopButton, recordButton;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -40,11 +47,25 @@ extern const char * GetPCMFromFile(char * filename);
     [super viewDidLoad];
     playButton.enabled = NO;
     stopButton.enabled = NO;
-        
     
     NSString *soundFilePath = [self getAudioFilePath];
                                 
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        
+    NSMutableDictionary* birdIsTheWord = [NSMutableDictionary dictionaryWithCapacity:0];
+    [birdIsTheWord setObject:TEST_FINGERPRINT forKey:@"fingerprint"];
+    [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
+    [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
+
+    RKObjectManager* manager = [RKObjectManager sharedManager];
+        [manager loadObjectsAtResourcePath:@"/ad/" usingBlock:^(RKObjectLoader * loader) {
+            loader.serializationMIMEType = RKMIMETypeJSON;
+            loader.objectMapping = [manager.mappingProvider objectMappingForClass:[AdHawkAd class]];
+            loader.resourcePath = @"/ad/";
+            loader.method = RKRequestMethodPOST;
+            [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
+        }];
+
     
     NSDictionary *recordSettings = [NSDictionary 
                                     dictionaryWithObjectsAndKeys:
@@ -128,38 +149,11 @@ extern const char * GetPCMFromFile(char * filename);
         [audioRecorder stop];
         [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
         NSString *soundFilePath = [self getAudioFilePath];
-        const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
+//        const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
         
-        NSLog(@"fpcode: %s", fpCode);
-        
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        
-        dispatch_async(queue, ^{
-            NSError *error = nil;
-            
-            NSString *base_url = @"http://adhawkapp.org/api/ad/";
-            NSString *urlStr = [base_url stringByAppendingFormat:@"%s",fpCode];
-            NSURL *url = [NSURL URLWithString:urlStr];
-            NSString *json = [NSString stringWithContentsOfURL:url
-                                                      encoding:NSASCIIStringEncoding
-                                                         error:&error];
-            NSLog(@"\nJSON: %@ \n Error: %@", json, error);
-            
-            if(!error) {
-                NSData *jsonData = [json dataUsingEncoding:NSASCIIStringEncoding];
-                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                         options:kNilOptions
-                                                                           error:&error];
-                NSLog(@"JSON: %@", jsonDict);
-            }
+        NSLog(@"fpcode generated");
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self performSegueWithIdentifier:@"adSegue" sender:self];
-            });
-            
-            
-        });
-
+//        [self.recorderDelegate recorderDidGenerateFingerPrint:[NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding]];
 
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
@@ -213,5 +207,14 @@ extern const char * GetPCMFromFile(char * filename);
 {
     NSLog(@"Encode Error occurred");
 }
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
+    NSLog(@"Load did fail with error: %@", error.localizedDescription);
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
+    NSLog(@"LOADED OBJECT!!!!");
+}
+
 
 @end
