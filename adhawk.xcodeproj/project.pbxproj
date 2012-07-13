@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F01962B15AE175A000542AC /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4B98AB15ACD95A00C5AB4C /* libTestFlight.a */; };
+		2F01964515AE2B72000542AC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964415AE2B72000542AC /* CoreData.framework */; };
+		2F01964715AE2B80000542AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964615AE2B80000542AC /* Security.framework */; };
+		2F01964915AE2B91000542AC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964815AE2B91000542AC /* libxml2.dylib */; };
+		2F01964B15AE2B9A000542AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964A15AE2B9A000542AC /* QuartzCore.framework */; };
+		2F01964C15AE2BA8000542AC /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01963815AE2A52000542AC /* libRestKit.a */; };
 		2F4B984915ACC7AC00C5AB4C /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */; };
 		2F4B984A15ACC7AC00C5AB4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */; };
 		2F4B984B15ACC7AC00C5AB4C /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */; };
@@ -26,14 +32,15 @@
 		2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		2F4B988D15ACD34D00C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
 		2F4B988E15ACD35000C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; };
-		2F4B98AF15ACD95A00C5AB4C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4B98AB15ACD95A00C5AB4C /* libTestFlight.a */; };
 		2F4B98B015ACD95A00C5AB4C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4B98AB15ACD95A00C5AB4C /* libTestFlight.a */; };
 		2F4B98B215ACD95A00C5AB4C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B98AC15ACD95A00C5AB4C /* README.txt */; };
 		2F4B98B415ACD95A00C5AB4C /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B98AD15ACD95A00C5AB4C /* release_notes.txt */; };
 		2F4B98B515ACD99700C5AB4C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941A5153FA9A100E64F82 /* libz.dylib */; };
 		2F4B98E515ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
 		2F4B98E615ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
-		2F93476F15AE111500FE5749 /* Ad Hawk-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */; };
+		2F8AD0CB15AF11B20004EECD /* AdHawkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */; };
+		2F8AD0D115AF1EE30004EECD /* AdHawkQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0D015AF1EE30004EECD /* AdHawkQuery.m */; };
+		2F8AD0D415AF22C70004EECD /* AdHawkAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0D315AF22C70004EECD /* AdHawkAd.m */; };
 		2FFB536215ADDBE20069A722 /* GSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533715ADDBE20069A722 /* GSAPI.m */; };
 		2FFB536315ADDBE20069A722 /* GSAPI_Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533915ADDBE20069A722 /* GSAPI_Internal.m */; };
 		2FFB536415ADDBE20069A722 /* GSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFB533B15ADDBE20069A722 /* GSContext.m */; };
@@ -73,6 +80,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2F01963715AE2A52000542AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		2F01963915AE2A52000542AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		2F01963B15AE2A52000542AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		2F01963D15AE2A52000542AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		2F01963F15AE2A52000542AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
+		};
+		2F01964215AE2B5A000542AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
 		C36B400415023E5400937C3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C36B3FD515023E5400937C3F /* Project object */;
@@ -83,6 +132,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F01962C15AE2A52000542AC /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = SDKs/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		2F01964415AE2B72000542AC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2F01964615AE2B80000542AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2F01964815AE2B91000542AC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		2F01964A15AE2B9A000542AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F4B984115ACC7AC00C5AB4C /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdDetailViewController.h; path = adhawk/Classes/AdDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdDetailViewController.m; path = adhawk/Classes/AdDetailViewController.m; sourceTree = SOURCE_ROOT; };
 		2F4B984315ACC7AC00C5AB4C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = adhawk/Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -117,6 +171,12 @@
 		2F4B98AE15ACD95A00C5AB4C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = adhawk/Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
 		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = adhawk/Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0C915AF11B20004EECD /* AdHawkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkAPI.h; path = adhawk/Classes/Services/AdHawkAPI.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAPI.m; path = adhawk/Classes/Services/AdHawkAPI.m; sourceTree = SOURCE_ROOT; };
+		2F8AD0CF15AF1EE30004EECD /* AdHawkQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkQuery.h; path = adhawk/Classes/Services/AdHawkQuery.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0D015AF1EE30004EECD /* AdHawkQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkQuery.m; path = adhawk/Classes/Services/AdHawkQuery.m; sourceTree = SOURCE_ROOT; };
+		2F8AD0D215AF22C70004EECD /* AdHawkAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkAd.h; path = adhawk/Classes/Services/AdHawkAd.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0D315AF22C70004EECD /* AdHawkAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAd.m; path = adhawk/Classes/Services/AdHawkAd.m; sourceTree = SOURCE_ROOT; };
 		2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Ad Hawk-Info.plist"; path = "adhawk/Ad Hawk-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ad Hawk-Prefix.pch"; path = "adhawk/Ad Hawk-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		2FFB533615ADDBE20069A722 /* GSAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPI.h; sourceTree = "<group>"; };
@@ -185,6 +245,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F01964C15AE2BA8000542AC /* libRestKit.a in Frameworks */,
+				2F01964B15AE2B9A000542AC /* QuartzCore.framework in Frameworks */,
+				2F01964915AE2B91000542AC /* libxml2.dylib in Frameworks */,
+				2F01964715AE2B80000542AC /* Security.framework in Frameworks */,
+				2F01964515AE2B72000542AC /* CoreData.framework in Frameworks */,
+				2F01962B15AE175A000542AC /* libTestFlight.a in Frameworks */,
 				2F4B988B15ACD34400C5AB4C /* libechoprint-codegen-ios.a in Frameworks */,
 				2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */,
 				C39941A6153FA9A100E64F82 /* libz.dylib in Frameworks */,
@@ -199,7 +265,6 @@
 				C36B3FE715023E5400937C3F /* CoreGraphics.framework in Frameworks */,
 				2FFB537F15ADF7200069A722 /* Accounts.framework in Frameworks */,
 				2FFB537D15ADF6DC0069A722 /* Twitter.framework in Frameworks */,
-				2F4B98AF15ACD95A00C5AB4C /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +285,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F01962D15AE2A52000542AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F01963815AE2A52000542AC /* libRestKit.a */,
+				2F01963A15AE2A52000542AC /* RestKitTests.octest */,
+				2F01963C15AE2A52000542AC /* RestKit.framework */,
+				2F01963E15AE2A52000542AC /* RestKitFrameworkTests.octest */,
+				2F01964015AE2A52000542AC /* RestKitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2F4B98A915ACD92300C5AB4C /* SDKs */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +325,19 @@
 				2F4B98E415ACDC5500C5AB4C /* Settings.m */,
 			);
 			name = config;
+			sourceTree = "<group>";
+		};
+		2F8AD0C815AF115C0004EECD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2F8AD0D215AF22C70004EECD /* AdHawkAd.h */,
+				2F8AD0D315AF22C70004EECD /* AdHawkAd.m */,
+				2F8AD0C915AF11B20004EECD /* AdHawkAPI.h */,
+				2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */,
+				2F8AD0CF15AF1EE30004EECD /* AdHawkQuery.h */,
+				2F8AD0D015AF1EE30004EECD /* AdHawkQuery.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		2FFB533515ADDBE20069A722 /* GSSDK */ = {
@@ -319,6 +409,7 @@
 		C36B3FD315023E5400937C3F = {
 			isa = PBXGroup;
 			children = (
+				2F01962C15AE2A52000542AC /* RestKit.xcodeproj */,
 				2F4B98A915ACD92300C5AB4C /* SDKs */,
 				C36B3FE815023E5400937C3F /* adhawk */,
 				C36B400615023E5400937C3F /* adhawkTests */,
@@ -339,6 +430,10 @@
 		C36B3FE115023E5400937C3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F01964A15AE2B9A000542AC /* QuartzCore.framework */,
+				2F01964815AE2B91000542AC /* libxml2.dylib */,
+				2F01964615AE2B80000542AC /* Security.framework */,
+				2F01964415AE2B72000542AC /* CoreData.framework */,
 				2FFB537E15ADF7200069A722 /* Accounts.framework */,
 				2FFB537C15ADF6DC0069A722 /* Twitter.framework */,
 				C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */,
@@ -362,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4B986A15ACC84800C5AB4C /* MainStoryboard.storyboard */,
-				C3C01695153A80C700D56553 /* classes */,
+				C3C01695153A80C700D56553 /* Classes */,
 				C3D6DD8615027FBB003F8F6B /* Resources */,
 				C36B3FE915023E5400937C3F /* Supporting Files */,
 			);
@@ -418,9 +513,10 @@
 			name = echoprint;
 			sourceTree = "<group>";
 		};
-		C3C01695153A80C700D56553 /* classes */ = {
+		C3C01695153A80C700D56553 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2F8AD0C815AF115C0004EECD /* Services */,
 				2F4B98E315ACDC1600C5AB4C /* config */,
 				2F4B984115ACC7AC00C5AB4C /* AdDetailViewController.h */,
 				2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */,
@@ -432,7 +528,7 @@
 				2F4B984815ACC7AC00C5AB4C /* ViewController.m */,
 				C39941A7153FA9D500E64F82 /* echoprint */,
 			);
-			name = classes;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		C3D6DD8615027FBB003F8F6B /* Resources */ = {
@@ -460,6 +556,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2F01964315AE2B5A000542AC /* PBXTargetDependency */,
 			);
 			name = "Ad Hawk";
 			productName = whopaid;
@@ -503,6 +600,12 @@
 			mainGroup = C36B3FD315023E5400937C3F;
 			productRefGroup = C36B3FDF15023E5400937C3F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2F01962D15AE2A52000542AC /* Products */;
+					ProjectRef = 2F01962C15AE2A52000542AC /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C36B3FDD15023E5400937C3F /* Ad Hawk */,
@@ -510,6 +613,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2F01963815AE2A52000542AC /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 2F01963715AE2A52000542AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2F01963A15AE2A52000542AC /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 2F01963915AE2A52000542AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2F01963C15AE2A52000542AC /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 2F01963B15AE2A52000542AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2F01963E15AE2A52000542AC /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 2F01963D15AE2A52000542AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2F01964015AE2A52000542AC /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = 2F01963F15AE2A52000542AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C36B3FDC15023E5400937C3F /* Resources */ = {
@@ -523,7 +664,6 @@
 				2F4B987815ACCC3500C5AB4C /* InfoPlist.strings in Resources */,
 				2FFB536615ADDBE20069A722 /* GSFBDialog.bundle in Resources */,
 				2FFB537015ADDBE20069A722 /* GSWebViewController.xib in Resources */,
-				2F93476F15AE111500FE5749 /* Ad Hawk-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,14 +682,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2F41957115AE06790038B0CA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n#\ngit=`sh /etc/profile; which git`\n## For the App Store, instead use: git describe –abbrev=0 –tags\nversion=`$git describe --abbrev=0 --tags --always`\ncount=`$git rev-list --all | wc -l`\nrevision=`$git rev-parse --short HEAD`\necho -e \"#define GIT_VERSION $version\\n#define GIT_COMMIT_COUNT $count\\n#define GIT_SHORT_REVISION $revision\" > Resources/InfoPlist.h";
 		};
@@ -601,6 +741,9 @@
 				2FFB537415ADDBE20069A722 /* SBJsonBase.m in Sources */,
 				2FFB537515ADDBE20069A722 /* SBJsonParser.m in Sources */,
 				2FFB537615ADDBE20069A722 /* SBJsonWriter.m in Sources */,
+				2F8AD0CB15AF11B20004EECD /* AdHawkAPI.m in Sources */,
+				2F8AD0D115AF1EE30004EECD /* AdHawkQuery.m in Sources */,
+				2F8AD0D415AF22C70004EECD /* AdHawkAd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +759,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2F01964315AE2B5A000542AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 2F01964215AE2B5A000542AC /* PBXContainerItemProxy */;
+		};
 		C36B400515023E5400937C3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C36B3FDD15023E5400937C3F /* Ad Hawk */;
@@ -671,11 +819,17 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "Ad Hawk";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 			};
 			name = Debug;
 		};
@@ -692,12 +846,18 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "Ad Hawk";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
