@@ -6,7 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Recorder View Controller - WhoPaid-->
+        <!--Recorder View Controller - Ad Hawk-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -15,10 +15,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.60000000000000009" contentMode="scaleToFill" image="president_crop.jpeg" id="u7m-kJ-XI3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="se0-Ba-GMo">
                                 <rect key="frame" x="20" y="20" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,10 +30,6 @@
                                     <segue destination="LgW-0a-Ir0" kind="push" identifier="menuSegue" id="mub-4u-Z2W"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="money_trans.png" id="ums-ZB-Zfd">
-                                <rect key="frame" x="-11" y="43" width="311" height="344"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFV-xK-5PI">
                                 <rect key="frame" x="93" y="146" width="134" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,11 +45,16 @@
                                     <action selector="recordAudio" destination="4" eventType="touchUpInside" id="Sb3-Gi-UxP"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="gIs-Hm-drC">
+                                <rect key="frame" x="142" y="234" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.40727365016937256" green="0.34394419193267822" blue="0.28781965374946594" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="WhoPaid" id="JEH-qS-Xi1"/>
+                    <navigationItem key="navigationItem" title="Ad Hawk" id="JEH-qS-Xi1"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="gIs-Hm-drC" id="nBo-ro-tMA"/>
                         <outlet property="recordButton" destination="hFV-xK-5PI" id="mam-dF-WmJ"/>
                         <segue destination="OhG-d8-01w" kind="push" identifier="adSegue" id="q4Z-7a-U2P"/>
                     </connections>
@@ -542,7 +539,7 @@
             </objects>
             <point key="canvasLocation" x="2678" y="352"/>
         </scene>
-        <!--View Controller - About WhoPaid-->
+        <!--View Controller - About Ad Hawk-->
         <scene sceneID="Bes-Zj-hy4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JM-Np-BUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -555,8 +552,7 @@
                                 <rect key="frame" x="0.0" y="126" width="320" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">WhoPaid is a Random Hacks of Kindness project that grew beyond the scope of the weekend hackathon. The team behind the app agreed to continue working on the project, to bring more transparency into politics.
-When you use WhoPaid on your Android or iPhone, you can listen to a political ad, submit the recording, and receive journalistic content and facts about the ad and its funders (#whopaid).</string>
+                                <mutableString key="text">Ad Hawk started as a Random Hacks of Kindness project that grew beyond the scope of the weekend hackathon. Locavore odio beard, freegan 3 wolf moon whatever cillum ea veniam. Food truck put a bird on it marfa stumptown vero. Skateboard synth sapiente culpa blog, DIY quis est laboris quinoa consequat retro minim delectus organic.Velit 8-bit iphone, retro brooklyn semiotics lomo thundercats. Artisan vegan duis DIY consequat tumblr irure pinterest. Thundercats cray adipisicing esse ut. Et raw denim wolf vegan aliquip, chambray williamsburg.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -567,7 +563,7 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="About WhoPaid" id="tto-RI-J6O"/>
+                    <navigationItem key="navigationItem" title="About Ad Hawk" id="tto-RI-J6O"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2285" y="352"/>
@@ -593,8 +589,6 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
     </scenes>
     <resources>
         <image name="icon.png" width="72" height="72"/>
-        <image name="money_trans.png" width="1386" height="1385"/>
-        <image name="president_crop.jpeg" width="480" height="640"/>
     </resources>
     <classes>
         <class className="AdDetailViewController" superclassName="UIViewController">
@@ -609,6 +603,7 @@ When you use WhoPaid on your Android or iPhone, you can listen to a political ad
                 <relationship kind="action" name="playAudio"/>
                 <relationship kind="action" name="recordAudio"/>
                 <relationship kind="action" name="stop"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>

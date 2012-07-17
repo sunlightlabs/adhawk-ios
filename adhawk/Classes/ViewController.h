@@ -3,7 +3,7 @@
 //  adhawk
 //
 //  Created by James Snavely on 3/3/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Sunlight Foundation. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
