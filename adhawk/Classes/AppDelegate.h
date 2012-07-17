@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RecorderViewController.h"
-#import "Settings.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

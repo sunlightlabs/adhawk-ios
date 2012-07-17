@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Settings.h"
 #import "AdHawkAPI.h"
 #import "AdHawkQuery.h"
 
@@ -17,9 +18,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+#define TESTING 1
 #ifdef TESTING
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
+    NSLog(@"TestFlight run");
+#else
+    NSLog(@"No testing");
 #endif
     
     [AdHawkAPI registerMappings];
