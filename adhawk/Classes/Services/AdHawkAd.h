@@ -10,6 +10,6 @@
 
 @interface AdHawkAd : NSObject
 
-@property (nonatomic, retain) NSURL* ad_profile_url;
+@property (nonatomic, retain) NSURL* result_url;
 
 @end

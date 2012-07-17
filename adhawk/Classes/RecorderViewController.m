@@ -19,7 +19,7 @@ extern const char * GetPCMFromFile(char * filename);
 @implementation RecorderViewController
 
 //@synthesize recorderDelegate;
-@synthesize playButton, stopButton, recordButton;
+@synthesize playButton, stopButton, recordButton, activityIndicator;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -106,6 +106,7 @@ extern const char * GetPCMFromFile(char * filename);
                                         repeats:NO];
         [audioRecorder record];
         [recordButton setTitle:@"Recording..." forState:UIControlStateNormal];
+        [activityIndicator startAnimating];
     }
 }
 
@@ -116,10 +117,10 @@ extern const char * GetPCMFromFile(char * filename);
     {
         // Get reference to the destination view controller
         AdDetailViewController *vc = [segue destinationViewController];
-
+        NSLog(@"Segue to AdDetailView");
         
         // Pass any objects to the view controller here, like...
-        [vc setTargetURL:[[AdHawkAPI sharedInstance].currentAd.ad_profile_url absoluteString]];
+        [vc setTargetURL:[[AdHawkAPI sharedInstance].currentAd.result_url absoluteString]];
     }
 }
 
@@ -143,6 +144,7 @@ extern const char * GetPCMFromFile(char * filename);
         [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
         [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
         
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         RKObjectManager* manager = [RKObjectManager sharedManager];
         [manager loadObjectsAtResourcePath:@"/ad/" usingBlock:^(RKObjectLoader * loader) {
             loader.serializationMIMEType = RKMIMETypeJSON;
@@ -152,9 +154,8 @@ extern const char * GetPCMFromFile(char * filename);
             loader.delegate = self;
             [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
         }];
-
-
-//        [self.recorderDelegate recorderDidGenerateFingerPrint:[NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding]];
+        
+        [activityIndicator stopAnimating];
 
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
@@ -202,9 +203,7 @@ extern const char * GetPCMFromFile(char * filename);
                           successfully:(BOOL)flag
 {
 }
--(void)audioRecorderEncodeErrorDidOccur:
-(AVAudioRecorder *)recorder 
-                                  error:(NSError *)error
+-(void)audioRecorderEncodeErrorDidOccur: (AVAudioRecorder *)recorder error:(NSError *)error
 {
     NSLog(@"Encode Error occurred");
 }
@@ -214,11 +213,16 @@ extern const char * GetPCMFromFile(char * filename);
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
-    NSLog(@"Loaded Object");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     if ([object isKindOfClass:[AdHawkAd class]]) {
-        NSLog(@"Got back an AdHawk ad object!");
+        NSLog(@"Got back an AdHawkAd object!");
         [AdHawkAPI sharedInstance].currentAd = (AdHawkAd *)object;
         [self performSegueWithIdentifier:@"adSegue" sender:self];
+    }
+    else {
+        NSLog(@"Got back an object, but it didn't conform to AdHawkAd");
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"The server didn't return data AdHawk could identify" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
+        [alertView show];
     }
 }
 

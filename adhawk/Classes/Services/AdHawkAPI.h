@@ -19,8 +19,8 @@ return _sharedObject;
 #import "AdHawkAd.h"
 
 @interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate>
-+ (AdHawkAPI *)registerMappings;
 + (AdHawkAPI *)sharedInstance;
+@property (readonly, strong) NSString *baseUrl;
 @property (nonatomic, strong) AdHawkAd *currentAd;
-
+@property (nonatomic, strong) NSURL *currentAdHawkURL;
 @end

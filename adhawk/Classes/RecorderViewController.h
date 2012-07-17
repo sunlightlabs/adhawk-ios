@@ -22,11 +22,13 @@
     UIButton *playButton;
     UIButton *recordButton;
     UIButton *stopButton;
+    UIActivityIndicatorView *activityIndicator;
 }
 //@property (nonatomic, retain) id <RecorderViewDelegate> recorderDelegate;
 @property (nonatomic, strong) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
 @property (nonatomic, strong) IBOutlet UIButton *stopButton;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 -(IBAction) recordAudio;
 -(IBAction) playAudio;
 -(IBAction) stop;

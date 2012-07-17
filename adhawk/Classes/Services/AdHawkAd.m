@@ -10,6 +10,6 @@
 
 @implementation AdHawkAd
 
-@synthesize ad_profile_url;
+@synthesize result_url;
 
 @end

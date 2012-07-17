@@ -13,13 +13,21 @@
 
 @implementation AdHawkAPI
 
-@synthesize currentAd;
+@synthesize currentAd, currentAdHawkURL, baseUrl=ADHAWK_API_BASE_URL;
 
 + (AdHawkAPI *) sharedInstance
 {
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
         return [[self alloc] init];
     });
+}
+
+- (id)init
+{
+    [super init];
+    [AdHawkAPI registerMappings];
+    
+    return self;
 }
 
 + (RKObjectManager *)registerMappings
@@ -29,7 +37,7 @@
     manager.serializationMIMEType = RKMIMETypeJSON;
     
     RKObjectMapping* adMapping = [RKObjectMapping mappingForClass:[AdHawkAd class]];
-    [adMapping mapAttributes: @"ad_profile_url", nil];    
+    [adMapping mapAttributes: @"result_url", nil];    
     
     RKObjectMapping* queryMapping = [RKObjectMapping mappingForClass:[AdHawkQuery class]];
     [queryMapping mapAttributes:@"fingerprint", @"lon", @"lat", nil];
@@ -44,12 +52,35 @@
     return manager;
 }
 
+//- (NSURL *)loadAdURLForFingerprint:(NSString*)fingerprint {
+//    NSMutableDictionary* birdIsTheWord = [NSMutableDictionary dictionaryWithCapacity:0];
+//    [birdIsTheWord setObject:fingerprint forKey:@"fingerprint"];
+//    [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
+//    [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
+//    
+//    NSURL *url = [NSURL URLWithString:self.baseUrl];
+//    NSURLRequest *req = [NSURLRequest initWithURL:url];
+//    req.HTTPMethod=@"POST";
+//    
+//    return url;
+//}
+
 - (void)objectLoaderDidFinishLoading:(RKObjectLoader*)objectLoader {
-    RKLogDebug(@"Object Loader Finished: %@", objectLoader.resourcePath);
+    NSLog(@"Object Loader Finished: %@", objectLoader.resourcePath);
 }
 
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
+    NSLog(@"Loaded Object");
+    if ([object isKindOfClass:[AdHawkAd class]]) {
+        NSLog(@"Got back an AdHawk ad object!");
+        self.currentAd = (AdHawkAd *)object;
+        self.currentAdHawkURL = self.currentAd.result_url;
+    }
+}
+
+
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
-    RKLogDebug(@"Object Loader Failed: %@", error.localizedDescription);
+    NSLog(@"Object Loader Failed: %@", error.localizedDescription);
 }
 
 
