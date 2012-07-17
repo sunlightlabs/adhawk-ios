@@ -153,6 +153,7 @@ extern const char * GetPCMFromFile(char * filename);
             loader.method = RKRequestMethodPOST;
             loader.delegate = self;
             [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
+            [TestFlight passCheckpoint:@"Submitted Fingerprint"];
         }];
         
         [activityIndicator stopAnimating];

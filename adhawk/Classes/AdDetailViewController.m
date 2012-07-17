@@ -32,7 +32,9 @@
     
     NSURL *url = [NSURL URLWithString:targetURL];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:req];    
+    [webView loadRequest:req];
+    [TestFlight passCheckpoint:@"Requested Ad detail page"];
+
 }
 
 - (void)viewDidUnload

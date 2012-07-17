@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -168,8 +167,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="About WhoPaid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fux-h4-yh0">
-                                                    <rect key="frame" x="10" y="2" width="134" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="About Ad Hawk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fux-h4-yh0">
+                                                    <rect key="frame" x="10" y="2" width="133" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -304,7 +303,7 @@
             </objects>
             <point key="canvasLocation" x="1293" y="99"/>
         </scene>
-        <!--Ad Detail View Controller - Article Title-->
+        <!--Ad Detail View Controller - Ad Info-->
         <scene sceneID="ODI-Ts-BFU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AW8-7q-HKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,7 +320,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Article Title" id="6mf-Z3-af6"/>
+                    <navigationItem key="navigationItem" title="Ad Info" id="6mf-Z3-af6"/>
                     <connections>
                         <outlet property="webView" destination="8Oa-CP-NE2" id="zoS-dq-1gc"/>
                     </connections>
@@ -419,7 +418,7 @@
             </objects>
             <point key="canvasLocation" x="2517" y="-299"/>
         </scene>
-        <!--Table View Controller - WhoPaid Partners-->
+        <!--Table View Controller - Ad Hawk Partners-->
         <scene sceneID="bHR-a0-qgw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3la-RG-X9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,7 +533,7 @@
                             <outlet property="delegate" destination="RnU-ve-dsY" id="MLL-oa-xZ2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="WhoPaid Partners" id="BYT-fC-I8v"/>
+                    <navigationItem key="navigationItem" title="Ad Hawk Partners" id="BYT-fC-I8v"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2678" y="352"/>
@@ -552,7 +551,7 @@
                                 <rect key="frame" x="0.0" y="126" width="320" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Ad Hawk started as a Random Hacks of Kindness project that grew beyond the scope of the weekend hackathon. Locavore odio beard, freegan 3 wolf moon whatever cillum ea veniam. Food truck put a bird on it marfa stumptown vero. Skateboard synth sapiente culpa blog, DIY quis est laboris quinoa consequat retro minim delectus organic.Velit 8-bit iphone, retro brooklyn semiotics lomo thundercats. Artisan vegan duis DIY consequat tumblr irure pinterest. Thundercats cray adipisicing esse ut. Et raw denim wolf vegan aliquip, chambray williamsburg.</mutableString>
+                                <string key="text">Ad Hawk started as a Random Hacks of Kindness project that grew beyond the scope of the weekend hackathon. Locavore odio beard, freegan 3 wolf moon whatever cillum ea veniam. Food truck put a bird on it marfa stumptown vero. Skateboard synth sapiente culpa blog, DIY quis est laboris quinoa consequat retro minim delectus organic.Velit 8-bit iphone, retro brooklyn semiotics lomo thundercats. Artisan vegan duis DIY consequat tumblr irure pinterest. Thundercats cray adipisicing esse ut. Et raw denim wolf vegan aliquip, chambray williamsburg.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
