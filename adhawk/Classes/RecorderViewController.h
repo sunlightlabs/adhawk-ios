@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "AdHawkAPI.h"
 
 //@protocol RecorderViewDelegate <NSObject>
 //@required
@@ -15,7 +16,7 @@
 //@end
 
 @interface RecorderViewController : UIViewController
-<AVAudioRecorderDelegate, AVAudioPlayerDelegate, RKObjectLoaderDelegate>
+<AVAudioRecorderDelegate, AVAudioPlayerDelegate, AdHawkAPIDelegate>
 {
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;

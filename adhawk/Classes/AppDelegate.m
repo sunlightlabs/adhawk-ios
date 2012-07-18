@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "Settings.h"
 #import "AdHawkAPI.h"
-#import "AdHawkQuery.h"
+
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 @implementation AppDelegate
 
@@ -18,16 +19,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-#define TESTING 1
-#ifdef TESTING
-    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
-    [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
-    NSLog(@"TestFlight run");
-#else
-    NSLog(@"No testing");
-#endif
-    
-    [AdHawkAPI registerMappings];
+    if (TESTING == YES) {
+        [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+        [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
+        NSLog(@"TestFlight run");
+    }
+    else
+    {
+        NSLog(@"No testing");
+    }
     
     return YES;
 }

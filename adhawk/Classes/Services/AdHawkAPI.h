@@ -18,9 +18,18 @@ return _sharedObject;
 #import <RestKit/RestKit.h>
 #import "AdHawkAd.h"
 
+NSURL *endPointURL(NSString *path);
+RKObjectManager *setUpAPI(void);
+
+@protocol AdHawkAPIDelegate <NSObject>
+@required
+-(void) adHawkAPIDidReturnURL:(NSURL *) url;
+@end
+
 @interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate>
 + (AdHawkAPI *)sharedInstance;
-@property (readonly, strong) NSString *baseUrl;
+- (void)searchForAdWithFingerprint:(NSString*)fingerprint delegate:(id)delegate;
 @property (nonatomic, strong) AdHawkAd *currentAd;
 @property (nonatomic, strong) NSURL *currentAdHawkURL;
+@property (readonly, nonatomic) id <AdHawkAPIDelegate> searchDelegate;
 @end
