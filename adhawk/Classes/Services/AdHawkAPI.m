@@ -78,8 +78,8 @@ RKObjectManager *setUpAPI(void)
     
 //    NSURLRequest *req = [NSURLRequest initWithURL:url];
 //    req.HTTPMethod=@"POST";
-//    
-//    return url;
+
+
 }
 
 - (void)objectLoaderDidFinishLoading:(RKObjectLoader*)objectLoader {
@@ -90,13 +90,13 @@ RKObjectManager *setUpAPI(void)
     NSLog(@"Loaded Object");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     if ([object isKindOfClass:[AdHawkAd class]]) {
-        NSLog(@"Got back an AdHawk ad object!");
+        TFPLog(@"Got back an AdHawk ad object!");
         self.currentAd = (AdHawkAd *)object;
         self.currentAdHawkURL = self.currentAd.result_url;
         [[self searchDelegate] adHawkAPIDidReturnURL:self.currentAdHawkURL];
     }
     else {
-        NSLog(@"Got back an object, but it didn't conform to AdHawkAd");
+        TFPLog(@"Got back an object, but it didn't conform to AdHawkAd");
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"The server didn't return data AdHawk could identify" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
         [alertView show];
     }

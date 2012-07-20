@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Sunlight Foundation. All rights reserved.
 //
 
-// #define TESTING
 
 /*
 #ifdef TESTING
@@ -14,10 +13,12 @@
 #endif
 */
 
-extern NSString* const TESTFLIGHT_TEAM_TOKEN;
+FOUNDATION_EXPORT NSString* const TESTFLIGHT_TEAM_TOKEN;
 
-extern NSString* const ADHAWK_API_BASE_URL;
+FOUNDATION_EXPORT NSString* const ADHAWK_API_BASE_URL;
 
-extern NSString* const GIGYA_API_KEY;
+FOUNDATION_EXPORT NSString* const GIGYA_API_KEY;
 
-extern NSString* const TEST_FINGERPRINT;
+FOUNDATION_EXPORT NSString* const TEST_FINGERPRINT;
+
+FOUNDATION_EXPORT BOOL const TESTING;
