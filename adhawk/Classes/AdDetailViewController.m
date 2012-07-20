@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    TFPLog(@"Requesting: @%", targetURL);
+    TFPLog(@"Requesting: %@", targetURL);
     NSURL *url = [NSURL URLWithString:targetURL];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [webView loadRequest:req];
