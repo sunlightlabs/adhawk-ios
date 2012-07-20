@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 #import "Settings.h"
-#import "AdHawkAPI.h"
-
-#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 @implementation AppDelegate
 
@@ -22,12 +19,13 @@
     if (TESTING == YES) {
         [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
         [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
-        NSLog(@"TestFlight run");
+        TFPLog(@"TestFlight run");
     }
     else
     {
-        NSLog(@"No testing");
+        TFPLog(@"No testing");
     }
+    
     
     return YES;
 }

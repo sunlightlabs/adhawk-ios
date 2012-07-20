@@ -12,5 +12,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <RestKit/RestKit.h>
+    #import "AppMacros.h"
     #import "TestFlight.h"
 #endif
