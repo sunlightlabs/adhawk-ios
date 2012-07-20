@@ -10,12 +10,16 @@
 #import "GSAPI.h"
 
 GSAPI *getAPIObject(void);
+GSObject *getParamsObject(void);
 
-@interface GigyaService : NSObject {
+@interface GigyaService : NSObject <UIApplicationDelegate, GSAddConnectionsUIDelegate, GSEventDelegate, GSLoginUIDelegate, GSResponseDelegate> {
     GSAPI *_api;
+    GSObject *_params;
 }
 + (GigyaService *)sharedInstanceWithViewController:(UIViewController *)mainViewController;
+- (void) showLoginUI;
 
 @property (readonly, nonatomic) GSAPI *api;
+@property (readonly, nonatomic) GSObject *params;
 
 @end
