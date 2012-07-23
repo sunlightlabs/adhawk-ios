@@ -143,7 +143,7 @@ extern const char * GetPCMFromFile(char * filename);
         NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
         NSLog(@"fpcode generated");
         
-        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:[UIApplication sharedApplication]];
+        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
         
         [activityIndicator stopAnimating];
 
