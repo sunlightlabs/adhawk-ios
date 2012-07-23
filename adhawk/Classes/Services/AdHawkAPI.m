@@ -9,7 +9,6 @@
 #import "AdHawkAPI.h"
 #import "Settings.h"
 #import "AdHawkAd.h"
-#import "AdHawkQuery.h"
 
 NSURL *endPointURL(NSString * path)
 {
@@ -25,11 +24,6 @@ RKObjectManager *setUpAPI(void)
     
     RKObjectMapping* adMapping = [RKObjectMapping mappingForClass:[AdHawkAd class]];
     [adMapping mapAttributes: @"result_url", nil];    
-    
-    RKObjectMapping* queryMapping = [RKObjectMapping mappingForClass:[AdHawkQuery class]];
-    [queryMapping mapAttributes:@"fingerprint", @"lon", @"lat", nil];
-    [manager.mappingProvider setSerializationMapping:queryMapping forClass:[AdHawkQuery class]];
-    
     [manager.mappingProvider setMapping:adMapping forKeyPath:@""];
     
     [RKObjectManager setSharedManager:manager];

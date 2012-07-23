@@ -11,7 +11,6 @@
 #import "Settings.h"
 #import "AdHawkAPI.h"
 #import "AdHawkAd.h"
-#import "AdHawkQuery.h"
 
 
 #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
@@ -48,6 +47,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     playButton.enabled = NO;
     stopButton.enabled = NO;
     
@@ -123,7 +123,8 @@ extern const char * GetPCMFromFile(char * filename);
         NSLog(@"Segue to AdDetailView");
         
         // Pass any objects to the view controller here, like...
-        [vc setTargetURL:[[AdHawkAPI sharedInstance].currentAd.result_url absoluteString]];
+        NSURL *targetURL = [AdHawkAPI sharedInstance].currentAdHawkURL;
+        [vc setTargetURL:[targetURL absoluteString]];
     }
 }
 
@@ -142,24 +143,7 @@ extern const char * GetPCMFromFile(char * filename);
         NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
         NSLog(@"fpcode generated");
         
-        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
-        
-//        NSMutableDictionary* birdIsTheWord = [NSMutableDictionary dictionaryWithCapacity:0];
-//        [birdIsTheWord setObject:fpCodeString forKey:@"fingerprint"];
-//        [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
-//        [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
-//        
-//        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-//        RKObjectManager* manager = [RKObjectManager sharedManager];
-//        [manager loadObjectsAtResourcePath:@"/ad/" usingBlock:^(RKObjectLoader * loader) {
-//            loader.serializationMIMEType = RKMIMETypeJSON;
-//            loader.objectMapping = [manager.mappingProvider objectMappingForClass:[AdHawkAd class]];
-//            loader.resourcePath = @"/ad/";
-//            loader.method = RKRequestMethodPOST;
-//            loader.delegate = [AdHawkAPI sharedInstance];
-//            [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
-//            [TestFlight passCheckpoint:@"Submitted Fingerprint"];
-//        }];
+        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:[UIApplication sharedApplication]];
         
         [activityIndicator stopAnimating];
 
@@ -220,24 +204,5 @@ extern const char * GetPCMFromFile(char * filename);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self performSegueWithIdentifier:@"adSegue" sender:self];
 }
-
-//- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
-//    NSLog(@"Load did fail with error: %@", error.localizedDescription);
-//}
-//
-//- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//    if ([object isKindOfClass:[AdHawkAd class]]) {
-//        NSLog(@"Got back an AdHawkAd object!");
-//        [AdHawkAPI sharedInstance].currentAd = (AdHawkAd *)object;
-//        [self performSegueWithIdentifier:@"adSegue" sender:self];
-//    }
-//    else {
-//        NSLog(@"Got back an object, but it didn't conform to AdHawkAd");
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"The server didn't return data AdHawk could identify" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
-//        [alertView show];
-//    }
-//}
-
 
 @end
