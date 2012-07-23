@@ -68,6 +68,39 @@ GSObject *getParamsObject(void)
     [self.api showAddConnectionsUI:[self params] delegate:self context:nil];
 }
 
+- (UIActionSheet *) showShareActionSheetInView:(UIView *)view
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share This" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", @"Like on Facebook", nil];
+    [actionSheet showInView:view];
+    return actionSheet;
+}
+
+#pragma mark - UIActionSheetDelegate callbacks
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    TFPLog(@"Share Action Click");
+    NSString *clickedButtonLabel = [actionSheet buttonTitleAtIndex:buttonIndex];
+    TFPLog(@"Share button clicked: %@", clickedButtonLabel);
+//    [TestFlight passCheckpoint:logMessage];
+    GSObject *pParams = [[GSObject new] autorelease];
+    [pParams putStringValue:@"I found out something on Ad Hawk!" forKey:@"status"];
+    [pParams putStringValue:@"AdHawk iOS" forKey:@"cid"];
+
+    if (buttonIndex == 0) {
+        [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
+        [pParams putStringValue:@"twitter" forKey:@"enabledProviders"];
+        // If the user allows tweets to have locations associated...
+//        [pParams putGSObjectValue:[GSObject objectWithJSONString:@"{lat:0, lon:0}"] forKey:@"userLocation"];
+    }
+    else if (buttonIndex == 1) {
+        [TestFlight passCheckpoint:@"Share 'Facebook' clicked"];
+        [pParams putStringValue:@"twitter" forKey:@"enabledProviders"];
+    }
+    [self.api sendRequest:@"socialize.setStatus" params:pParams delegate:self context:nil];
+
+}
+
 #pragma mark - GSAddConnectionsUIDelegate callbacks
 
 // Fired when add connection operation (and getUserInfo that follows it) completes.    

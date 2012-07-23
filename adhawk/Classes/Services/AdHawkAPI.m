@@ -56,6 +56,7 @@ RKObjectManager *setUpAPI(void)
     [birdIsTheWord setObject:fingerprint forKey:@"fingerprint"];
     [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lat"];
     [birdIsTheWord setObject:[NSNumber numberWithInt:0] forKey:@"lon"];
+    TFPLog(@"Submitting fingerprint: %@", fingerprint);
     
 //    NSURL *reqURL = endPointURL(@"/ad/");
     

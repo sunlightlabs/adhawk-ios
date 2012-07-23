@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AdHawkBaseViewController.h"
 
-@interface AdDetailViewController : UIViewController {
+@interface AdDetailViewController : AdHawkBaseViewController {
     IBOutlet UIWebView *webView;
     NSString *targetURL;
 }

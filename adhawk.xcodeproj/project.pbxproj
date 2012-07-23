@@ -13,6 +13,7 @@
 		2F01964915AE2B91000542AC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964815AE2B91000542AC /* libxml2.dylib */; };
 		2F01964B15AE2B9A000542AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964A15AE2B9A000542AC /* QuartzCore.framework */; };
 		2F01964C15AE2BA8000542AC /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01963815AE2A52000542AC /* libRestKit.a */; };
+		2F2F125815BE0C79001A74F5 /* AdHawkBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */; };
 		2F46F64215B750C000B38A19 /* GSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F46F61715B750C000B38A19 /* GSAPI.m */; };
 		2F46F64315B750C000B38A19 /* GSAPI_Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F46F61915B750C000B38A19 /* GSAPI_Internal.m */; };
 		2F46F64415B750C000B38A19 /* GSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F46F61B15B750C000B38A19 /* GSContext.m */; };
@@ -137,6 +138,8 @@
 		2F01964615AE2B80000542AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F01964815AE2B91000542AC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		2F01964A15AE2B9A000542AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkBaseViewController.h; path = adhawk/Classes/AdHawkBaseViewController.h; sourceTree = SOURCE_ROOT; };
+		2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkBaseViewController.m; path = adhawk/Classes/AdHawkBaseViewController.m; sourceTree = SOURCE_ROOT; };
 		2F46F61615B750C000B38A19 /* GSAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPI.h; sourceTree = "<group>"; };
 		2F46F61715B750C000B38A19 /* GSAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAPI.m; sourceTree = "<group>"; };
 		2F46F61815B750C000B38A19 /* GSAPI_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPI_Internal.h; sourceTree = "<group>"; };
@@ -529,6 +532,8 @@
 				2F4B984715ACC7AC00C5AB4C /* ViewController.h */,
 				2F4B984815ACC7AC00C5AB4C /* ViewController.m */,
 				C39941A7153FA9D500E64F82 /* echoprint */,
+				2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */,
+				2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -746,6 +751,7 @@
 				2F46F65515B750C000B38A19 /* SBJsonParser.m in Sources */,
 				2F46F65615B750C000B38A19 /* SBJsonWriter.m in Sources */,
 				2F7C97E915B9A11900FC8AA1 /* GigyaService.m in Sources */,
+				2F2F125815BE0C79001A74F5 /* AdHawkBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

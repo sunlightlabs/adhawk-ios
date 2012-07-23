@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "AdHawkBaseViewController.h"
 #import "AdHawkAPI.h"
 
 //@protocol RecorderViewDelegate <NSObject>
@@ -15,7 +16,7 @@
 //- (void) recorderDidGenerateFingerPrint:(NSString *)fingerprint;
 //@end
 
-@interface RecorderViewController : UIViewController
+@interface RecorderViewController : AdHawkBaseViewController
 <AVAudioRecorderDelegate, AVAudioPlayerDelegate, AdHawkAPIDelegate>
 {
     AVAudioRecorder *audioRecorder;

@@ -12,12 +12,14 @@
 GSAPI *getAPIObject(void);
 GSObject *getParamsObject(void);
 
-@interface GigyaService : NSObject <UIApplicationDelegate, GSAddConnectionsUIDelegate, GSEventDelegate, GSLoginUIDelegate, GSResponseDelegate> {
+@interface GigyaService : NSObject <UIApplicationDelegate, UIActionSheetDelegate, GSAddConnectionsUIDelegate, GSEventDelegate, GSLoginUIDelegate, GSResponseDelegate> {
     GSAPI *_api;
     GSObject *_params;
 }
 + (GigyaService *)sharedInstanceWithViewController:(UIViewController *)mainViewController;
 - (void) showLoginUI;
+- (void) showAddConnectionsUI;
+- (UIActionSheet *) showShareActionSheetInView:(UIView *)view;
 
 @property (readonly, nonatomic) GSAPI *api;
 @property (readonly, nonatomic) GSObject *params;
