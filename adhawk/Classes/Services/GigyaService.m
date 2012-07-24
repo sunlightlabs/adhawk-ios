@@ -68,13 +68,6 @@ GSObject *getParamsObject(void)
     [self.api showAddConnectionsUI:[self params] delegate:self context:nil];
 }
 
-- (UIActionSheet *) showShareActionSheetInView:(UIView *)view
-{
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share This" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", @"Like on Facebook", nil];
-    [actionSheet showInView:view];
-    return actionSheet;
-}
-
 #pragma mark - UIActionSheetDelegate callbacks
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -152,7 +145,7 @@ GSObject *getParamsObject(void)
 // This method should handle the response.
 - (void) gsDidReceiveResponse:(NSString*)method response:(GSResponse*)response context:(id)context
 {
-    TFPLog(@"gsDidReceiveResponse: %@", [response ResponseText]);
+    TFPLog(@"response: \n%@", [response ResponseText]);
 }
 
 #pragma mark - GSEventDelegate callbacks

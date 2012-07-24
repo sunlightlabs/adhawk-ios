@@ -19,7 +19,6 @@ GSObject *getParamsObject(void);
 + (GigyaService *)sharedInstanceWithViewController:(UIViewController *)mainViewController;
 - (void) showLoginUI;
 - (void) showAddConnectionsUI;
-- (UIActionSheet *) showShareActionSheetInView:(UIView *)view;
 
 @property (readonly, nonatomic) GSAPI *api;
 @property (readonly, nonatomic) GSObject *params;

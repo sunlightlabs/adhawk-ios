@@ -57,7 +57,8 @@
 #pragma mark - IBActions
 
 -(IBAction)showSocialActionSheet:(id)sender {
-    [[GigyaService sharedInstanceWithViewController:self] showShareActionSheetInView:self.view];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share This" delegate:[GigyaService sharedInstanceWithViewController:self] cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", @"Like on Facebook", nil];
+    [actionSheet showInView:self.view];
 }
 
 
