@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AdHawkBaseViewController.h"
 
-@interface AdDetailViewController : AdHawkBaseViewController {
+@interface AdDetailViewController : AdHawkBaseViewController <UIWebViewDelegate> {
     IBOutlet UIWebView *webView;
     NSString *targetURL;
+    BOOL _authed;
 }
 
 @property (strong,nonatomic) NSString *targetURL;

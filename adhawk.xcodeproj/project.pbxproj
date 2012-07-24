@@ -877,6 +877,7 @@
 		C36B401215023E5400937C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
@@ -892,6 +893,7 @@
 				);
 				PRODUCT_NAME = "Ad Hawk";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -899,6 +901,7 @@
 		C36B401315023E5400937C3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
@@ -914,6 +917,7 @@
 				);
 				PRODUCT_NAME = "Ad Hawk";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
