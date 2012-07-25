@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Twitter/Twitter.h>
 
-@interface AdHawkBaseViewController : UIViewController
+@interface AdHawkBaseViewController : UIViewController <UIActionSheetDelegate>
+{
+    NSArray *_navButtons;
+    NSArray *_toolBarItems;
+    UIToolbar *_toolbar;
+    BOOL _socialEnabled;
+}
+@property (nonatomic) BOOL socialEnabled;
 
 -(IBAction)showSocialActionSheet:(id)sender;
-
+- (void) enableSocial;
 
 @end

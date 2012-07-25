@@ -6,13 +6,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Recorder View Controller-->
+        <!--Recorder View Controller - Ad Hawk-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="RecorderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFV-xK-5PI">
@@ -37,9 +37,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40727365016937256" green="0.34394419193267822" blue="0.28781965374946594" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JEH-qS-Xi1"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Ad Hawk" id="JEH-qS-Xi1"/>
                     <connections>
                         <outlet property="activityIndicator" destination="gIs-Hm-drC" id="nBo-ro-tMA"/>
                         <outlet property="recordButton" destination="hFV-xK-5PI" id="mam-dF-WmJ"/>
@@ -297,11 +295,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AW8-7q-HKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="OhG-d8-01w" customClass="AdDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deL-sx-TvF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="8Oa-CP-NE2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -310,7 +308,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Ad Info" id="6mf-Z3-af6"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="webView" destination="8Oa-CP-NE2" id="zoS-dq-1gc"/>
                     </connections>
@@ -561,14 +558,19 @@
         <scene sceneID="2c9-T8-WGe">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9np-MC-2Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="Viy-z5-39k" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="Viy-z5-39k" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="afs-cC-R4w">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="afs-cC-R4w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" barStyle="blackOpaque" id="WZf-f7-I4D">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="rootViewController" id="bwD-QW-CFg"/>
                     </connections>
