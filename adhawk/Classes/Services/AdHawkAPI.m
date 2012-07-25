@@ -19,6 +19,7 @@ NSURL *endPointURL(NSString * path)
 RKObjectManager *setUpAPI(void)
 {
     RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:[RKURL URLWithBaseURLString:ADHAWK_API_BASE_URL]];
+    [manager.client setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
     manager.acceptMIMEType = RKMIMETypeJSON;
     manager.serializationMIMEType = RKMIMETypeJSON;
     
@@ -88,7 +89,14 @@ RKObjectManager *setUpAPI(void)
         TFPLog(@"Got back an AdHawk ad object!");
         self.currentAd = (AdHawkAd *)object;
         self.currentAdHawkURL = self.currentAd.result_url;
-        [[self searchDelegate] adHawkAPIDidReturnURL:self.currentAdHawkURL];
+        if (self.currentAdHawkURL != NULL) {
+            [[self searchDelegate] adHawkAPIDidReturnURL:self.currentAdHawkURL];
+
+        }
+        else {
+            TFPLog(@"currentAdHawkURL is null: issue adHawkAPIDidReturnNoResult");
+            [[self searchDelegate] adHawkAPIDidReturnNoResult];
+        }
     }
     else {
         TFPLog(@"Got back an object, but it didn't conform to AdHawkAd");

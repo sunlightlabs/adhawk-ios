@@ -17,6 +17,7 @@ RKObjectManager *setUpAPI(void);
 @protocol AdHawkAPIDelegate <NSObject>
 @required
 -(void) adHawkAPIDidReturnURL:(NSURL *) url;
+-(void) adHawkAPIDidReturnNoResult;
 @end
 
 @interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate>

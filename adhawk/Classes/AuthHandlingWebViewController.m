@@ -23,10 +23,23 @@
     return self;
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:(NSCoder *)aDecoder];
+    
+    if (self) {        
+        webView.delegate = self;
+    }
+    return self;
+}
+
+
+
 #pragma mark - UIWebViewDelegate methods
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    TFPLog(@"User-Agent: %@", [request valueForHTTPHeaderField:@"User-Agent"]);
+    TFPLog(@"Url: %@", [[request URL] absoluteString]);
     if(!_authed)
     {
         _authed = NO;
@@ -64,10 +77,7 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 {
     NSLog(@"received response via nsurlconnection");
-    
-    /** THIS IS WHERE YOU SET MAKE THE NEW REQUEST TO UIWebView, which will use the new saved auth info **/
-    
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:targetURL]];
+    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:targetURL]];
     
     [webView loadRequest:urlRequest];
     _authed = YES;
