@@ -13,6 +13,8 @@
 {
     NSArray *_navButtons;
     NSArray *_toolBarItems;
+    UIBarButtonItem *_settingsButton;
+    UIBarButtonItem *_aboutButton;
     UIToolbar *_toolbar;
     BOOL _socialEnabled;
 }

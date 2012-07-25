@@ -26,9 +26,9 @@
 - (void) setupUIElements
 {
     // Prep navigationController buttons. These will be added to navigationController on viewWillAppear.
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-    UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
-    _navButtons = [[NSArray alloc] initWithObjects:settingsButton, aboutButton, nil];
+    _settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+    _aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
+    _navButtons = [[NSArray alloc] initWithObjects:_settingsButton, _aboutButton, nil];
     
     // Set logo in Toolbar. [self enableSocial] must be run seprately to add the sharing button to the toolbar.
     UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithTitle:@"Sunlight Logo" style:UIBarButtonItemStylePlain target:nil action:nil];

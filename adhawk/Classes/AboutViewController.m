@@ -11,13 +11,21 @@
 
 @implementation AboutViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // Make sure about page doesn't have about button!
+    [self.navigationItem setRightBarButtonItems:[[NSArray alloc] initWithObjects:_settingsButton, nil] animated:YES];
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     TFPLog(@"AboutView loaded");
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ADHAWK_ABOUT_URL]]];
+    NSMutableURLRequest *_urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:ADHAWK_ABOUT_URL]];
+    [webView loadRequest:_urlReq];
 }
 
 @end
