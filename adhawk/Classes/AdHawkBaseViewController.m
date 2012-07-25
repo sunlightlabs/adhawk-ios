@@ -7,6 +7,7 @@
 //
 
 #import "AdHawkBaseViewController.h"
+#import "AboutViewController.h"
 #import "GigyaService.h"
 
 @implementation AdHawkBaseViewController
@@ -26,7 +27,7 @@
 {
     // Prep navigationController buttons. These will be added to navigationController on viewWillAppear.
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-    UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:nil action:nil];
+    UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
     _navButtons = [[NSArray alloc] initWithObjects:settingsButton, aboutButton, nil];
     
     // Set logo in Toolbar. [self enableSocial] must be run seprately to add the sharing button to the toolbar.
@@ -34,6 +35,8 @@
     logoItem.enabled = NO;
 //    [self setToolbarItems:[[NSArray alloc] initWithObjects:logoItem, nil] animated:NO];
     
+    UIImage *bgImage = [UIImage imageNamed:@"ToolbarBackground.png"];
+    [[UIToolbar appearance] setBackgroundImage:bgImage forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
     _toolBarItems = [[NSArray alloc] initWithObjects:logoItem, nil];
 }
 
@@ -43,7 +46,7 @@
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
     _toolBarItems = [_toolBarItems arrayByAddingObjectsFromArray:[[NSArray alloc] initWithObjects:flexibleSpace, socialButton, nil]];
-    [_toolbar setItems:_toolBarItems animated:NO];
+    [self setToolbarItems:_toolBarItems];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -64,14 +67,11 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[self navigationController] setToolbarHidden:YES animated:NO];
-    _toolbar = [[UIToolbar alloc] init];
-    _toolbar.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 44);
-    _toolbar.barStyle = UIBarStyleBlack;
-    _toolbar.backgroundColor = [UIColor whiteColor];
-    [_toolbar setItems:_toolBarItems animated:NO];
-    [self.view addSubview:_toolbar];
+    [self setToolbarItems:_toolBarItems animated:NO];
+    _toolbar = [self navigationController].toolbar;
+    _toolbar.translucent = YES;
     [self.navigationItem setRightBarButtonItems:_navButtons animated:NO];
+    [[self navigationController] setToolbarHidden:NO animated:NO];
 }
 
 - (void)viewDidUnload
@@ -83,6 +83,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void) showAboutView
+{
+    NSLog(@"Show about view");
+    AboutViewController *avc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"aboutAdHawk"];
+    [self.navigationController pushViewController:avc animated:YES];
+    //    [self performSegueWithIdentifier:@"aboutSegue" sender:self];
 }
 
 #pragma mark - IBActions

@@ -1,14 +1,14 @@
 //
-//  AdDetailViewController.h
+//  AboutViewController.h
 //  adhawk
 //
-//  Created by Jim Snavely on 6/22/12.
+//  Created by Daniel Cloud on 7/25/12.
 //  Copyright (c) 2012 Sunlight Foundation. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "AuthHandlingWebViewController.h"
 
-@interface AdDetailViewController : AuthHandlingWebViewController
+@interface AboutViewController : AuthHandlingWebViewController
 
 @end
