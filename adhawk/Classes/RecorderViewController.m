@@ -41,6 +41,10 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(handleEnteredBackground:) 
+                                                 name: UIApplicationDidEnterBackgroundNotification
+                                               object: nil];
     [self setFailState:NO];
 
     recordButton.enabled = YES; 
@@ -93,15 +97,22 @@ extern const char * GetPCMFromFile(char * filename);
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void) handleEnteredBackground:(NSNotification *)notification
+{
+    [self setFailState:NO];
+}
+
 -(void) setFailState:(BOOL)isFail
 {
     if (isFail) {
         label.hidden = NO;
         popularResultsButton.hidden = NO;
+        
     }
     else{
         label.hidden = YES;
         popularResultsButton.hidden = YES;
+        popularResultsButton.enabled = YES;
     }
 }
 
@@ -226,10 +237,16 @@ extern const char * GetPCMFromFile(char * filename);
     TFPLog(@"No results for search");
     [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//    UIViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"noResults"];
-//    [self.navigationController pushViewController:vc animated:YES];
     recordButton.enabled = YES;
     [self setFailState:YES];
+}
+
+-(void)showBrowseWebView
+{
+    AuthHandlingWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"genericAuthWebView"];
+    NSURL *browseURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
 }
 
 

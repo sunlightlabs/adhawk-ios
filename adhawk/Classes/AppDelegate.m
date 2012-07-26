@@ -15,6 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [_window makeKeyAndVisible];
     // Override point for customization after application launch.
     if (TESTING == YES) {
         [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];

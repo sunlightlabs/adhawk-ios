@@ -53,13 +53,18 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
-{}
+{
+    TFPLog(@"Url: %@", [[self.webView.request URL] absoluteString]);
+}
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {}
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{}
+{
+    TFPLog(@"error: %@", [error localizedDescription]);
+
+}
 
 #pragma mark NSURLConnection delegate methods
 

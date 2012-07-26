@@ -35,6 +35,7 @@
 -(IBAction) recordAudio;
 -(IBAction) playAudio;
 -(IBAction) stopRecorder;
+-(IBAction) showBrowseWebView;
 
 -(void)setFailState:(BOOL)isFail;
 
