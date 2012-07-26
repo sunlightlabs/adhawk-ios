@@ -13,23 +13,17 @@
 #import "AdHawkAd.h"
 
 
-#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-
 extern const char * GetPCMFromFile(char * filename);
-
 
 @implementation RecorderViewController
 
-//@synthesize recorderDelegate;
-@synthesize playButton, stopButton, recordButton, activityIndicator;
-
+@synthesize recordButton, popularResultsButton, label, failView, activityIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -47,9 +41,9 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    playButton.enabled = NO;
-    stopButton.enabled = NO;
+    [self setFailState:NO];
+
+    recordButton.enabled = YES; 
     
     NSString *soundFilePath = [self getAudioFilePath];
                                 
@@ -89,22 +83,37 @@ extern const char * GetPCMFromFile(char * filename);
     // Release any retained subviews of the main view.
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
+-(void) setFailState:(BOOL)isFail
+{
+    if (isFail) {
+        label.hidden = NO;
+        popularResultsButton.hidden = NO;
+    }
+    else{
+        label.hidden = YES;
+        popularResultsButton.hidden = YES;
+    }
+}
 
 -(void) recordAudio
 {
     if (!audioRecorder.recording)
     {
-        playButton.enabled = NO;
-        stopButton.enabled = YES;
+        [self setFailState:NO];
+        recordButton.enabled = NO; 
         [NSTimer scheduledTimerWithTimeInterval:15.0
                                          target:self
-                                       selector:@selector(stop)
+                                       selector:@selector(recordingTimerFinished:)
                                        userInfo:nil
                                         repeats:NO];
         [audioRecorder record];
@@ -116,6 +125,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [super prepareForSegue:segue sender:sender];
     if ([[segue identifier] isEqualToString:@"adSegue"])
     {
         // Get reference to the destination view controller
@@ -128,21 +138,27 @@ extern const char * GetPCMFromFile(char * filename);
     }
 }
 
--(void)stop
+- (void) recordingTimerFinished:(NSTimer*)theTimer
 {
-    stopButton.enabled = NO;
-    playButton.enabled = YES;
+    
+    TFPLog(@"Timer complete");
+    [self stopRecorder];
+}
+
+-(void)stopRecorder
+{
     recordButton.enabled = YES;
     
     if (audioRecorder.recording)
     {
         [audioRecorder stop];
-        [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
+        recordButton.enabled = NO; 
         NSString *soundFilePath = [self getAudioFilePath];
         const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
         NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
         NSLog(@"fpcode generated");
         
+//        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
         [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
         
         [activityIndicator stopAnimating];
@@ -157,7 +173,6 @@ extern const char * GetPCMFromFile(char * filename);
 {
     if (!audioRecorder.recording)
     {
-        stopButton.enabled = YES;
         recordButton.enabled = NO;
         
         NSError *error;
@@ -180,8 +195,8 @@ extern const char * GetPCMFromFile(char * filename);
 (AVAudioPlayer *)player successfully:(BOOL)flag
 {
     recordButton.enabled = YES;
-    stopButton.enabled = NO;
 }
+
 -(void)audioPlayerDecodeErrorDidOccur:
 (AVAudioPlayer *)player 
                                 error:(NSError *)error
@@ -203,6 +218,19 @@ extern const char * GetPCMFromFile(char * filename);
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self performSegueWithIdentifier:@"adSegue" sender:self];
+    [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
 }
+
+-(void) adHawkAPIDidReturnNoResult
+{
+    TFPLog(@"No results for search");
+    [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//    UIViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"noResults"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    recordButton.enabled = YES;
+    [self setFailState:YES];
+}
+
 
 @end

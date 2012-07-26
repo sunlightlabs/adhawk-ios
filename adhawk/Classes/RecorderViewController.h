@@ -21,17 +21,21 @@
 {
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
-    UIButton *playButton;
     UIButton *recordButton;
-    UIButton *stopButton;
+    UIButton *popularResultsButton;
+    UILabel *label;
+    UIView *failView;
     UIActivityIndicatorView *activityIndicator;
 }
-//@property (nonatomic, retain) id <RecorderViewDelegate> recorderDelegate;
-@property (nonatomic, strong) IBOutlet UIButton *playButton;
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
-@property (nonatomic, strong) IBOutlet UIButton *stopButton;
+@property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) IBOutlet UIButton *popularResultsButton;
+@property (nonatomic, strong) IBOutlet UIView *failView;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 -(IBAction) recordAudio;
 -(IBAction) playAudio;
--(IBAction) stop;
+-(IBAction) stopRecorder;
+
+-(void)setFailState:(BOOL)isFail;
+
 @end

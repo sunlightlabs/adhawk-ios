@@ -17,6 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        _authed = NO;
         webView.delegate = self;
 
     }
@@ -26,7 +27,8 @@
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:(NSCoder *)aDecoder];
     
-    if (self) {        
+    if (self) {
+        _authed = NO;
         webView.delegate = self;
     }
     return self;
