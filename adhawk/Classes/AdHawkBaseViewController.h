@@ -12,9 +12,10 @@
 @interface AdHawkBaseViewController : UIViewController <UIActionSheetDelegate>
 {
     NSArray *_navButtons;
-    NSArray *_toolBarItems;
+    NSMutableArray *_toolBarItems;
     UIBarButtonItem *_settingsButton;
     UIBarButtonItem *_aboutButton;
+    UIBarButtonItem *_logoItem;
     UIToolbar *_toolbar;
     BOOL _socialEnabled;
 }

@@ -8,6 +8,7 @@
 
 #import "RecorderViewController.h"
 #import "AdDetailViewController.h"
+#import "InternalAdBrowserViewController.h"
 #import "Settings.h"
 #import "AdHawkAPI.h"
 #import "AdHawkAd.h"
@@ -41,6 +42,8 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
+
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(handleEnteredBackground:) 
                                                  name: UIApplicationDidEnterBackgroundNotification
@@ -145,7 +148,7 @@ extern const char * GetPCMFromFile(char * filename);
         
         // Pass any objects to the view controller here, like...
         NSURL *targetURL = [AdHawkAPI sharedInstance].currentAdHawkURL;
-        [vc setTargetURL:[targetURL absoluteString]];
+        [vc setTargetURLString:[targetURL absoluteString]];
     }
 }
 
@@ -227,8 +230,10 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void) adHawkAPIDidReturnURL:(NSURL *)url
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [self performSegueWithIdentifier:@"adSegue" sender:self];
+//    [self performSegueWithIdentifier:@"adSegue" sender:self];
+    AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adDetailVC"];
+    [vc setTargetURLString:[url absoluteString]];
+    [self.navigationController pushViewController:vc animated:YES];
     [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
 }
 
@@ -236,14 +241,13 @@ extern const char * GetPCMFromFile(char * filename);
 {
     TFPLog(@"No results for search");
     [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     recordButton.enabled = YES;
     [self setFailState:YES];
 }
 
 -(void)showBrowseWebView
 {
-    AuthHandlingWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"genericAuthWebView"];
+    InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"internalBrowserVC"];
     NSURL *browseURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
     [self.navigationController pushViewController:vc animated:YES];
     [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];

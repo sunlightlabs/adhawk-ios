@@ -71,6 +71,7 @@ RKObjectManager *setUpAPI(void)
         [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
         [TestFlight passCheckpoint:@"Submitted Fingerprint"];
     }];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
 //    NSURLRequest *req = [NSURLRequest initWithURL:url];
 //    req.HTTPMethod=@"POST";

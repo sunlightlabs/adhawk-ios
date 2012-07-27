@@ -25,12 +25,12 @@
 	// Do any additional setup after loading the view.
     webView.delegate = self;
     
-    TFPLog(@"Requesting: %@", targetURL);
-    NSURL *url = [NSURL URLWithString:targetURL];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:req];
-    [TestFlight passCheckpoint:@"Requested Ad detail page"];
-    
+    if ([_targetURL absoluteString] != @"") {
+        TFPLog(@"Requesting: %@", [_targetURL absoluteString]);
+        NSURLRequest *req = [NSURLRequest requestWithURL:_targetURL];
+        [webView loadRequest:req];
+        [TestFlight passCheckpoint:@"Requested Ad detail page"];
+    }
 }
 
 - (void)viewDidUnload
@@ -42,6 +42,18 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    BOOL shouldStartLoad = [super webView:p_webView shouldStartLoadWithRequest:request navigationType:navigationType];
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        return NO;
+    }
+    
+    return shouldStartLoad;
 }
 
 

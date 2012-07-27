@@ -31,22 +31,19 @@
     _navButtons = [[NSArray alloc] initWithObjects:_settingsButton, _aboutButton, nil];
     
     // Set logo in Toolbar. [self enableSocial] must be run seprately to add the sharing button to the toolbar.
-    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithTitle:@"Sunlight Logo" style:UIBarButtonItemStylePlain target:nil action:nil];
-    logoItem.enabled = NO;
-//    [self setToolbarItems:[[NSArray alloc] initWithObjects:logoItem, nil] animated:NO];
-    
     UIImage *bgImage = [UIImage imageNamed:@"ToolbarBackground.png"];
     [[UIToolbar appearance] setBackgroundImage:bgImage forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
-    _toolBarItems = [[NSArray alloc] initWithObjects:logoItem, nil];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunlight-logo35.png"]];
+    _logoItem = [[UIBarButtonItem alloc] initWithCustomView:imageView];    
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    _toolBarItems = [[NSMutableArray alloc] initWithObjects:flexibleSpace,_logoItem, nil];
 }
 
 // Will add a flexible space and social Button to the toolbaritems.
 - (void) enableSocial
 {
-    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
-    _toolBarItems = [_toolBarItems arrayByAddingObjectsFromArray:[[NSArray alloc] initWithObjects:flexibleSpace, socialButton, nil]];
-    [self setToolbarItems:_toolBarItems];
+    [_toolBarItems insertObject:socialButton atIndex:0];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

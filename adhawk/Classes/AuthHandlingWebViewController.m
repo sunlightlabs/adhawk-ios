@@ -11,15 +11,13 @@
 
 @implementation AuthHandlingWebViewController
 
-@synthesize webView, targetURL;
+@synthesize webView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _authed = NO;
-        webView.delegate = self;
-
     }
     return self;
 }
@@ -29,41 +27,58 @@
     
     if (self) {
         _authed = NO;
-        webView.delegate = self;
     }
     return self;
 }
 
+- (void) viewDidLoad
+{
+    [super viewDidLoad];
+    webView.delegate = self;
+    _authed = NO;
+}
+
+- (void) setTargetURLString:(NSString *)p_targetURLString
+{
+    _targetURL = [NSURL URLWithString:p_targetURLString];
+}
+
+- (NSString *) targetURLString
+{
+    return [_targetURL absoluteString];
+}
 
 
 #pragma mark - UIWebViewDelegate methods
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)p_request navigationType:(UIWebViewNavigationType)navigationType
 {
-    TFPLog(@"User-Agent: %@", [request valueForHTTPHeaderField:@"User-Agent"]);
-    TFPLog(@"Url: %@", [[request URL] absoluteString]);
-    if(!_authed)
-    {
-        _authed = NO;
-        [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        return NO;
-    }
+    TFPLog(@"User-Agent: %@", [p_request valueForHTTPHeaderField:@"User-Agent"]);
+    TFPLog(@"Url: %@", [[p_request URL] absoluteString]);
+    _targetURL = (_targetURL != [p_request URL]) ? [p_request URL] : _targetURL;
+//    if(!_authed)
+//    {
+//        _authed = NO;
+//        [[NSURLConnection alloc] initWithRequest:p_request delegate:self];
+//        return NO;
+//    }
     
     return YES;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webViewDidFinishLoad:(UIWebView *)p_webView
 {
-    TFPLog(@"Url: %@", [[self.webView.request URL] absoluteString]);
+    TFPLog(@"Url: %@", [[p_webView.request URL] absoluteString]);
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(UIWebView *)p_webView
 {}
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
 {
     TFPLog(@"error: %@", [error localizedDescription]);
-
+    UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
+    [e_alert show];
 }
 
 #pragma mark NSURLConnection delegate methods
@@ -84,8 +99,8 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 {
     NSLog(@"received response via nsurlconnection");
-    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:targetURL]];
-    
+    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:_targetURL];
+    TFPLog(@"Look at url: %@", [[urlRequest URL] absoluteString]);
     [webView loadRequest:urlRequest];
     _authed = YES;
 }
