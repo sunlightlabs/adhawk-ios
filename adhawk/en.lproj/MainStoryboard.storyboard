@@ -37,42 +37,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="RecorderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" id="0EU-R8-8AT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sorry, your search returned no results." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7Cz-6y-6Ai">
-                                        <rect key="frame" x="85" y="81" width="150" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dxa-yG-E5Q">
-                                        <rect key="frame" x="93" y="252" width="134" height="74"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="View Popular">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showBrowseWebView" destination="4" eventType="touchUpInside" id="FuB-gF-Xdb"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFV-xK-5PI">
-                                <rect key="frame" x="93" y="133" width="134" height="74"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="IDbkgrnd.png" id="Gtw-sY-Nbe">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="IDworking.png" id="Clf-oc-QGl">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFV-xK-5PI">
+                                <rect key="frame" x="62" y="162" width="159" height="130"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Identify Ad">
+                                <state key="normal" title="Identify This Ad" image="IDbtnup.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -83,20 +63,54 @@
                                     <action selector="recordAudio" destination="4" eventType="touchUpInside" id="Sb3-Gi-UxP"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="gIs-Hm-drC">
-                                <rect key="frame" x="150" y="187" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" id="GWc-G0-llb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="0bE-5T-fjS">
+                                        <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qoh-ic-k5d">
+                                        <rect key="frame" x="76" y="41" width="169" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Listen Again">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryButtonClicked" destination="2" eventType="touchUpInside" id="iNI-AK-aq3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZI1-Rk-t9z">
+                                        <rect key="frame" x="76" y="212" width="169" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="View Popular">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showBrowseWebView" destination="2" eventType="touchUpInside" id="Mcm-cT-dqX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="Ad Hawk" id="JEH-qS-Xi1"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="gIs-Hm-drC" id="nBo-ro-tMA"/>
-                        <outlet property="failView" destination="0EU-R8-8AT" id="2Qw-3E-MxO"/>
-                        <outlet property="label" destination="7Cz-6y-6Ai" id="W4l-1w-i0V"/>
-                        <outlet property="popularResultsButton" destination="dxa-yG-E5Q" id="92s-Sd-aiu"/>
+                        <outlet property="failView" destination="GWc-G0-llb" id="HRV-zz-fEW"/>
+                        <outlet property="popularResultsButton" destination="ZI1-Rk-t9z" id="cm9-3L-I3d"/>
                         <outlet property="recordButton" destination="hFV-xK-5PI" id="mam-dF-WmJ"/>
+                        <outlet property="workingBackground" destination="Clf-oc-QGl" id="el4-Wi-sya"/>
                         <segue destination="OhG-d8-01w" kind="push" identifier="adSegue" id="q4Z-7a-U2P"/>
                     </connections>
                 </viewController>
@@ -136,11 +150,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9np-MC-2Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="Viy-z5-39k" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackTranslucent" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackTranslucent" id="afs-cC-R4w">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="afs-cC-R4w">
+                        <rect key="frame" x="0.0" y="-30" width="320" height="74"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -230,7 +243,28 @@
             </objects>
             <point key="canvasLocation" x="-149" y="-488"/>
         </scene>
+        <!--Fail Retry View Controller - Ad Hawk-->
+        <scene sceneID="84P-Bq-ypu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oad-sp-8kI" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="failVC" id="IiL-hC-UK4" customClass="FailRetryViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Ad Hawk" id="vzm-xz-Aca"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="recordButton" destination="qoh-ic-k5d" id="8bn-hF-TTe"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="799" y="677"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="IDbkgrnd.png" width="320" height="480"/>
+        <image name="IDbtnup.png" width="159" height="130"/>
+        <image name="IDworking.png" width="320" height="480"/>
+        <image name="bkgrnd.png" width="320" height="480"/>
+    </resources>
     <classes>
         <class className="AboutViewController" superclassName="AuthHandlingWebViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
@@ -250,6 +284,9 @@
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="FailRetryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FailRetryViewController.h"/>
+        </class>
         <class className="InternalAdBrowserViewController" superclassName="SimpleWebViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InternalAdBrowserViewController.h"/>
         </class>
@@ -258,13 +295,14 @@
             <relationships>
                 <relationship kind="action" name="playAudio"/>
                 <relationship kind="action" name="recordAudio"/>
+                <relationship kind="action" name="retryButtonClicked"/>
                 <relationship kind="action" name="showBrowseWebView"/>
                 <relationship kind="action" name="stopRecorder"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="failView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="popularResultsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="workingBackground" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="SimpleWebViewController" superclassName="AdHawkBaseViewController">

@@ -78,10 +78,15 @@
 		2FBFE4E815C2F3250035C0F6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4E115C2F3250035C0F6 /* Icon@2x.png */; };
 		2FBFE4EA15C2F34B0035C0F6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4E915C2F34B0035C0F6 /* Icon.png */; };
 		2FBFE4EC15C2F3730035C0F6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4EB15C2F3730035C0F6 /* Icon@2x.png */; };
+		2FBFE4F115C309FC0035C0F6 /* IDbtndown.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4ED15C309FC0035C0F6 /* IDbtndown.png */; };
+		2FBFE4F215C309FC0035C0F6 /* IDbtndown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4EE15C309FC0035C0F6 /* IDbtndown@2x.png */; };
+		2FBFE4F315C309FC0035C0F6 /* IDbtnup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4EF15C309FC0035C0F6 /* IDbtnup.png */; };
+		2FBFE4F415C309FC0035C0F6 /* IDbtnup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4F015C309FC0035C0F6 /* IDbtnup@2x.png */; };
+		2FBFE4F715C32E380035C0F6 /* sunlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4F515C32E380035C0F6 /* sunlight.png */; };
+		2FBFE4F815C32E380035C0F6 /* sunlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4F615C32E380035C0F6 /* sunlight@2x.png */; };
 		2FD683E815C0505600822ABE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD683E715C0505600822ABE /* AboutViewController.m */; };
 		2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */; };
 		2FF8DFE315C08DD300D68C84 /* ToolbarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8DFE215C08DD300D68C84 /* ToolbarBackground.png */; };
-		2FF8DFF915C1D33D00D68C84 /* sunlight-logo35.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8DFF815C1D33D00D68C84 /* sunlight-logo35.png */; };
 		2FF8DFFF15C2064100D68C84 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8DFFE15C2064000D68C84 /* Default.png */; };
 		2FF8E00115C2064600D68C84 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8E00015C2064600D68C84 /* Default@2x.png */; };
 		2FF8E00415C2109A00D68C84 /* InternalAdBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */; };
@@ -264,12 +269,17 @@
 		2FBFE4E115C2F3250035C0F6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2FBFE4E915C2F34B0035C0F6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2FBFE4EB15C2F3730035C0F6 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		2FBFE4ED15C309FC0035C0F6 /* IDbtndown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDbtndown.png; sourceTree = "<group>"; };
+		2FBFE4EE15C309FC0035C0F6 /* IDbtndown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDbtndown@2x.png"; sourceTree = "<group>"; };
+		2FBFE4EF15C309FC0035C0F6 /* IDbtnup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDbtnup.png; sourceTree = "<group>"; };
+		2FBFE4F015C309FC0035C0F6 /* IDbtnup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDbtnup@2x.png"; sourceTree = "<group>"; };
+		2FBFE4F515C32E380035C0F6 /* sunlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunlight.png; sourceTree = "<group>"; };
+		2FBFE4F615C32E380035C0F6 /* sunlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunlight@2x.png"; sourceTree = "<group>"; };
 		2FD683E615C0505600822ABE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = adhawk/Classes/AboutViewController.h; sourceTree = SOURCE_ROOT; };
 		2FD683E715C0505600822ABE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = adhawk/Classes/AboutViewController.m; sourceTree = SOURCE_ROOT; };
 		2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthHandlingWebViewController.h; path = Classes/AuthHandlingWebViewController.h; sourceTree = "<group>"; };
 		2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthHandlingWebViewController.m; path = Classes/AuthHandlingWebViewController.m; sourceTree = "<group>"; };
 		2FF8DFE215C08DD300D68C84 /* ToolbarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarBackground.png; sourceTree = "<group>"; };
-		2FF8DFF815C1D33D00D68C84 /* sunlight-logo35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunlight-logo35.png"; sourceTree = "<group>"; };
 		2FF8DFFE15C2064000D68C84 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2FF8E00015C2064600D68C84 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = Classes/InternalAdBrowserViewController.h; sourceTree = "<group>"; };
@@ -601,6 +611,10 @@
 		C3D6DD8615027FBB003F8F6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FBFE4ED15C309FC0035C0F6 /* IDbtndown.png */,
+				2FBFE4EE15C309FC0035C0F6 /* IDbtndown@2x.png */,
+				2FBFE4EF15C309FC0035C0F6 /* IDbtnup.png */,
+				2FBFE4F015C309FC0035C0F6 /* IDbtnup@2x.png */,
 				2FBFE4DB15C2F3250035C0F6 /* Icon-72.png */,
 				2FBFE4DC15C2F3250035C0F6 /* Icon-72@2x.png */,
 				2FBFE4DD15C2F3250035C0F6 /* Icon-Small-50.png */,
@@ -617,7 +631,8 @@
 				2FBFE4D715C2F2750035C0F6 /* bkgrnd@2x.png */,
 				2FF8E00015C2064600D68C84 /* Default@2x.png */,
 				2FF8DFFE15C2064000D68C84 /* Default.png */,
-				2FF8DFF815C1D33D00D68C84 /* sunlight-logo35.png */,
+				2FBFE4F515C32E380035C0F6 /* sunlight.png */,
+				2FBFE4F615C32E380035C0F6 /* sunlight@2x.png */,
 				2FF8DFE215C08DD300D68C84 /* ToolbarBackground.png */,
 			);
 			name = Resources;
@@ -744,7 +759,6 @@
 				2F46F64615B750C000B38A19 /* GSFBDialog.bundle in Resources */,
 				2F46F65015B750C000B38A19 /* GSWebViewController.xib in Resources */,
 				2FF8DFE315C08DD300D68C84 /* ToolbarBackground.png in Resources */,
-				2FF8DFF915C1D33D00D68C84 /* sunlight-logo35.png in Resources */,
 				2FF8DFFF15C2064100D68C84 /* Default.png in Resources */,
 				2FF8E00115C2064600D68C84 /* Default@2x.png in Resources */,
 				2FBFE4C615C2E96E0035C0F6 /* bkgrnd.png in Resources */,
@@ -763,6 +777,12 @@
 				2FBFE4E815C2F3250035C0F6 /* Icon@2x.png in Resources */,
 				2FBFE4EA15C2F34B0035C0F6 /* Icon.png in Resources */,
 				2FBFE4EC15C2F3730035C0F6 /* Icon@2x.png in Resources */,
+				2FBFE4F115C309FC0035C0F6 /* IDbtndown.png in Resources */,
+				2FBFE4F215C309FC0035C0F6 /* IDbtndown@2x.png in Resources */,
+				2FBFE4F315C309FC0035C0F6 /* IDbtnup.png in Resources */,
+				2FBFE4F415C309FC0035C0F6 /* IDbtnup@2x.png in Resources */,
+				2FBFE4F715C32E380035C0F6 /* sunlight.png in Resources */,
+				2FBFE4F815C32E380035C0F6 /* sunlight@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
