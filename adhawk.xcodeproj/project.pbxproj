@@ -66,7 +66,6 @@
 		2FBFE4D115C2F0A50035C0F6 /* IDbkgrnd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4CD15C2F0A50035C0F6 /* IDbkgrnd@2x.png */; };
 		2FBFE4D215C2F0A50035C0F6 /* IDworking.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4CE15C2F0A50035C0F6 /* IDworking.png */; };
 		2FBFE4D315C2F0A50035C0F6 /* IDworking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4CF15C2F0A50035C0F6 /* IDworking@2x.png */; };
-		2FBFE4D615C2F1B80035C0F6 /* FailRetryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFE4D515C2F1B80035C0F6 /* FailRetryViewController.m */; };
 		2FBFE4D815C2F2750035C0F6 /* bkgrnd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4D715C2F2750035C0F6 /* bkgrnd@2x.png */; };
 		2FBFE4DA15C2F3160035C0F6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4D915C2F3160035C0F6 /* Icon.png */; };
 		2FBFE4E215C2F3250035C0F6 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4DB15C2F3250035C0F6 /* Icon-72.png */; };
@@ -256,8 +255,6 @@
 		2FBFE4CD15C2F0A50035C0F6 /* IDbkgrnd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDbkgrnd@2x.png"; sourceTree = "<group>"; };
 		2FBFE4CE15C2F0A50035C0F6 /* IDworking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDworking.png; sourceTree = "<group>"; };
 		2FBFE4CF15C2F0A50035C0F6 /* IDworking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDworking@2x.png"; sourceTree = "<group>"; };
-		2FBFE4D415C2F1B80035C0F6 /* FailRetryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FailRetryViewController.h; path = Classes/FailRetryViewController.h; sourceTree = "<group>"; };
-		2FBFE4D515C2F1B80035C0F6 /* FailRetryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FailRetryViewController.m; path = Classes/FailRetryViewController.m; sourceTree = "<group>"; };
 		2FBFE4D715C2F2750035C0F6 /* bkgrnd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkgrnd@2x.png"; sourceTree = "<group>"; };
 		2FBFE4D915C2F3160035C0F6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2FBFE4DB15C2F3250035C0F6 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -602,8 +599,6 @@
 				2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */,
 				2FBFE4C115C2D4F40035C0F6 /* SimpleWebViewController.h */,
 				2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */,
-				2FBFE4D415C2F1B80035C0F6 /* FailRetryViewController.h */,
-				2FBFE4D515C2F1B80035C0F6 /* FailRetryViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -869,7 +864,6 @@
 				2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */,
 				2FF8E00415C2109A00D68C84 /* InternalAdBrowserViewController.m in Sources */,
 				2FBFE4C315C2D4F40035C0F6 /* SimpleWebViewController.m in Sources */,
-				2FBFE4D615C2F1B80035C0F6 /* FailRetryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
