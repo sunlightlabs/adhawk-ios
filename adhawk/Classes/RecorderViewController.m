@@ -18,7 +18,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 @implementation RecorderViewController
 
-@synthesize recordButton, popularResultsButton, label, failView, activityIndicator;
+@synthesize recordButton, popularResultsButton, workingBackground, failView, activityIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,8 +49,10 @@ extern const char * GetPCMFromFile(char * filename);
                                                  name: UIApplicationDidEnterBackgroundNotification
                                                object: nil];
     [self setFailState:NO];
-
-    recordButton.enabled = YES; 
+    [self setWorkingState:NO];
+    
+    recordButton.enabled = YES;
+    [recordButton setImage:[UIImage imageNamed:@"IDbtndown"] forState:UIControlStateHighlighted];
     
     NSString *soundFilePath = [self getAudioFilePath];
                                 
@@ -93,6 +95,17 @@ extern const char * GetPCMFromFile(char * filename);
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    recordButton.hidden = NO;
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [self setFailState:NO];
+    if (audioRecorder.recording) {
+        [audioRecorder stop];
+        [_timer invalidate];
+    }
+    [self setWorkingState:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -105,18 +118,29 @@ extern const char * GetPCMFromFile(char * filename);
     [self setFailState:NO];
 }
 
+- (void) retryButtonClicked
+{
+    [self setFailState:NO];
+    [self recordAudio];
+}
+
 -(void) setFailState:(BOOL)isFail
 {
-    if (isFail) {
-        label.hidden = NO;
-        popularResultsButton.hidden = NO;
-        
+    failView.hidden = !isFail;
+}
+
+- (void)setWorkingState:(BOOL)isWorking
+{
+    if (isWorking) {
+        workingBackground.hidden = NO;
+        recordButton.hidden = YES;
+        recordButton.enabled = NO; 
     }
-    else{
-        label.hidden = YES;
-        popularResultsButton.hidden = YES;
-        popularResultsButton.enabled = YES;
-    }
+    else {
+        workingBackground.hidden = YES;
+        recordButton.hidden = NO;
+        recordButton.enabled = YES; 
+   }
 }
 
 -(void) recordAudio
@@ -124,14 +148,13 @@ extern const char * GetPCMFromFile(char * filename);
     if (!audioRecorder.recording)
     {
         [self setFailState:NO];
-        recordButton.enabled = NO; 
-        [NSTimer scheduledTimerWithTimeInterval:15.0
+        [self setWorkingState:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:15.0
                                          target:self
                                        selector:@selector(recordingTimerFinished:)
                                        userInfo:nil
                                         repeats:NO];
         [audioRecorder record];
-        [recordButton setTitle:@"Recording..." forState:UIControlStateNormal];
         [activityIndicator startAnimating];
     }
 }
@@ -160,13 +183,10 @@ extern const char * GetPCMFromFile(char * filename);
 }
 
 -(void)stopRecorder
-{
-    recordButton.enabled = YES;
-    
+{    
     if (audioRecorder.recording)
     {
         [audioRecorder stop];
-        recordButton.enabled = NO; 
         NSString *soundFilePath = [self getAudioFilePath];
         const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
         NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
@@ -187,8 +207,6 @@ extern const char * GetPCMFromFile(char * filename);
 {
     if (!audioRecorder.recording)
     {
-        recordButton.enabled = NO;
-        
         NSError *error;
         
         audioPlayer = [[AVAudioPlayer alloc] 
@@ -234,14 +252,13 @@ extern const char * GetPCMFromFile(char * filename);
     AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adDetailVC"];
     [vc setTargetURLString:[url absoluteString]];
     [self.navigationController pushViewController:vc animated:YES];
-    [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
+    [self setWorkingState:NO];
 }
 
 -(void) adHawkAPIDidReturnNoResult
 {
     TFPLog(@"No results for search");
-    [recordButton setTitle:@"Identify Ad" forState:UIControlStateNormal];
-    recordButton.enabled = YES;
+    [self setWorkingState:NO];
     [self setFailState:YES];
 }
 

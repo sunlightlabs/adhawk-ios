@@ -14,6 +14,7 @@
     NSArray *_navButtons;
     NSMutableArray *_toolBarItems;
     UIBarButtonItem *_settingsButton;
+    UIBarButtonItem *_socialButton;
     UIBarButtonItem *_aboutButton;
     UIBarButtonItem *_logoItem;
     UIToolbar *_toolbar;

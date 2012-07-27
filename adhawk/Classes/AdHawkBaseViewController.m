@@ -18,7 +18,6 @@
     self = [super initWithCoder:(NSCoder *)aDecoder];
     
     if (self) {        
-        [self setupUIElements];
     }
     return self;
 }
@@ -26,14 +25,16 @@
 - (void) setupUIElements
 {
     // Prep navigationController buttons. These will be added to navigationController on viewWillAppear.
+    _socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
     _settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
     _aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
     _navButtons = [[NSArray alloc] initWithObjects:_settingsButton, _aboutButton, nil];
     
     // Set logo in Toolbar. [self enableSocial] must be run seprately to add the sharing button to the toolbar.
-    UIImage *bgImage = [UIImage imageNamed:@"ToolbarBackground.png"];
+    UIImage *bgImage = [UIImage imageNamed:@"ToolbarBackground"];
     [[UIToolbar appearance] setBackgroundImage:bgImage forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunlight-logo35.png"]];
+    [self.navigationController.toolbar setTranslucent:YES]; 
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunlight"]];
     _logoItem = [[UIBarButtonItem alloc] initWithCustomView:imageView];    
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     _toolBarItems = [[NSMutableArray alloc] initWithObjects:flexibleSpace,_logoItem, nil];
@@ -42,15 +43,15 @@
 // Will add a flexible space and social Button to the toolbaritems.
 - (void) enableSocial
 {
-    UIBarButtonItem *socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
-    [_toolBarItems insertObject:socialButton atIndex:0];
+    if ([_toolBarItems objectAtIndex:0] != _socialButton) {
+        [_toolBarItems insertObject:_socialButton atIndex:0];
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {        
-        [self setupUIElements];
     }
     return self;
 }
@@ -59,6 +60,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self setupUIElements];
 }
 
 - (void) viewWillAppear:(BOOL)animated
