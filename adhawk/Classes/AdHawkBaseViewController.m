@@ -26,12 +26,16 @@
 {
     // Prep navigationController buttons. These will be added to navigationController on viewWillAppear.
     _socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
-    _settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-    _aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
+//    _settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+    _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain 
+                                                      target:nil action:nil];
+//    _aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
+    _aboutButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info"] style:UIBarButtonItemStylePlain 
+                                                   target:self action:@selector(showAboutView)];
     _navButtons = [[NSArray alloc] initWithObjects:_settingsButton, _aboutButton, nil];
     
     // Set logo in Toolbar. [self enableSocial] must be run seprately to add the sharing button to the toolbar.
-    UIImage *bgImage = [UIImage imageNamed:@"ToolbarBackground"];
+    UIImage *bgImage = [UIImage imageNamed:@"btm"];
     [[UIToolbar appearance] setBackgroundImage:bgImage forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
     [self.navigationController.toolbar setTranslucent:YES]; 
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunlight"]];

@@ -57,6 +57,11 @@
 		2F4B98B515ACD99700C5AB4C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941A5153FA9A100E64F82 /* libz.dylib */; };
 		2F4B98E515ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
 		2F4B98E615ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
+		2F5E142B15C3464F0071F3FF /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5E142715C3464F0071F3FF /* info.png */; };
+		2F5E142C15C3464F0071F3FF /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5E142815C3464F0071F3FF /* info@2x.png */; };
+		2F5E142D15C3464F0071F3FF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5E142915C3464F0071F3FF /* settings.png */; };
+		2F5E142E15C3464F0071F3FF /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5E142A15C3464F0071F3FF /* settings@2x.png */; };
+		2F5E143015C347C60071F3FF /* btm.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F5E142F15C347C60071F3FF /* btm.png */; };
 		2F7C97E915B9A11900FC8AA1 /* GigyaService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C97E815B9A11900FC8AA1 /* GigyaService.m */; };
 		2F8AD0CB15AF11B20004EECD /* AdHawkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */; };
 		2F8AD0D415AF22C70004EECD /* AdHawkAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0D315AF22C70004EECD /* AdHawkAd.m */; };
@@ -239,6 +244,11 @@
 		2F4B98AE15ACD95A00C5AB4C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = adhawk/Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
 		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = adhawk/Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
+		2F5E142715C3464F0071F3FF /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		2F5E142815C3464F0071F3FF /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		2F5E142915C3464F0071F3FF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		2F5E142A15C3464F0071F3FF /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		2F5E142F15C347C60071F3FF /* btm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btm.png; sourceTree = "<group>"; };
 		2F7C97E715B9A11900FC8AA1 /* GigyaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GigyaService.h; path = adhawk/Classes/Services/GigyaService.h; sourceTree = SOURCE_ROOT; };
 		2F7C97E815B9A11900FC8AA1 /* GigyaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GigyaService.m; path = adhawk/Classes/Services/GigyaService.m; sourceTree = SOURCE_ROOT; };
 		2F7C97EC15B9AD9400FC8AA1 /* AppMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = adhawk/Classes/Config/AppMacros.h; sourceTree = SOURCE_ROOT; };
@@ -606,6 +616,11 @@
 		C3D6DD8615027FBB003F8F6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F5E142F15C347C60071F3FF /* btm.png */,
+				2F5E142715C3464F0071F3FF /* info.png */,
+				2F5E142815C3464F0071F3FF /* info@2x.png */,
+				2F5E142915C3464F0071F3FF /* settings.png */,
+				2F5E142A15C3464F0071F3FF /* settings@2x.png */,
 				2FBFE4ED15C309FC0035C0F6 /* IDbtndown.png */,
 				2FBFE4EE15C309FC0035C0F6 /* IDbtndown@2x.png */,
 				2FBFE4EF15C309FC0035C0F6 /* IDbtnup.png */,
@@ -778,6 +793,11 @@
 				2FBFE4F415C309FC0035C0F6 /* IDbtnup@2x.png in Resources */,
 				2FBFE4F715C32E380035C0F6 /* sunlight.png in Resources */,
 				2FBFE4F815C32E380035C0F6 /* sunlight@2x.png in Resources */,
+				2F5E142B15C3464F0071F3FF /* info.png in Resources */,
+				2F5E142C15C3464F0071F3FF /* info@2x.png in Resources */,
+				2F5E142D15C3464F0071F3FF /* settings.png in Resources */,
+				2F5E142E15C3464F0071F3FF /* settings@2x.png in Resources */,
+				2F5E143015C347C60071F3FF /* btm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
