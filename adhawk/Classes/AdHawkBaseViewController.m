@@ -10,6 +10,9 @@
 #import "AboutViewController.h"
 #import "GigyaService.h"
 
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
 @implementation AdHawkBaseViewController
 
 @synthesize socialEnabled = _socialEnabled;
@@ -107,9 +110,9 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    TFPLog(@"Share Action Click");
+    NSLog(@"Share Action Click");
     NSString *clickedButtonLabel = [actionSheet buttonTitleAtIndex:buttonIndex];
-    TFPLog(@"Share button clicked: %@", clickedButtonLabel);
+    NSLog(@"Share button clicked: %@", clickedButtonLabel);
     if (buttonIndex == 0) {
         [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
         if ([TWTweetComposeViewController canSendTweet]) {
@@ -143,7 +146,7 @@
 
 - (void) handleTweetResult:(BOOL)didTweet
 {
-//    TFPLog(<#__FORMAT__, ...#>)
+//    NSLog(<#__FORMAT__, ...#>)
 //    switch (didTweet) {
 //        case TWTweetComposeViewControllerResultCancelled:
 //            // The cancel button was tapped.

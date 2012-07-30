@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -59,7 +60,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordAudio" destination="4" eventType="touchUpInside" id="Sb3-Gi-UxP"/>
+                                    <action selector="handleTVButtonTouch" destination="2" eventType="touchUpInside" id="OBx-1f-4bD"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="GWc-G0-llb">
@@ -108,7 +109,7 @@
                     <connections>
                         <outlet property="failView" destination="GWc-G0-llb" id="HRV-zz-fEW"/>
                         <outlet property="popularResultsButton" destination="ZI1-Rk-t9z" id="cm9-3L-I3d"/>
-                        <outlet property="recordButton" destination="hFV-xK-5PI" id="mam-dF-WmJ"/>
+                        <outlet property="recordButton" destination="hFV-xK-5PI" id="3gV-Tv-kYi"/>
                         <outlet property="workingBackground" destination="Clf-oc-QGl" id="el4-Wi-sya"/>
                         <segue destination="OhG-d8-01w" kind="push" identifier="adSegue" id="q4Z-7a-U2P"/>
                     </connections>
@@ -274,8 +275,8 @@
         <class className="RecorderViewController" superclassName="AdHawkBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecorderViewController.h"/>
             <relationships>
+                <relationship kind="action" name="handleTVButtonTouch"/>
                 <relationship kind="action" name="playAudio"/>
-                <relationship kind="action" name="recordAudio"/>
                 <relationship kind="action" name="retryButtonClicked"/>
                 <relationship kind="action" name="showBrowseWebView"/>
                 <relationship kind="action" name="stopRecorder"/>

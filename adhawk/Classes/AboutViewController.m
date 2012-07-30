@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    TFPLog(@"AboutView loaded");
+    NSLog(@"AboutView loaded");
     NSMutableURLRequest *_urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:ADHAWK_ABOUT_URL]];
     [webView loadRequest:_urlReq];
 }

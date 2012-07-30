@@ -26,7 +26,7 @@
     webView.delegate = self;
     
     if ([_targetURL absoluteString] != @"") {
-        TFPLog(@"Requesting: %@", [_targetURL absoluteString]);
+        NSLog(@"Requesting: %@", [_targetURL absoluteString]);
         NSURLRequest *req = [NSURLRequest requestWithURL:_targetURL];
         [webView loadRequest:req];
         [TestFlight passCheckpoint:@"Requested Ad detail page"];

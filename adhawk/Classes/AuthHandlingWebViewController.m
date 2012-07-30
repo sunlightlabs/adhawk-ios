@@ -9,6 +9,9 @@
 #import "AuthHandlingWebViewController.h"
 #import "Settings.h"
 
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
 @implementation AuthHandlingWebViewController
 
 @synthesize webView;
@@ -53,8 +56,8 @@
 
 - (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)p_request navigationType:(UIWebViewNavigationType)navigationType
 {
-    TFPLog(@"User-Agent: %@", [p_request valueForHTTPHeaderField:@"User-Agent"]);
-    TFPLog(@"Url: %@", [[p_request URL] absoluteString]);
+    NSLog(@"User-Agent: %@", [p_request valueForHTTPHeaderField:@"User-Agent"]);
+    NSLog(@"Url: %@", [[p_request URL] absoluteString]);
     _targetURL = (_targetURL != [p_request URL]) ? [p_request URL] : _targetURL;
 //    if(!_authed)
 //    {
@@ -68,7 +71,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)p_webView
 {
-    TFPLog(@"Url: %@", [[p_webView.request URL] absoluteString]);
+    NSLog(@"Url: %@", [[p_webView.request URL] absoluteString]);
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)p_webView
@@ -76,7 +79,7 @@
 
 - (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
 {
-    TFPLog(@"error: %@", [error localizedDescription]);
+    NSLog(@"error: %@", [error localizedDescription]);
     UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
     [e_alert show];
 }
@@ -100,7 +103,7 @@
 {
     NSLog(@"received response via nsurlconnection");
     NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:_targetURL];
-    TFPLog(@"Look at url: %@", [[urlRequest URL] absoluteString]);
+    NSLog(@"Look at url: %@", [[urlRequest URL] absoluteString]);
     [webView loadRequest:urlRequest];
     _authed = YES;
 }

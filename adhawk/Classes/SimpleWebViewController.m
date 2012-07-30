@@ -8,6 +8,9 @@
 
 #import "SimpleWebViewController.h"
 
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
 @implementation SimpleWebViewController
 
 @synthesize webView;
@@ -61,17 +64,22 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)p_webView
 {
-    TFPLog(@"Url: %@", [[p_webView.request URL] absoluteString]);
+    NSLog(@"Url: %@", [[p_webView.request URL] absoluteString]);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)p_webView
-{}
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
+}
 
 - (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
 {
-    TFPLog(@"error: %@", [error localizedDescription]);
+    NSLog(@"error: %@", [error localizedDescription]);
     UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
     [e_alert show];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 @end

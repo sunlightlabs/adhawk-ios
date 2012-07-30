@@ -11,5 +11,6 @@
 @implementation AdHawkAd
 
 @synthesize result_url;
+@synthesize share_text;
 
 @end

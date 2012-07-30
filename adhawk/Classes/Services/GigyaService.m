@@ -10,6 +10,9 @@
 #import "GSAPI.h"
 #import "Settings.h"
 
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
 GSAPI *getAPIObject(void)
 {
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
@@ -72,9 +75,9 @@ GSObject *getParamsObject(void)
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    TFPLog(@"Share Action Click");
+    NSLog(@"Share Action Click");
     NSString *clickedButtonLabel = [actionSheet buttonTitleAtIndex:buttonIndex];
-    TFPLog(@"Share button clicked: %@", clickedButtonLabel);
+    NSLog(@"Share button clicked: %@", clickedButtonLabel);
 //    [TestFlight passCheckpoint:logMessage];
     GSObject *pParams = [[GSObject new] autorelease];
     [pParams putStringValue:@"I found out something on Ad Hawk!" forKey:@"status"];
@@ -118,25 +121,25 @@ GSObject *getParamsObject(void)
 // Fired when login operation (and getUserInfo that follows it) complete.
 -(void) gsLoginUIDidLogin:(NSString*)provider user:(GSObject*)user context:(id)context
 {
-    TFPLog(@"gsLoginUIDidLogin");
+    NSLog(@"gsLoginUIDidLogin");
 }
 
 // Fired when error occurred, either from webView or as result of login process, or get user info that followed it.
 -(void) gsLoginUIDidFail:(int)errorCode errorMessage:(NSString*)errorMessage context:(id)context
 {
-    TFPLog(@"gsLoginUIDidFail: %@", errorMessage);
+    NSLog(@"gsLoginUIDidFail: %@", errorMessage);
 }
 
 // Fired when network selection page is shown.
 -(void) gsLoginUIDidLoad:(id)context
 {
-    TFPLog(@"gsLoginUIDidLoad");
+    NSLog(@"gsLoginUIDidLoad");
 }
 
 // Fired when the login UI is closed (for any reason - canceled, error, operation completed OK). 
 -(void) gsLoginUIDidClose:(id)context
 {
-    TFPLog(@"gsLoginUIDidClose");
+    NSLog(@"gsLoginUIDidClose");
 }
 
 
@@ -145,7 +148,7 @@ GSObject *getParamsObject(void)
 // This method should handle the response.
 - (void) gsDidReceiveResponse:(NSString*)method response:(GSResponse*)response context:(id)context
 {
-    TFPLog(@"response: \n%@", [response ResponseText]);
+    NSLog(@"response: \n%@", [response ResponseText]);
 }
 
 #pragma mark - GSEventDelegate callbacks
@@ -173,7 +176,7 @@ GSObject *getParamsObject(void)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    TFPLog(@"GigyaService openURL sourceApplication");
+    NSLog(@"GigyaService openURL sourceApplication");
     if(self.api != nil)
         return [self.api handleOpenURL:url];
     return NO;
@@ -183,7 +186,7 @@ GSObject *getParamsObject(void)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    TFPLog(@"GigyaService handleOpenURL");
+    NSLog(@"GigyaService handleOpenURL");
     if(self.api != nil)
         return [self.api handleOpenURL:url];
     return NO;

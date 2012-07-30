@@ -14,6 +14,9 @@
 #import "AdHawkAd.h"
 
 
+#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
 extern const char * GetPCMFromFile(char * filename);
 
 @implementation RecorderViewController
@@ -43,7 +46,7 @@ extern const char * GetPCMFromFile(char * filename);
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
-
+    _hawktivityAnimatedImageView = nil;
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(handleEnteredBackground:) 
                                                  name: UIApplicationDidEnterBackgroundNotification
@@ -121,6 +124,7 @@ extern const char * GetPCMFromFile(char * filename);
 - (void) retryButtonClicked
 {
     [self setFailState:NO];
+    [self setWorkingState:YES];
     [self recordAudio];
 }
 
@@ -131,16 +135,40 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)setWorkingState:(BOOL)isWorking
 {
+    if(_hawktivityAnimatedImageView == nil)
+    {
+        UIImage *animImage = [UIImage animatedImageNamed:@"Animation_" duration:3.125];  
+        _hawktivityAnimatedImageView = [[UIImageView alloc] initWithImage:animImage];
+        _hawktivityAnimatedImageView.layer.position = recordButton.layer.position;
+    }
     if (isWorking) {
+        [self.view addSubview:_hawktivityAnimatedImageView];
         workingBackground.hidden = NO;
         recordButton.hidden = YES;
         recordButton.enabled = NO; 
     }
     else {
+        [_hawktivityAnimatedImageView removeFromSuperview];
         workingBackground.hidden = YES;
         recordButton.hidden = NO;
         recordButton.enabled = YES; 
    }
+}
+
+-(void)handleTVButtonTouch
+{
+    BOOL locationEnabled = [CLLocationManager locationServicesEnabled];
+    if (locationEnabled == YES && nil == _locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = [AdHawkAPI sharedInstance];
+        _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        _locationManager.distanceFilter = 500;
+        
+    }
+        
+    [self setWorkingState:YES];
+    [_locationManager startUpdatingLocation];
+    [self recordAudio];
 }
 
 -(void) recordAudio
@@ -170,7 +198,7 @@ extern const char * GetPCMFromFile(char * filename);
         NSLog(@"Segue to AdDetailView");
         
         // Pass any objects to the view controller here, like...
-        NSURL *targetURL = [AdHawkAPI sharedInstance].currentAdHawkURL;
+        NSURL *targetURL = [AdHawkAPI sharedInstance].currentAd.result_url;
         [vc setTargetURLString:[targetURL absoluteString]];
     }
 }
@@ -178,7 +206,7 @@ extern const char * GetPCMFromFile(char * filename);
 - (void) recordingTimerFinished:(NSTimer*)theTimer
 {
     
-    TFPLog(@"Timer complete");
+    NSLog(@"Timer complete");
     [self stopRecorder];
 }
 
@@ -190,7 +218,7 @@ extern const char * GetPCMFromFile(char * filename);
         NSString *soundFilePath = [self getAudioFilePath];
         const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
         NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
-        NSLog(@"fpcode generated");
+        NSLog(@"Fingerprint generated");
         
 //        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
         [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
@@ -257,7 +285,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void) adHawkAPIDidReturnNoResult
 {
-    TFPLog(@"No results for search");
+    NSLog(@"No results for search");
     [self setWorkingState:NO];
     [self setFailState:YES];
 }

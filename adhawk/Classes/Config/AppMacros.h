@@ -19,7 +19,4 @@ _sharedObject = block(); \
 return _sharedObject;
 
 
-#define TFPLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-
-
 #endif
