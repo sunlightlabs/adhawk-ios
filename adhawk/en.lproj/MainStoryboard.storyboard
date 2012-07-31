@@ -52,7 +52,7 @@
                                 <rect key="frame" x="62" y="162" width="159" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Identify This Ad" image="IDbtnup.png">
+                                <state key="normal" title="Identify Ad" image="IDbtnup.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -63,52 +63,11 @@
                                     <action selector="handleTVButtonTouch" destination="2" eventType="touchUpInside" id="OBx-1f-4bD"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="GWc-G0-llb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="0bE-5T-fjS">
-                                        <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qoh-ic-k5d">
-                                        <rect key="frame" x="76" y="41" width="169" height="138"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Listen Again">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="retryButtonClicked" destination="2" eventType="touchUpInside" id="iNI-AK-aq3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZI1-Rk-t9z">
-                                        <rect key="frame" x="76" y="212" width="169" height="138"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="View Popular">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showBrowseWebView" destination="2" eventType="touchUpInside" id="Mcm-cT-dqX"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="Ad Hawk" id="JEH-qS-Xi1"/>
                     <connections>
                         <outlet property="failView" destination="GWc-G0-llb" id="HRV-zz-fEW"/>
-                        <outlet property="popularResultsButton" destination="ZI1-Rk-t9z" id="cm9-3L-I3d"/>
                         <outlet property="recordButton" destination="hFV-xK-5PI" id="3gV-Tv-kYi"/>
                         <outlet property="workingBackground" destination="Clf-oc-QGl" id="el4-Wi-sya"/>
                         <segue destination="OhG-d8-01w" kind="push" identifier="adSegue" id="q4Z-7a-U2P"/>
@@ -116,6 +75,66 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="799" y="99"/>
+        </scene>
+        <!--Adhawk Error View Controller - AdHawk Error-->
+        <scene sceneID="wcc-AP-nec">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ien-pt-Xhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="adhawkErrorVC" title="AdHawk Error" id="FJu-3N-LzE" customClass="AdhawkErrorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GWc-G0-llb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="0bE-5T-fjS">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qoh-ic-k5d">
+                                <rect key="frame" x="74" y="137" width="173" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                <state key="normal" title="Identify Again" backgroundImage="btnup.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="btndown.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZI1-Rk-t9z">
+                                <rect key="frame" x="74" y="215" width="173" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                <state key="normal" title="View Popular" backgroundImage="btnup.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="btndown.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sorry, Ad Hawk missed that." lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="17" id="WLh-3Y-sXl">
+                                <rect key="frame" x="94" y="66" width="133" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <connections>
+                        <outlet property="popularResultsButton" destination="ZI1-Rk-t9z" id="qGK-tl-PYa"/>
+                        <outlet property="tryAgainButton" destination="qoh-ic-k5d" id="rMr-C4-g3i"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="799" y="681"/>
         </scene>
         <!--Ad Detail View Controller - Ad Info-->
         <scene sceneID="ODI-Ts-BFU">
@@ -150,10 +169,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9np-MC-2Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="Viy-z5-39k" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="afs-cC-R4w">
-                        <rect key="frame" x="0.0" y="-30" width="320" height="74"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -249,6 +268,8 @@
         <image name="IDbtnup.png" width="159" height="130"/>
         <image name="IDworking.png" width="320" height="480"/>
         <image name="bkgrnd.png" width="320" height="480"/>
+        <image name="btndown.png" width="173" height="63"/>
+        <image name="btnup.png" width="173" height="63"/>
     </resources>
     <classes>
         <class className="AboutViewController" superclassName="AuthHandlingWebViewController">
@@ -261,6 +282,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdHawkBaseViewController.h"/>
             <relationships>
                 <relationship kind="action" name="showSocialActionSheet:"/>
+            </relationships>
+        </class>
+        <class className="AdhawkErrorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdhawkErrorViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="popularResultsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tryAgainButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="AuthHandlingWebViewController" superclassName="AdHawkBaseViewController">
@@ -280,9 +308,7 @@
                 <relationship kind="action" name="retryButtonClicked"/>
                 <relationship kind="action" name="showBrowseWebView"/>
                 <relationship kind="action" name="stopRecorder"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="failView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="popularResultsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="workingBackground" candidateClass="UIImageView"/>
             </relationships>

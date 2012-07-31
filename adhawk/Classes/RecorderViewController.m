@@ -8,6 +8,7 @@
 
 #import "RecorderViewController.h"
 #import "AdDetailViewController.h"
+#import "AdhawkErrorViewController.h"
 #import "InternalAdBrowserViewController.h"
 #import "Settings.h"
 #import "AdHawkAPI.h"
@@ -21,7 +22,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 @implementation RecorderViewController
 
-@synthesize recordButton, popularResultsButton, workingBackground, failView, activityIndicator;
+@synthesize recordButton, workingBackground, failView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,13 +46,16 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    failView = nil;
 //    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
+//    [self setFailState:YES];
     _hawktivityAnimatedImageView = nil;
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(handleEnteredBackground:) 
                                                  name: UIApplicationDidEnterBackgroundNotification
                                                object: nil];
     [self setFailState:NO];
+    
     [self setWorkingState:NO];
     
     recordButton.enabled = YES;
@@ -130,7 +134,21 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void) setFailState:(BOOL)isFail
 {
-    failView.hidden = !isFail;
+    if (isFail && failView == nil) {
+        AdhawkErrorViewController *errorVC = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adhawkErrorVC"];
+        failView = errorVC.view;
+        [errorVC.popularResultsButton addTarget:self action:@selector(showBrowseWebView) forControlEvents:UIControlEventTouchUpInside];
+        [errorVC.tryAgainButton addTarget:self action:@selector(handleTVButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+    }
+    if (isFail) {
+        [self.view addSubview:failView];
+    }
+    else {
+        if ([failView isDescendantOfView:self.view]) {
+            [failView removeFromSuperview];
+        }
+        failView = nil;
+    }
 }
 
 - (void)setWorkingState:(BOOL)isWorking
@@ -183,7 +201,6 @@ extern const char * GetPCMFromFile(char * filename);
                                        userInfo:nil
                                         repeats:NO];
         [audioRecorder record];
-        [activityIndicator startAnimating];
     }
 }
 
@@ -223,7 +240,6 @@ extern const char * GetPCMFromFile(char * filename);
 //        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
         [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
         
-        [activityIndicator stopAnimating];
 
     } else if (audioPlayer.playing) {
         [audioPlayer stop];

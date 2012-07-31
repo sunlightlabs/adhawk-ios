@@ -239,6 +239,11 @@
 		2FBFE4F415C309FC0035C0F6 /* IDbtnup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4F015C309FC0035C0F6 /* IDbtnup@2x.png */; };
 		2FBFE4F715C32E380035C0F6 /* sunlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4F515C32E380035C0F6 /* sunlight.png */; };
 		2FBFE4F815C32E380035C0F6 /* sunlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBFE4F615C32E380035C0F6 /* sunlight@2x.png */; };
+		2FC0B16315C857330020CCFC /* btndown.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0B15F15C857330020CCFC /* btndown.png */; };
+		2FC0B16415C857330020CCFC /* btndown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0B16015C857330020CCFC /* btndown@2x.png */; };
+		2FC0B16515C857330020CCFC /* btnup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0B16115C857330020CCFC /* btnup.png */; };
+		2FC0B16615C857330020CCFC /* btnup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0B16215C857330020CCFC /* btnup@2x.png */; };
+		2FC0B16915C85F710020CCFC /* AdhawkErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */; };
 		2FD683E815C0505600822ABE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD683E715C0505600822ABE /* AboutViewController.m */; };
 		2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */; };
 		2FF8DFFF15C2064100D68C84 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8DFFE15C2064000D68C84 /* Default.png */; };
@@ -559,8 +564,8 @@
 		2F8AD0D315AF22C70004EECD /* AdHawkAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAd.m; path = adhawk/Classes/Services/AdHawkAd.m; sourceTree = SOURCE_ROOT; };
 		2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Ad Hawk-Info.plist"; path = "adhawk/Ad Hawk-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ad Hawk-Prefix.pch"; path = "adhawk/Ad Hawk-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		2FBFE4C115C2D4F40035C0F6 /* SimpleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleWebViewController.h; path = Classes/SimpleWebViewController.h; sourceTree = "<group>"; };
-		2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleWebViewController.m; path = Classes/SimpleWebViewController.m; sourceTree = "<group>"; };
+		2FBFE4C115C2D4F40035C0F6 /* SimpleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleWebViewController.h; path = adhawk/Classes/SimpleWebViewController.h; sourceTree = SOURCE_ROOT; };
+		2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleWebViewController.m; path = adhawk/Classes/SimpleWebViewController.m; sourceTree = SOURCE_ROOT; };
 		2FBFE4C415C2E96E0035C0F6 /* bkgrnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkgrnd.png; sourceTree = "<group>"; };
 		2FBFE4CC15C2F0A50035C0F6 /* IDbkgrnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDbkgrnd.png; sourceTree = "<group>"; };
 		2FBFE4CD15C2F0A50035C0F6 /* IDbkgrnd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDbkgrnd@2x.png"; sourceTree = "<group>"; };
@@ -583,14 +588,20 @@
 		2FBFE4F015C309FC0035C0F6 /* IDbtnup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDbtnup@2x.png"; sourceTree = "<group>"; };
 		2FBFE4F515C32E380035C0F6 /* sunlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunlight.png; sourceTree = "<group>"; };
 		2FBFE4F615C32E380035C0F6 /* sunlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunlight@2x.png"; sourceTree = "<group>"; };
+		2FC0B15F15C857330020CCFC /* btndown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btndown.png; sourceTree = "<group>"; };
+		2FC0B16015C857330020CCFC /* btndown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btndown@2x.png"; sourceTree = "<group>"; };
+		2FC0B16115C857330020CCFC /* btnup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnup.png; sourceTree = "<group>"; };
+		2FC0B16215C857330020CCFC /* btnup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnup@2x.png"; sourceTree = "<group>"; };
+		2FC0B16715C85F710020CCFC /* AdhawkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdhawkErrorViewController.h; path = adhawk/Classes/AdhawkErrorViewController.h; sourceTree = SOURCE_ROOT; };
+		2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdhawkErrorViewController.m; path = adhawk/Classes/AdhawkErrorViewController.m; sourceTree = SOURCE_ROOT; };
 		2FD683E615C0505600822ABE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = adhawk/Classes/AboutViewController.h; sourceTree = SOURCE_ROOT; };
 		2FD683E715C0505600822ABE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = adhawk/Classes/AboutViewController.m; sourceTree = SOURCE_ROOT; };
-		2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthHandlingWebViewController.h; path = Classes/AuthHandlingWebViewController.h; sourceTree = "<group>"; };
-		2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthHandlingWebViewController.m; path = Classes/AuthHandlingWebViewController.m; sourceTree = "<group>"; };
+		2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthHandlingWebViewController.h; path = adhawk/Classes/AuthHandlingWebViewController.h; sourceTree = SOURCE_ROOT; };
+		2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthHandlingWebViewController.m; path = adhawk/Classes/AuthHandlingWebViewController.m; sourceTree = SOURCE_ROOT; };
 		2FF8DFFE15C2064000D68C84 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2FF8E00015C2064600D68C84 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = Classes/InternalAdBrowserViewController.h; sourceTree = "<group>"; };
-		2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternalAdBrowserViewController.m; path = Classes/InternalAdBrowserViewController.m; sourceTree = "<group>"; };
+		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = adhawk/Classes/InternalAdBrowserViewController.h; sourceTree = SOURCE_ROOT; };
+		2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternalAdBrowserViewController.m; path = adhawk/Classes/InternalAdBrowserViewController.m; sourceTree = SOURCE_ROOT; };
 		2FFB537C15ADF6DC0069A722 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		2FFB537E15ADF7200069A722 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C36B3FDE15023E5400937C3F /* Ad Hawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ad Hawk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -938,7 +949,6 @@
 		C36B3FD315023E5400937C3F = {
 			isa = PBXGroup;
 			children = (
-				2F46044F15C388F7004B2DA9 /* CoreLocation.framework */,
 				2FBFE4EB15C2F3730035C0F6 /* Icon@2x.png */,
 				2FBFE4E915C2F34B0035C0F6 /* Icon.png */,
 				2F01962C15AE2A52000542AC /* RestKit.xcodeproj */,
@@ -962,6 +972,7 @@
 		C36B3FE115023E5400937C3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F46044F15C388F7004B2DA9 /* CoreLocation.framework */,
 				2F01964A15AE2B9A000542AC /* QuartzCore.framework */,
 				2F01964815AE2B91000542AC /* libxml2.dylib */,
 				2F01964615AE2B80000542AC /* Security.framework */,
@@ -1047,6 +1058,8 @@
 		C3C01695153A80C700D56553 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2FC0B16715C85F710020CCFC /* AdhawkErrorViewController.h */,
+				2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */,
 				2F8AD0C815AF115C0004EECD /* Services */,
 				2F4B98E315ACDC1600C5AB4C /* config */,
 				2F4B984115ACC7AC00C5AB4C /* AdDetailViewController.h */,
@@ -1069,12 +1082,16 @@
 				2FBFE4C115C2D4F40035C0F6 /* SimpleWebViewController.h */,
 				2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		C3D6DD8615027FBB003F8F6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FC0B15F15C857330020CCFC /* btndown.png */,
+				2FC0B16015C857330020CCFC /* btndown@2x.png */,
+				2FC0B16115C857330020CCFC /* btnup.png */,
+				2FC0B16215C857330020CCFC /* btnup@2x.png */,
 				2F673CB415C6FD07004097DF /* animation */,
 				2F5E142F15C347C60071F3FF /* btm.png */,
 				2F5E142715C3464F0071F3FF /* info.png */,
@@ -1406,6 +1423,10 @@
 				2F673DDE15C6FE87004097DF /* Animation_73@2x.png in Resources */,
 				2F673DDF15C6FE87004097DF /* Animation_74@2x.png in Resources */,
 				2F673DE015C6FE87004097DF /* Animation_75@2x.png in Resources */,
+				2FC0B16315C857330020CCFC /* btndown.png in Resources */,
+				2FC0B16415C857330020CCFC /* btndown@2x.png in Resources */,
+				2FC0B16515C857330020CCFC /* btnup.png in Resources */,
+				2FC0B16615C857330020CCFC /* btnup@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1492,6 +1513,7 @@
 				2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */,
 				2FF8E00415C2109A00D68C84 /* InternalAdBrowserViewController.m in Sources */,
 				2FBFE4C315C2D4F40035C0F6 /* SimpleWebViewController.m in Sources */,
+				2FC0B16915C85F710020CCFC /* AdhawkErrorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

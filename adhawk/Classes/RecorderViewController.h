@@ -28,14 +28,11 @@
     UIButton *popularResultsButton;
     UILabel *label;
     UIView *failView;
-    UIActivityIndicatorView *activityIndicator;
     CLLocationManager *_locationManager;
 }
 @property (nonatomic, strong) IBOutlet UIImageView *workingBackground;
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
-@property (nonatomic, strong) IBOutlet UIButton *popularResultsButton;
 @property (nonatomic, strong) IBOutlet UIView *failView;
-@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 -(IBAction) handleTVButtonTouch;
 -(IBAction) retryButtonClicked;
 -(IBAction) playAudio;
