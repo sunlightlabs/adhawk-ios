@@ -8,6 +8,9 @@
 
 #import "InternalAdBrowserViewController.h"
 #import "AdDetailViewController.h"
+#import "AdHawkAPI.h"
+#import "AdHawkAd.h"
+#import "Settings.h"
 
 @implementation InternalAdBrowserViewController
 
@@ -23,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _interceptedRequest = NO;
 	// Do any additional setup after loading the view.
 }
 
@@ -46,12 +50,31 @@
     if(navigationType == UIWebViewNavigationTypeLinkClicked)
     {
         AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adDetailVC"];
-        [vc setTargetURLString:[[p_request URL] absoluteString]];
-        [self.navigationController pushViewController:vc animated:YES];
+        
+        AdHawkAd *theAd = [[AdHawkAPI sharedInstance] getAdHawkAdFromURL:[p_request URL]];
+        if (theAd != NULL) {
+            [p_webView stopLoading];
+            _interceptedRequest = YES;
+            NSString *absoluteURLString = [theAd.result_url absoluteString];
+            [vc setTargetURLString:absoluteURLString];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+
         return NO;
     }
     
     return shouldStartLoad;
+}
+
+- (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
+{
+    NSLog(@"error: %@", [error localizedDescription]);
+    if (!_interceptedRequest) {
+        UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
+        [e_alert show];
+    }
+    _interceptedRequest = NO; // Reset for next time?
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 

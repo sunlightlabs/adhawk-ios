@@ -19,23 +19,6 @@ NSURL *endPointURL(NSString * path)
     
 }
 
-RKObjectManager *setUpAPI(void)
-{
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:[RKURL URLWithBaseURLString:ADHAWK_API_BASE_URL]];
-    [manager.client setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
-    manager.acceptMIMEType = RKMIMETypeJSON;
-    manager.serializationMIMEType = RKMIMETypeJSON;
-    
-    RKObjectMapping* adMapping = [RKObjectMapping mappingForClass:[AdHawkAd class]];
-    [adMapping mapAttributes: @"result_url", nil];    
-    [adMapping mapAttributes:@"share_text", nil];
-    [manager.mappingProvider setMapping:adMapping forKeyPath:@""];
-    
-    [RKObjectManager setSharedManager:manager];
-    
-    return manager;
-}
-
 @implementation AdHawkAPI
 
 @synthesize currentAd, currentAdHawkURL, searchDelegate, _lastFoundLocation;
@@ -51,7 +34,17 @@ RKObjectManager *setUpAPI(void)
 {
     self = [super init];
     self._lastFoundLocation = nil;
-    setUpAPI();
+
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:[RKURL URLWithBaseURLString:ADHAWK_API_BASE_URL]];
+    [manager.client setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
+    manager.acceptMIMEType = RKMIMETypeJSON;
+    manager.serializationMIMEType = RKMIMETypeJSON;    
+    
+    [RKObjectManager setSharedManager:manager];
+    _adMapping = [RKObjectMapping mappingForClass:[AdHawkAd class]];
+    [_adMapping mapAttributes: @"result_url", nil];    
+    [_adMapping mapAttributes:@"share_text", nil];
+    [manager.mappingProvider setMapping:_adMapping forKeyPath:@""];
     
     return self;
 }
@@ -92,6 +85,40 @@ RKObjectManager *setUpAPI(void)
 
 }
 
+- (AdHawkAd *)getAdHawkAdFromURL:(NSURL *)reqURL
+{
+    NSMutableURLRequest *adhawkRequest = [[[NSMutableURLRequest alloc] initWithURL:reqURL] autorelease];
+    [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"X-Client-App"];
+    [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User_Agent"];
+    [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
+    NSLog(@"Requesting: %@", [[adhawkRequest URL] absoluteString]);
+
+    NSURLResponse *the_response = [[NSURLResponse alloc] init];
+    NSError *urlError = nil;
+    NSData *resultData = [NSURLConnection sendSynchronousRequest:adhawkRequest returningResponse:&the_response error:&urlError];
+    
+    if(!urlError)
+    {
+        NSLog(@"Got response");
+        
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:resultData options:0 error:nil];
+        AdHawkAd *the_ad = [[AdHawkAd alloc] init];
+        the_ad.result_url = [NSURL URLWithString:[jsonDict objectForKey:@"result_url"]];
+        the_ad.share_text = (NSString *)[jsonDict objectForKey:@"share_text"];
+        self.currentAd = the_ad; 
+        self.currentAdHawkURL = self.currentAd.result_url;
+        
+        return the_ad;
+    }
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Ad Hawk encountered an error while trying to load this resource" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alertView show];
+    }
+
+    
+    return NULL;
+}
+
 - (void)objectLoaderDidFinishLoading:(RKObjectLoader*)objectLoader {
     NSLog(@"Object Loader Finished: %@", objectLoader.resourcePath);
 }
@@ -127,7 +154,7 @@ RKObjectManager *setUpAPI(void)
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
     NSLog(@"%@", error.localizedDescription);
-    NSString *recoverySuggestion = error.localizedRecoverySuggestion;
+//    NSString *recoverySuggestion = error.localizedRecoverySuggestion;
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"There was a problem connecting to the server" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
     [alertView show];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

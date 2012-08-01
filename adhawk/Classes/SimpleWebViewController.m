@@ -7,6 +7,7 @@
 //
 
 #import "SimpleWebViewController.h"
+#import "Settings.h"
 
 #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
@@ -58,6 +59,18 @@
 - (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)p_request navigationType:(UIWebViewNavigationType)navigationType
 {
     _targetURL = (_targetURL != [p_request URL]) ? [p_request URL] : _targetURL;
+    
+//    Check headers for custom x-header
+    NSMutableURLRequest *customRequest = [p_request copy];
+    
+    BOOL needRequestOverride = [[p_request allHTTPHeaderFields] objectForKey:@"X-Client-App"] == nil ? YES : NO;
+    
+    if (needRequestOverride) {
+        NSLog(@"Overriding headers");
+        [customRequest addValue:CLIENT_APP_HEADER forHTTPHeaderField:@"X-Client-App"];
+        [p_webView loadRequest:customRequest];
+        return NO;
+    }
     
     return YES;
 }

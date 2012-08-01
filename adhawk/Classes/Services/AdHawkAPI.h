@@ -22,8 +22,12 @@ RKObjectManager *setUpAPI(void);
 @end
 
 @interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate, CLLocationManagerDelegate>
+{
+    RKObjectMapping *_adMapping;
+}
 + (AdHawkAPI *)sharedInstance;
 - (void)searchForAdWithFingerprint:(NSString*)fingerprint delegate:(id)delegate;
+- (AdHawkAd *)getAdHawkAdFromURL:(NSURL *)reqURL;
 @property (nonatomic, strong) CLLocation *_lastFoundLocation;
 @property (nonatomic, strong) AdHawkAd *currentAd;
 @property (nonatomic, strong) NSURL *currentAdHawkURL;

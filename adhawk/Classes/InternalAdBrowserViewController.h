@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SimpleWebViewController.h"
 
-@interface InternalAdBrowserViewController : SimpleWebViewController
-
+@interface InternalAdBrowserViewController : SimpleWebViewController <NSURLConnectionDelegate>
+{
+    BOOL _interceptedRequest;
+}
 @end
