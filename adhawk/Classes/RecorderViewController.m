@@ -10,6 +10,7 @@
 #import "AdDetailViewController.h"
 #import "AdhawkErrorViewController.h"
 #import "InternalAdBrowserViewController.h"
+#import "AdHawkLocationManager.h"
 #import "Settings.h"
 #import "AdHawkAPI.h"
 #import "AdHawkAd.h"
@@ -178,16 +179,10 @@ extern const char * GetPCMFromFile(char * filename);
 -(void)handleTVButtonTouch
 {
     NSLog(@"handleTVButtonTouch run");
-    BOOL locationEnabled = [CLLocationManager locationServicesEnabled];
-    if (locationEnabled == YES && nil == _locationManager) {
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = [AdHawkAPI sharedInstance];
-        _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-        _locationManager.distanceFilter = 500;
-        NSLog(@"[_locationManager startUpdatingLocation]");
-        [_locationManager startUpdatingLocation];
-    }
-        
+    
+    AdHawkLocationManager *locationManager = [AdHawkLocationManager sharedInstance];
+    [locationManager attempLocationUpdateOver:20.0];
+    
     [self setWorkingState:YES];
     [self recordAudio];
 }
@@ -199,7 +194,7 @@ extern const char * GetPCMFromFile(char * filename);
     {
         [self setFailState:NO];
         [self setWorkingState:YES];
-        _timer = [NSTimer scheduledTimerWithTimeInterval:15.0
+        _timer = [NSTimer scheduledTimerWithTimeInterval:12.0
                                          target:self
                                        selector:@selector(recordingTimerFinished:)
                                        userInfo:nil

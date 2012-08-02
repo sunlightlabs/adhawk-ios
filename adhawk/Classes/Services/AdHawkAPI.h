@@ -8,8 +8,8 @@
 
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 #import <RestKit/RestKit.h>
+#import "AdHawkLocationManager.h"
 #import "AdHawkAd.h"
 
 NSURL *endPointURL(NSString *path);
@@ -21,14 +21,13 @@ RKObjectManager *setUpAPI(void);
 -(void) adHawkAPIDidReturnNoResult;
 @end
 
-@interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate, CLLocationManagerDelegate>
+@interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate>
 {
     RKObjectMapping *_adMapping;
 }
 + (AdHawkAPI *)sharedInstance;
 - (void)searchForAdWithFingerprint:(NSString*)fingerprint delegate:(id)delegate;
 - (AdHawkAd *)getAdHawkAdFromURL:(NSURL *)reqURL;
-@property (nonatomic, strong) CLLocation *_lastFoundLocation;
 @property (nonatomic, strong) AdHawkAd *currentAd;
 @property (nonatomic, strong) NSURL *currentAdHawkURL;
 @property (readonly, nonatomic) id <AdHawkAPIDelegate> searchDelegate;

@@ -21,7 +21,7 @@ NSURL *endPointURL(NSString * path)
 
 @implementation AdHawkAPI
 
-@synthesize currentAd, currentAdHawkURL, searchDelegate, _lastFoundLocation;
+@synthesize currentAd, currentAdHawkURL, searchDelegate;
 
 + (AdHawkAPI *) sharedInstance
 {
@@ -33,7 +33,6 @@ NSURL *endPointURL(NSString * path)
 - (id)init
 {
     self = [super init];
-    self._lastFoundLocation = nil;
 
     RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:[RKURL URLWithBaseURLString:ADHAWK_API_BASE_URL]];
     [manager.client setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
@@ -53,10 +52,16 @@ NSURL *endPointURL(NSString * path)
     searchDelegate = delegate;
     NSNumber *lat = [NSNumber numberWithInt:0];
     NSNumber *lon = [NSNumber numberWithInt:0];
-
-//    if (nil != self._lastFoundLocation) {
-//        lat = [NSNumber numberWithDouble:self._lastFoundLocation.coordinate.latitude];
-//        lon = [NSNumber numberWithDouble:self._lastFoundLocation.coordinate.longitude];
+    
+    CLLocation *location = [[AdHawkLocationManager sharedInstance] lastBestLocation];
+    
+    if (location != nil) {
+        lat = [NSNumber numberWithDouble:location.coordinate.latitude];
+        lon = [NSNumber numberWithDouble:location.coordinate.longitude];
+    }
+//    if (nil != self._lastBestLocation) {
+//        lat = [NSNumber numberWithDouble:self._lastBestLocation.coordinate.latitude];
+//        lon = [NSNumber numberWithDouble:self._lastBestLocation.coordinate.longitude];
 //    }
     
     NSMutableDictionary* birdIsTheWord = [NSMutableDictionary dictionaryWithCapacity:3];
@@ -159,30 +164,6 @@ NSURL *endPointURL(NSString * path)
     [alertView show];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [[self searchDelegate] adHawkAPIDidReturnNoResult];
-}
-
-#pragma mark CLLocationManager delegate methods
-
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
-    // If it's a relatively recent event, turn off updates to save power
-    NSDate* eventDate = newLocation.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    
-    if (nil == _lastFoundLocation || abs(howRecent) > 15.0) {
-        _lastFoundLocation = newLocation;
-        NSLog(@"latitude %+.6f, longitude %+.6f\n",
-               _lastFoundLocation.coordinate.latitude,
-               _lastFoundLocation.coordinate.longitude);
-
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"Location update failed: @%", [error localizedDescription]);
 }
 
 @end
