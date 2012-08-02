@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AuthHandlingWebViewController.h"
+#import "SimpleWebViewController.h"
 
-@interface AboutViewController : AuthHandlingWebViewController
+@interface AboutViewController : SimpleWebViewController
 
 @end
