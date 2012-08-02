@@ -47,13 +47,15 @@ extern const char * GetPCMFromFile(char * filename);
 - (void)viewDidLoad {
     [super viewDidLoad];
     failView = nil;
-//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
-//    [self setFailState:YES];
     _hawktivityAnimatedImageView = nil;
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(handleEnteredBackground:) 
                                                  name: UIApplicationDidEnterBackgroundNotification
                                                object: nil];
+//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
+//    [self setFailState:YES];
+//    [self showSocialActionSheet:self]; // Testing social action sheet
+    
     [self setFailState:NO];
     
     [self setWorkingState:NO];
@@ -175,22 +177,24 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void)handleTVButtonTouch
 {
+    NSLog(@"handleTVButtonTouch run");
     BOOL locationEnabled = [CLLocationManager locationServicesEnabled];
     if (locationEnabled == YES && nil == _locationManager) {
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = [AdHawkAPI sharedInstance];
         _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
         _locationManager.distanceFilter = 500;
-        
+        NSLog(@"[_locationManager startUpdatingLocation]");
+        [_locationManager startUpdatingLocation];
     }
         
     [self setWorkingState:YES];
-    [_locationManager startUpdatingLocation];
     [self recordAudio];
 }
 
 -(void) recordAudio
 {
+    NSLog(@"Start recording audio");
     if (!audioRecorder.recording)
     {
         [self setFailState:NO];
@@ -224,11 +228,17 @@ extern const char * GetPCMFromFile(char * filename);
 {
     
     NSLog(@"Timer complete");
+    [_timer invalidate];
+    if (theTimer != nil ) {
+        NSString *timerValid = [theTimer isValid] ? @"YES" : @"NO";
+        NSLog(@"Time isValid: %@", timerValid);
+    }
     [self stopRecorder];
 }
 
 -(void)stopRecorder
 {    
+    NSLog(@"Stop Recorder");
     if (audioRecorder.recording)
     {
         [audioRecorder stop];
@@ -283,7 +293,9 @@ extern const char * GetPCMFromFile(char * filename);
 (AVAudioRecorder *)recorder 
                           successfully:(BOOL)flag
 {
+    NSLog(@"audioRecorderDidFinishRecording successully: %@", flag ? @"True" : @"False");
 }
+
 -(void)audioRecorderEncodeErrorDidOccur: (AVAudioRecorder *)recorder error:(NSError *)error
 {
     NSLog(@"Encode Error occurred");
