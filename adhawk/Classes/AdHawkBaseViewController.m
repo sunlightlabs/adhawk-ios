@@ -9,6 +9,7 @@
 #import "AdHawkBaseViewController.h"
 #import "AboutViewController.h"
 #import "GigyaService.h"
+#import "AdHawkAPI.h"
 
 #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
@@ -31,7 +32,7 @@
     _socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
 //    _settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
     _settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain 
-                                                      target:nil action:nil];
+                                                      target:self action:@selector(showSettingsView)];
 //    _aboutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(showAboutView)];
     _aboutButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info"] style:UIBarButtonItemStylePlain 
                                                    target:self action:@selector(showAboutView)];
@@ -91,6 +92,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void) showSettingsView
+{
+    NSLog(@"Show settings view");
+    UIViewController *svc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"settingsVC"];
+    [self.navigationController pushViewController:svc animated:YES];
+}
+
 - (void) showAboutView
 {
     NSLog(@"Show about view");
@@ -113,35 +121,19 @@
     NSLog(@"Share Action Click");
     NSString *clickedButtonLabel = [actionSheet buttonTitleAtIndex:buttonIndex];
     NSLog(@"Share button clicked: %@", clickedButtonLabel);
+    AdHawkAPI *adhawkApi = [AdHawkAPI sharedInstance];
+    NSString *share_text = adhawkApi.currentAd != nil ? adhawkApi.currentAd.share_text : @"";
+    GigyaService *gs = [GigyaService sharedInstanceWithViewController:self];
+    NSString *serviceName = nil;
     if (buttonIndex == 0) {
         [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
-        if ([TWTweetComposeViewController canSendTweet]) {
-            [[GigyaService sharedInstanceWithViewController:self] showAddConnectionsUI];
-        }
-        else{
-            TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
-            
-            [tweetViewController setInitialText:@"Hello. This is a tweet."];
-            
-            [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
-                
-                BOOL didTweet = (result == TWTweetComposeViewControllerResultDone) ? YES : NO;
-                
-                [self performSelectorOnMainThread:@selector(handleTweetResult:) withObject:nil waitUntilDone:NO];
-                
-                // Dismiss the tweet composition view controller.
-                [self dismissModalViewControllerAnimated:YES];
-            }];
-            
-            [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:NO];
-            [self presentModalViewController:tweetViewController animated:YES];
-        }
+        serviceName = gs.TWITTER;
     }
     else if (buttonIndex == 1) {
         [TestFlight passCheckpoint:@"Share 'Facebook' clicked"];
-        [[GigyaService sharedInstanceWithViewController:self] showAddConnectionsUI];
+        serviceName = gs.FACEBOOK;
     }
-    
+    [gs shareMessage:share_text toService:serviceName];
 }
 
 - (void) handleTweetResult:(BOOL)didTweet

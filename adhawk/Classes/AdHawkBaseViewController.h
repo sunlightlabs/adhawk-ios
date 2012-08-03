@@ -24,5 +24,7 @@
 
 -(IBAction)showSocialActionSheet:(id)sender;
 - (void) enableSocial;
+- (void) showSettingsView;
+- (void) showAboutView;
 
 @end
