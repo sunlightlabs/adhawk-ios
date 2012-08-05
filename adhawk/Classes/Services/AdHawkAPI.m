@@ -124,6 +124,8 @@ NSURL *endPointURL(NSString * path)
     return NULL;
 }
 
+#pragma mark - ObjectLoaderDelegate messages
+
 - (void)objectLoaderDidFinishLoading:(RKObjectLoader*)objectLoader {
     NSLog(@"Object Loader Finished: %@", objectLoader.resourcePath);
 }
@@ -149,8 +151,6 @@ NSURL *endPointURL(NSString * path)
     }
     else {
         NSLog(@"Got back an object, but it didn't conform to AdHawkAd");
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"The server didn't return data AdHawk could identify" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
-        [alertView show];
         [[self searchDelegate] adHawkAPIDidReturnNoResult];
     }
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -159,11 +159,35 @@ NSURL *endPointURL(NSString * path)
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
     NSLog(@"%@", error.localizedDescription);
-//    NSString *recoverySuggestion = error.localizedRecoverySuggestion;
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Server Error" message:@"There was a problem connecting to the server" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
-    [alertView show];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Server Error", @"title",
+//                              @"There was a problem retrieving information from the Ad Hawk server.", @"message", nil];
+//    NSError *p_error = [NSError errorWithDomain:error.domain code:error.code userInfo:userInfo];
     [[self searchDelegate] adHawkAPIDidReturnNoResult];
+}
+
+#pragma mark - RKRequestDelegate messages
+
+
+- (void) request:(RKRequest *)request didReceiveData:(NSInteger)bytesReceived totalBytesReceived:(NSInteger)totalBytesReceived totalBytesExpectedToReceive:(NSInteger)totalBytesExpectedToReceive
+{
+    NSLog(@"Received %d of %d", totalBytesReceived, totalBytesExpectedToReceive);
+}
+
+- (void) request:(RKRequest *)request didLoadResponse:(RKResponse *)response
+{
+    NSLog(@"Received response from server: %@", response.localizedStatusCodeString);
+}
+
+
+- (void)requestDidTimeout:(RKRequest *)request
+{
+    NSLog(@"Request timed out!");
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Server Timed Out", @"title",
+                              @"The Ad Hawk's server response timed out.", @"message", nil];
+    NSError *error = [NSError errorWithDomain:NSOSStatusErrorDomain code:kCFURLErrorTimedOut userInfo:userInfo];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [[self searchDelegate] adHawkAPIDidFailWithError:error];
 }
 
 @end

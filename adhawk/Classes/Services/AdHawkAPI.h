@@ -19,9 +19,10 @@ RKObjectManager *setUpAPI(void);
 @required
 -(void) adHawkAPIDidReturnURL:(NSURL *) url;
 -(void) adHawkAPIDidReturnNoResult;
+-(void) adHawkAPIDidFailWithError:(NSError *) error;
 @end
 
-@interface AdHawkAPI : NSObject <RKObjectLoaderDelegate, RKRequestQueueDelegate>
+@interface AdHawkAPI : NSObject <RKObjectLoaderDelegate>
 {
     RKObjectMapping *_adMapping;
 }

@@ -313,6 +313,16 @@ extern const char * GetPCMFromFile(char * filename);
     [self setFailState:YES];
 }
 
+-(void) adHawkAPIDidFailWithError:(NSError *) error
+{
+    NSLog(@"Fail error: %@", error.code);
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[error.userInfo objectForKey:@"title"] message:[error.userInfo objectForKey:@"message"] 
+                                                       delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
+    [alertView show];
+    [self setWorkingState:NO];
+}
+
+
 -(void)showBrowseWebView
 {
     InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"internalBrowserVC"];
