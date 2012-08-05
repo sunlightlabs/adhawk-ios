@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Settings.h"
+#import "AdHawkPreferencesManager.h"
 
 #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AdHawkPreferencesManager sharedInstance] setupPreferences];
     [_window makeKeyAndVisible];
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     // Override point for customization after application launch.

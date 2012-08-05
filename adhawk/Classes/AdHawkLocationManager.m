@@ -7,6 +7,7 @@
 //
 
 #import "AdHawkLocationManager.h"
+#import "AdHawkPreferencesManager.h"
 
 @implementation AdHawkLocationManager
 
@@ -31,14 +32,19 @@
 
 - (void) attempLocationUpdateOver:(NSTimeInterval)attemptTime
 {
-    BOOL locationEnabled = [CLLocationManager locationServicesEnabled];
-    if (locationEnabled == YES) {
+    BOOL locationServicesEnabled = [CLLocationManager locationServicesEnabled];
+    BOOL hasNotDeterminedAuth = [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined ? YES : NO;
+    BOOL locationPrefEnabled = [AdHawkPreferencesManager sharedInstance].locationEnabled;
+    if (locationServicesEnabled == YES && (hasNotDeterminedAuth || locationPrefEnabled)) {
         NSLog(@"startUpdatingLocation");
         self->_manager.delegate = self;
         [self->_manager startUpdatingLocation];
     }
     else {
-        NSLog(@"can't start updating location: location checking is disabled");
+        NSLog(@"Can't start updating location: location services is %@ and user pref is %@. Auth status is: %@", 
+              (locationServicesEnabled ? @"ENABLED" : @"DISABLED"),
+              (locationPrefEnabled ? @"ENABLED" : @"DISABLED"),
+              (hasNotDeterminedAuth ? @"Not Determined" : @"Determined"));
     }
     [self performSelector:@selector(stopUpdatingLocation:) withObject:@"Timed Out" afterDelay:attemptTime];
 }
@@ -83,6 +89,11 @@
     if ([error code] != kCLErrorLocationUnknown) {
         [self stopUpdatingLocation:NSLocalizedString(@"Error", @"Error")];
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    [AdHawkPreferencesManager sharedInstance].locationEnabled = (status == kCLAuthorizationStatusAuthorized) ? YES : NO;
 }
 
 @end
