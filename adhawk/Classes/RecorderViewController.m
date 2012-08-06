@@ -200,6 +200,7 @@ extern const char * GetPCMFromFile(char * filename);
                                        userInfo:nil
                                         repeats:NO];
         [audioRecorder record];
+//        [audioRecorder recordForDuration:12.0];
     }
 }
 
@@ -244,7 +245,7 @@ extern const char * GetPCMFromFile(char * filename);
         
 //        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
         [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
-        
+        [audioRecorder deleteRecording];
 
     } else if (audioPlayer.playing) {
         [audioPlayer stop];
@@ -289,6 +290,7 @@ extern const char * GetPCMFromFile(char * filename);
                           successfully:(BOOL)flag
 {
     NSLog(@"audioRecorderDidFinishRecording successully: %@", flag ? @"True" : @"False");
+    [self stopRecorder];
 }
 
 -(void)audioRecorderEncodeErrorDidOccur: (AVAudioRecorder *)recorder error:(NSError *)error

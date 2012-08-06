@@ -10,8 +10,6 @@
 #import "Settings.h"
 #import "AdHawkAd.h"
 
-#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-
 
 NSURL *endPointURL(NSString * path)
 {
@@ -68,7 +66,7 @@ NSURL *endPointURL(NSString * path)
     [birdIsTheWord setObject:fingerprint forKey:@"fingerprint"];
     [birdIsTheWord setObject:lat forKey:@"lat"];
     [birdIsTheWord setObject:lon forKey:@"lon"];
-    NSLog(@"Submitting fingerprint: %@", fingerprint);
+    TFLog(@"Submitting fingerprint... ");
     
 //    NSURL *reqURL = endPointURL(@"/ad/");
     
@@ -131,13 +129,13 @@ NSURL *endPointURL(NSString * path)
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
-    NSLog(@"Loaded Object");
+    TFLog(@"Loaded Object");
     
     RKResponse *response = objectLoader.response;
     NSLog(@"response: %@", [response bodyAsString]);
     
     if ([object isKindOfClass:[AdHawkAd class]]) {
-        NSLog(@"Got back an AdHawk ad object!");
+        TFLog(@"Got back an AdHawk ad object!");
         self.currentAd = (AdHawkAd *)object;
         self.currentAdHawkURL = self.currentAd.result_url;
         if (self.currentAdHawkURL != NULL) {
@@ -145,12 +143,12 @@ NSURL *endPointURL(NSString * path)
 
         }
         else {
-            NSLog(@"currentAdHawkURL is null: issue adHawkAPIDidReturnNoResult");
+            TFLog(@"currentAdHawkURL is null: issue adHawkAPIDidReturnNoResult");
             [[self searchDelegate] adHawkAPIDidReturnNoResult];
         }
     }
     else {
-        NSLog(@"Got back an object, but it didn't conform to AdHawkAd");
+        TFLog(@"Got back an object, but it didn't conform to AdHawkAd");
         [[self searchDelegate] adHawkAPIDidReturnNoResult];
     }
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -158,7 +156,7 @@ NSURL *endPointURL(NSString * path)
 
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
-    NSLog(@"%@", error.localizedDescription);
+    TFLog(@"%@", error.localizedDescription);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 //    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Server Error", @"title",
 //                              @"There was a problem retrieving information from the Ad Hawk server.", @"message", nil];
@@ -182,7 +180,7 @@ NSURL *endPointURL(NSString * path)
 
 - (void)requestDidTimeout:(RKRequest *)request
 {
-    NSLog(@"Request timed out!");
+    TFLog(@"Request timed out!");
     NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Server Timed Out", @"title",
                               @"The Ad Hawk's server response timed out.", @"message", nil];
     NSError *error = [NSError errorWithDomain:NSOSStatusErrorDomain code:kCFURLErrorTimedOut userInfo:userInfo];
