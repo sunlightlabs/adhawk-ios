@@ -28,4 +28,26 @@
     [webView loadRequest:_urlReq];
 }
 
+#pragma mark - UIWebViewDelegate methods
+
+- (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)p_request navigationType:(UIWebViewNavigationType)navigationType
+{
+    BOOL shouldStartLoad = [super webView:p_webView shouldStartLoadWithRequest:p_request navigationType:navigationType];
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:[p_request URL]];
+        [p_webView stopLoading];
+        return NO;
+    }
+
+    return shouldStartLoad;
+}
+
+
+- (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+
 @end

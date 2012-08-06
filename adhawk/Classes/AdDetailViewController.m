@@ -50,11 +50,18 @@
     
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         [[UIApplication sharedApplication] openURL:[request URL]];
+        [p_webView stopLoading];
         return NO;
     }
     
     return shouldStartLoad;
 }
+
+- (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 
 @end

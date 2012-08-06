@@ -29,7 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     webView.delegate = self;
-    [webView.scrollView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 88.0, 0.0)];
+    [webView.scrollView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 44.0, 0.0)];
     webView.backgroundColor = [UIColor whiteColor];
     for (UIView* shadowView in [webView.scrollView subviews])
     {
