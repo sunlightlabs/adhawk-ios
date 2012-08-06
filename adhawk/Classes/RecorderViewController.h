@@ -18,10 +18,9 @@
 //@end
 
 @interface RecorderViewController : AdHawkBaseViewController
-<AVAudioRecorderDelegate, AVAudioPlayerDelegate, AdHawkAPIDelegate>
+<AVAudioRecorderDelegate, AdHawkAPIDelegate>
 {
     AVAudioRecorder *audioRecorder;
-    AVAudioPlayer *audioPlayer;
     NSTimer *_timer;
     UIImageView *_hawktivityAnimatedImageView;
     UIButton *recordButton;
@@ -35,7 +34,6 @@
 @property (nonatomic, strong) IBOutlet UIView *failView;
 -(IBAction) handleTVButtonTouch;
 -(IBAction) retryButtonClicked;
--(IBAction) playAudio;
 -(IBAction) stopRecorder;
 -(IBAction) showBrowseWebView;
 

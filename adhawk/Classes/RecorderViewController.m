@@ -61,13 +61,9 @@ extern const char * GetPCMFromFile(char * filename);
     
     [self setWorkingState:NO];
     
-    recordButton.enabled = YES;
-    [recordButton setImage:[UIImage imageNamed:@"IDbtndown"] forState:UIControlStateHighlighted];
-    
-    NSString *soundFilePath = [self getAudioFilePath];
-                                
+    // Recording setup. Audio session set up in AppDelegate
+    NSString *soundFilePath = [self getAudioFilePath];                                
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        
     NSDictionary *recordSettings = [NSDictionary 
                                     dictionaryWithObjectsAndKeys:
                                     [NSNumber numberWithInt:AVAudioQualityMin],
@@ -86,6 +82,7 @@ extern const char * GetPCMFromFile(char * filename);
                      initWithURL:soundFileURL
                      settings:recordSettings
                      error:&error];
+    audioRecorder.delegate = self;
     
     if (error)
     {
@@ -193,14 +190,16 @@ extern const char * GetPCMFromFile(char * filename);
     if (!audioRecorder.recording)
     {
         [self setFailState:NO];
-        [self setWorkingState:YES];
-        _timer = [NSTimer scheduledTimerWithTimeInterval:12.0
-                                         target:self
-                                       selector:@selector(recordingTimerFinished:)
-                                       userInfo:nil
-                                        repeats:NO];
-        [audioRecorder record];
-//        [audioRecorder recordForDuration:12.0];
+
+        BOOL didRecord = [audioRecorder recordForDuration:(NSTimeInterval)12.0];        
+        if (didRecord) {
+            [self setWorkingState:YES];
+        }
+        else{
+            NSLog(@"audioRecorder failed to start recording");
+        }
+
+        NSLog(@"Trying recordforDuration method... %@", (didRecord ? @"SUCCESS" : @"FAILURE"));
     }
 }
 
@@ -220,6 +219,12 @@ extern const char * GetPCMFromFile(char * filename);
     }
 }
 
+- (void) stopRecorder
+{
+    [audioRecorder stop];
+    [self handleRecordingFinished];
+}
+
 - (void) recordingTimerFinished:(NSTimer*)theTimer
 {
     
@@ -229,73 +234,22 @@ extern const char * GetPCMFromFile(char * filename);
         NSString *timerValid = [theTimer isValid] ? @"YES" : @"NO";
         NSLog(@"Time isValid: %@", timerValid);
     }
-    [self stopRecorder];
+    [self handleRecordingFinished];
 }
 
--(void)stopRecorder
+-(void)handleRecordingFinished
 {    
-    NSLog(@"Stop Recorder");
-    if (audioRecorder.recording)
-    {
-        [audioRecorder stop];
-        NSString *soundFilePath = [self getAudioFilePath];
-        const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
-        NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
-        NSLog(@"Fingerprint generated");
-        
-//        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
-        [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
-        [audioRecorder deleteRecording];
+    NSLog(@"Handle recording finished. Recorder %@ recording", (audioRecorder.recording ? @"IS" : @"IS NOT"));
+    if (audioRecorder.recording) [audioRecorder stop]; else NSLog(@"Audio recorder stopped already, as expected");
+    NSString *soundFilePath = [self getAudioFilePath];
+    const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
+    NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
+    NSLog(@"Fingerprint generated");
+    
+//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
+    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
+    [audioRecorder deleteRecording];
 
-    } else if (audioPlayer.playing) {
-        [audioPlayer stop];
-    }
-}
-
-
--(void) playAudio
-{
-    if (!audioRecorder.recording)
-    {
-        NSError *error;
-        
-        audioPlayer = [[AVAudioPlayer alloc] 
-                       initWithContentsOfURL:audioRecorder.url                                    
-                       error:&error];
-        
-        audioPlayer.delegate = self;
-        
-        if (error)
-            NSLog(@"Error: %@", 
-                  [error localizedDescription]);
-        else
-            [audioPlayer play];
-    }
-}
-
--(void)audioPlayerDidFinishPlaying:
-(AVAudioPlayer *)player successfully:(BOOL)flag
-{
-    recordButton.enabled = YES;
-}
-
--(void)audioPlayerDecodeErrorDidOccur:
-(AVAudioPlayer *)player 
-                                error:(NSError *)error
-{
-    NSLog(@"Decode Error occurred");
-}
--(void)audioRecorderDidFinishRecording:
-(AVAudioRecorder *)recorder 
-                          successfully:(BOOL)flag
-{
-    NSLog(@"audioRecorderDidFinishRecording successully: %@", flag ? @"True" : @"False");
-    [self stopRecorder];
-}
-
--(void)audioRecorderEncodeErrorDidOccur: (AVAudioRecorder *)recorder error:(NSError *)error
-{
-    NSLog(@"Encode Error occurred");
 }
 
 
@@ -333,5 +287,27 @@ extern const char * GetPCMFromFile(char * filename);
     [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
 }
 
+#pragma mark AudioRecorderDelegate message handlers
+
+-(void)audioRecorderDidFinishRecording: (AVAudioRecorder *)recorder successfully:(BOOL)flag
+{
+    NSLog(@"audioRecorderDidFinishRecording successully: %@", flag ? @"True" : @"False");
+    [self handleRecordingFinished];
+}
+
+-(void)audioRecorderEncodeErrorDidOccur: (AVAudioRecorder *)recorder error:(NSError *)error
+{
+    NSLog(@"Encode Error occurred");
+}
+
+- (void)audioRecorderBeginInterruption:(AVAudioRecorder *)recorder
+{
+    TFLog(@"Audio recording interrupted. Should only happen during a call or something.");
+}
+
+-(void)audioRecorderEndInterruption:(AVAudioRecorder *)recorder
+{
+    TFLog(@"Audio recording resumed.");
+}
 
 @end

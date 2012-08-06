@@ -18,6 +18,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[AdHawkPreferencesManager sharedInstance] setupPreferences];
+    
+    // Audio Session setup
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
+    [audioSession setPreferredHardwareSampleRate:44100.0 error:nil];
+    [audioSession setActive:YES withFlags:AVAudioSessionInterruptionFlags_ShouldResume error:nil];
+
     [_window makeKeyAndVisible];
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     // Override point for customization after application launch.
@@ -51,6 +58,8 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
+    [[AVAudioSession sharedInstance] setActive:NO error:nil];
+    [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -74,6 +83,8 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    [[AVAudioSession sharedInstance] setActive:NO error:nil];
+    [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
 }
 
 @end
