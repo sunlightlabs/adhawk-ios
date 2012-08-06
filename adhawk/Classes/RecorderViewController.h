@@ -21,11 +21,9 @@
 <AVAudioRecorderDelegate, AdHawkAPIDelegate>
 {
     AVAudioRecorder *audioRecorder;
-    NSTimer *_timer;
     UIImageView *_hawktivityAnimatedImageView;
     UIButton *recordButton;
     UIButton *popularResultsButton;
-    UILabel *label;
     UIView *failView;
     CLLocationManager *_locationManager;
 }

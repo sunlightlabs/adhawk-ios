@@ -97,6 +97,15 @@ extern const char * GetPCMFromFile(char * filename);
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    [audioRecorder release];
+    if (_hawktivityAnimatedImageView != nil) {
+        [_hawktivityAnimatedImageView release];
+        _hawktivityAnimatedImageView = nil;
+    }
+    if (failView != nil) {
+        [failView release];
+        failView = nil;
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -108,9 +117,12 @@ extern const char * GetPCMFromFile(char * filename);
 - (void) viewDidDisappear:(BOOL)animated
 {
     [self setFailState:NO];
+    if (_hawktivityAnimatedImageView != nil) {
+        [_hawktivityAnimatedImageView release];
+        _hawktivityAnimatedImageView = nil;
+    }
     if (audioRecorder.recording) {
         [audioRecorder stop];
-        [_timer invalidate];
     }
     [self setWorkingState:NO];
 }
@@ -222,18 +234,6 @@ extern const char * GetPCMFromFile(char * filename);
 - (void) stopRecorder
 {
     [audioRecorder stop];
-    [self handleRecordingFinished];
-}
-
-- (void) recordingTimerFinished:(NSTimer*)theTimer
-{
-    
-    NSLog(@"Timer complete");
-    [_timer invalidate];
-    if (theTimer != nil ) {
-        NSString *timerValid = [theTimer isValid] ? @"YES" : @"NO";
-        NSLog(@"Time isValid: %@", timerValid);
-    }
     [self handleRecordingFinished];
 }
 
