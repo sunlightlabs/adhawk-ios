@@ -109,7 +109,7 @@
 #pragma mark - IBActions
 
 -(IBAction)showSocialActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share This" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", @"Like on Facebook", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share This" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", nil];
     [actionSheet showFromToolbar:[[self navigationController] toolbar]];
 }
 
@@ -122,17 +122,47 @@
     NSLog(@"Share button clicked: %@", clickedButtonLabel);
     AdHawkAPI *adhawkApi = [AdHawkAPI sharedInstance];
     NSString *share_text = adhawkApi.currentAd != nil ? adhawkApi.currentAd.share_text : @"";
-    GigyaService *gs = [GigyaService sharedInstanceWithViewController:self];
-    NSString *serviceName = nil;
+//    GigyaService *gs = [GigyaService sharedInstanceWithViewController:self];
+//    NSString *serviceName = nil;
     if (buttonIndex == 0) {
         [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
-        serviceName = gs.TWITTER;
+        if ([TWTweetComposeViewController canSendTweet]) {
+            TWTweetComposeViewController *tweetVC = [[TWTweetComposeViewController alloc] init];
+            [tweetVC setInitialText:share_text];
+            [tweetVC setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+                NSString *output;
+                
+                switch (result) {
+                    case TWTweetComposeViewControllerResultCancelled:
+                        // The cancel button was tapped.
+                        output = @"Tweet cancelled.";
+                        break;
+                    case TWTweetComposeViewControllerResultDone:
+                        // The tweet was sent.
+                        output = @"Tweet sent.";
+                        break;
+                    default:
+                        break;
+                }
+                
+                NSLog(@"Tweet status: %@", output);
+                
+                // Dismiss the tweet composition view controller.
+                [self dismissModalViewControllerAnimated:YES];
+            }];
+            [self presentModalViewController:tweetVC animated:YES];
+        }
+        else{
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Twitter not configured" message:@"Twitter does not appear to be configured on this device" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+            [alertView show];
+        }
+//        serviceName = gs.TWITTER;
     }
     else if (buttonIndex == 1) {
         [TestFlight passCheckpoint:@"Share 'Facebook' clicked"];
-        serviceName = gs.FACEBOOK;
+//        serviceName = gs.FACEBOOK;
     }
-    [gs shareMessage:share_text toService:serviceName];
+//    [gs shareMessage:share_text toService:serviceName];
 }
 
 - (void) handleTweetResult:(BOOL)didTweet
