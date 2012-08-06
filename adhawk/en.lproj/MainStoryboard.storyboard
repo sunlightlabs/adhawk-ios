@@ -176,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eDc-w3-dBy">
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eDc-w3-dBy">
                                 <rect key="frame" x="43" y="131" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.81568627449999997" green="0.39607843139999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,7 +184,7 @@
                                     <action selector="handleFacebookAccountSwitch:" destination="78Y-GP-4cl" eventType="valueChanged" id="xZu-NZ-z0W"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Facebook Sharing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="GBU-GW-96d">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Facebook Sharing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="GBU-GW-96d">
                                 <rect key="frame" x="130" y="134" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -206,7 +206,7 @@
                                     <action selector="handleShareLocationSwitch:" destination="78Y-GP-4cl" eventType="valueChanged" id="7yu-XR-okv"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="xCl-pg-rui">
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="xCl-pg-rui">
                                 <rect key="frame" x="43" y="185" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.81568627449999997" green="0.39607843139999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +214,7 @@
                                     <action selector="handleTwitterAccountSwitch:" destination="78Y-GP-4cl" eventType="valueChanged" id="boe-cU-C8D"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter Sharing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="RXZ-HE-ZJR">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter Sharing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="RXZ-HE-ZJR">
                                 <rect key="frame" x="130" y="188" width="125" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
