@@ -14,8 +14,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    // Make sure about page doesn't have about button!
-    [self.navigationItem setRightBarButtonItems:[[NSArray alloc] initWithObjects:_settingsButton, nil] animated:YES];
+    // Make sure about button disabled
+    [self.navigationItem setRightBarButtonItems:nil animated:YES];
 }
 
 

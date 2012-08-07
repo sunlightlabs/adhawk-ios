@@ -41,8 +41,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationItem setRightBarButtonItems:[[NSArray alloc] initWithObjects:_aboutButton, nil] animated:YES];
-
+    [self.navigationItem setRightBarButtonItems:nil animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
