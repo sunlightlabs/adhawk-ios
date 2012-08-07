@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AdHawkPreferencesManager.h"
+#import "AdHawkBaseViewController.h"
 
-@interface PreferencesViewController : UIViewController
+@interface PreferencesViewController : AdHawkBaseViewController
 {
     AdHawkPreferencesManager *_prefMan;
 }

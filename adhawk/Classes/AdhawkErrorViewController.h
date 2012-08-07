@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AdHawkBaseViewController.h"
 
-@interface AdhawkErrorViewController : UIViewController
+@interface AdhawkErrorViewController : AdHawkBaseViewController
 
 @property (nonatomic, strong) IBOutlet UIButton *popularResultsButton;
 @property (nonatomic, strong) IBOutlet UIButton *tryAgainButton;
+@property (nonatomic, strong) IBOutlet UIButton *whyNoResultsButton;
 
 @end

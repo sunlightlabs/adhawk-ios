@@ -10,7 +10,7 @@
 
 @implementation AdhawkErrorViewController
 
-@synthesize popularResultsButton, tryAgainButton;
+@synthesize popularResultsButton, tryAgainButton, whyNoResultsButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

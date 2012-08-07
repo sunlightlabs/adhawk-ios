@@ -38,8 +38,8 @@
         NSLog(@"No testing");
     }
     
-    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:ADHAWK_APP_USER_AGENT, @"UserAgent", nil];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];  
+//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:ADHAWK_APP_USER_AGENT, @"UserAgent", nil];
+//    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];  
     
     return YES;
 }

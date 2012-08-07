@@ -57,6 +57,7 @@ extern const char * GetPCMFromFile(char * filename);
 //    [self setFailState:YES];
 //    [self showSocialActionSheet:self]; // Testing social action sheet
     
+    
     [self setFailState:NO];
     
     [self setWorkingState:NO];
@@ -151,9 +152,11 @@ extern const char * GetPCMFromFile(char * filename);
         failView = errorVC.view;
         [errorVC.popularResultsButton addTarget:self action:@selector(showBrowseWebView) forControlEvents:UIControlEventTouchUpInside];
         [errorVC.tryAgainButton addTarget:self action:@selector(handleTVButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+        [errorVC.whyNoResultsButton addTarget:self action:@selector(handleWhyNoResultsTouch) forControlEvents:UIControlEventTouchUpInside];
     }
     if (isFail) {
         [self.view addSubview:failView];
+        failView.frame = self.view.frame;
     }
     else {
         if ([failView isDescendantOfView:self.view]) {
@@ -185,6 +188,8 @@ extern const char * GetPCMFromFile(char * filename);
    }
 }
 
+#pragma mark button touches
+
 -(void)handleTVButtonTouch
 {
     NSLog(@"handleTVButtonTouch run");
@@ -194,6 +199,24 @@ extern const char * GetPCMFromFile(char * filename);
     
     [self setWorkingState:YES];
     [self recordAudio];
+}
+
+
+-(void)showBrowseWebView
+{
+    InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"internalBrowserVC"];
+    NSURL *browseURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
+}
+
+
+-(void)handleWhyNoResultsTouch
+{
+    SimpleWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"simpleWebVC"];
+    NSURL *browseURL = [NSURL URLWithString:ADHAWK_TROUBLESHOOTING_URL];
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
 }
 
 -(void) recordAudio
@@ -278,14 +301,6 @@ extern const char * GetPCMFromFile(char * filename);
     [self setWorkingState:NO];
 }
 
-
--(void)showBrowseWebView
-{
-    InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"internalBrowserVC"];
-    NSURL *browseURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
-    [self.navigationController pushViewController:vc animated:YES];
-    [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
-}
 
 #pragma mark AudioRecorderDelegate message handlers
 
