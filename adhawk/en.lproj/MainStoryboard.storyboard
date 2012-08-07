@@ -38,15 +38,15 @@
                 <viewController id="2" customClass="RecorderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="IDbkgrnd.png" id="Gtw-sY-Nbe">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="IDworking.png" id="Clf-oc-QGl">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFV-xK-5PI">
                                 <rect key="frame" x="62" y="162" width="159" height="130"/>
@@ -83,14 +83,14 @@
                 <viewController storyboardIdentifier="adhawkErrorVC" title="AdHawk Error" id="FJu-3N-LzE" customClass="AdhawkErrorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GWc-G0-llb">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="0bE-5T-fjS">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="-22" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qoh-ic-k5d">
-                                <rect key="frame" x="74" y="137" width="173" height="63"/>
+                                <rect key="frame" x="74" y="195" width="173" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -103,7 +103,20 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZI1-Rk-t9z">
-                                <rect key="frame" x="74" y="215" width="173" height="63"/>
+                                <rect key="frame" x="74" y="117" width="173" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                <state key="normal" title="Why No Results" backgroundImage="btnup.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="btndown.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tbi-XE-Xtu">
+                                <rect key="frame" x="74" y="273" width="173" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -116,7 +129,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sorry, Ad Hawk missed that." lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="17" id="WLh-3Y-sXl">
-                                <rect key="frame" x="94" y="66" width="133" height="43"/>
+                                <rect key="frame" x="94" y="46" width="133" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -129,8 +142,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
-                        <outlet property="popularResultsButton" destination="ZI1-Rk-t9z" id="qGK-tl-PYa"/>
+                        <outlet property="popularResultsButton" destination="Tbi-XE-Xtu" id="ypn-Dt-kyn"/>
                         <outlet property="tryAgainButton" destination="qoh-ic-k5d" id="rMr-C4-g3i"/>
+                        <outlet property="whyNoResultsButton" destination="ZI1-Rk-t9z" id="BtC-Qn-1fQ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -170,11 +184,11 @@
                 <viewController storyboardIdentifier="settingsVC" title="Settings" id="78Y-GP-4cl" customClass="PreferencesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aPv-Vk-KXm">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="sdE-ie-cCN">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eDc-w3-dBy">
                                 <rect key="frame" x="43" y="131" width="79" height="27"/>
@@ -357,11 +371,12 @@
                 <relationship kind="action" name="showSocialActionSheet:"/>
             </relationships>
         </class>
-        <class className="AdhawkErrorViewController" superclassName="UIViewController">
+        <class className="AdhawkErrorViewController" superclassName="AdHawkBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AdhawkErrorViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="popularResultsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tryAgainButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="whyNoResultsButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="AuthHandlingWebViewController" superclassName="AdHawkBaseViewController">
@@ -373,7 +388,7 @@
         <class className="InternalAdBrowserViewController" superclassName="SimpleWebViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InternalAdBrowserViewController.h"/>
         </class>
-        <class className="PreferencesViewController" superclassName="UIViewController">
+        <class className="PreferencesViewController" superclassName="AdHawkBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PreferencesViewController.h"/>
             <relationships>
                 <relationship kind="action" name="handleFacebookAccountSwitch:" candidateClass="UISwitch"/>
