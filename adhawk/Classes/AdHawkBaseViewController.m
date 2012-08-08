@@ -8,6 +8,7 @@
 
 #import "AdHawkBaseViewController.h"
 #import "AboutViewController.h"
+#import "Settings.h"
 #import "GigyaService.h"
 #import "AdHawkAPI.h"
 
@@ -125,7 +126,7 @@
 //    GigyaService *gs = [GigyaService sharedInstanceWithViewController:self];
 //    NSString *serviceName = nil;
     if (buttonIndex == 0) {
-        [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
+        if (TESTING == YES) [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
         if ([TWTweetComposeViewController canSendTweet]) {
             TWTweetComposeViewController *tweetVC = [[TWTweetComposeViewController alloc] init];
             [tweetVC setInitialText:share_text];
@@ -159,7 +160,7 @@
 //        serviceName = gs.TWITTER;
     }
     else if (buttonIndex == 1) {
-        [TestFlight passCheckpoint:@"Share 'Facebook' clicked"];
+        if (TESTING == YES) [TestFlight passCheckpoint:@"Share 'Facebook' clicked"];
 //        serviceName = gs.FACEBOOK;
     }
 //    [gs shareMessage:share_text toService:serviceName];

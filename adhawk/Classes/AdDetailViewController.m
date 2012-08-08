@@ -29,7 +29,7 @@
         NSLog(@"Requesting: %@", [_targetURL absoluteString]);
         NSURLRequest *req = [NSURLRequest requestWithURL:_targetURL];
         [webView loadRequest:req];
-        [TestFlight passCheckpoint:@"Requested Ad detail page"];
+        if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
     }
 }
 

@@ -16,9 +16,6 @@
 #import "AdHawkAd.h"
 
 
-#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-
-
 extern const char * GetPCMFromFile(char * filename);
 
 @implementation RecorderViewController
@@ -179,12 +176,14 @@ extern const char * GetPCMFromFile(char * filename);
         workingBackground.hidden = NO;
         recordButton.hidden = YES;
         recordButton.enabled = NO; 
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }
     else {
         [_hawktivityAnimatedImageView removeFromSuperview];
         workingBackground.hidden = YES;
         recordButton.hidden = NO;
         recordButton.enabled = YES; 
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
    }
 }
 

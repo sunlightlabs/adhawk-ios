@@ -29,7 +29,9 @@
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     // Override point for customization after application launch.
     if (TESTING == YES) {
+#ifdef FLYING
         [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+#endif
         [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
         NSLog(@"TestFlight run");
     }
@@ -60,6 +62,7 @@
      */
     [[AVAudioSession sharedInstance] setActive:NO error:nil];
     [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

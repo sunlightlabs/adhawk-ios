@@ -79,7 +79,7 @@ NSURL *endPointURL(NSString * path)
         loader.method = RKRequestMethodPOST;
         loader.delegate = self;
         [loader setBody:birdIsTheWord forMIMEType:RKMIMETypeJSON];
-        [TestFlight passCheckpoint:@"Submitted Fingerprint"];
+        if (TESTING == YES) [TestFlight passCheckpoint:@"Submitted Fingerprint"];
     }];
     
 //    NSURLRequest *req = [NSURLRequest initWithURL:url];
@@ -90,6 +90,7 @@ NSURL *endPointURL(NSString * path)
 
 - (AdHawkAd *)getAdHawkAdFromURL:(NSURL *)reqURL
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSMutableURLRequest *adhawkRequest = [[[NSMutableURLRequest alloc] initWithURL:reqURL] autorelease];
     [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"X-Client-App"];
     [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User_Agent"];
@@ -126,6 +127,7 @@ NSURL *endPointURL(NSString * path)
 
 - (void)objectLoaderDidFinishLoading:(RKObjectLoader*)objectLoader {
     NSLog(@"Object Loader Finished: %@", objectLoader.resourcePath);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObject:(id)object {
@@ -175,6 +177,7 @@ NSURL *endPointURL(NSString * path)
 - (void) request:(RKRequest *)request didLoadResponse:(RKResponse *)response
 {
     NSLog(@"Received response from server: %@", response.localizedStatusCodeString);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 
