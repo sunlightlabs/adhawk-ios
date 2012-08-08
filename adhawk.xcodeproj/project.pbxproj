@@ -1587,6 +1587,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2F16E3C315D2B83200D7FBA7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
+				INFOPLIST_PREPROCESS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "Ad Hawk";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		2F16E3C415D2B83200D7FBA7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "adhawk/Ad Hawk-Info.plist";
+				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = "Ad Hawk";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = AppStore;
+		};
+		2F16E3C515D2B83200D7FBA7 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk.app/adhawk";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
+				INFOPLIST_FILE = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks/TestFlightSDK\"",
+					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
+				);
+				PRODUCT_NAME = "Ad HawkTests";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = AppStore;
+		};
 		C36B400F15023E5400937C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1683,6 +1765,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
@@ -1696,8 +1779,10 @@
 					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad Hawk";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1758,6 +1843,7 @@
 			buildConfigurations = (
 				C36B400F15023E5400937C3F /* Debug */,
 				C36B401015023E5400937C3F /* Release */,
+				2F16E3C315D2B83200D7FBA7 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1767,6 +1853,7 @@
 			buildConfigurations = (
 				C36B401215023E5400937C3F /* Debug */,
 				C36B401315023E5400937C3F /* Release */,
+				2F16E3C415D2B83200D7FBA7 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1776,6 +1863,7 @@
 			buildConfigurations = (
 				C36B401515023E5400937C3F /* Debug */,
 				C36B401615023E5400937C3F /* Release */,
+				2F16E3C515D2B83200D7FBA7 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
