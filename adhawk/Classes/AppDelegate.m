@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _netReachability = [RKReachabilityObserver reachabilityObserverForInternet];
+    
     [[AdHawkPreferencesManager sharedInstance] setupPreferences];
     
     // Audio Session setup
@@ -63,6 +65,7 @@
     [[AVAudioSession sharedInstance] setActive:NO error:nil];
     [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKReachabilityDidChangeNotification object:_netReachability];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -77,6 +80,7 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleReachabilityChange) name:RKReachabilityDidChangeNotification object:_netReachability];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -88,6 +92,19 @@
      */
     [[AVAudioSession sharedInstance] setActive:NO error:nil];
     [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RKReachabilityDidChangeNotification object:_netReachability];
 }
+
+// Checking network reachability.
+- (void) handleReachabilityChange
+{
+    NSString *reachabilityDetermined = _netReachability.reachabilityDetermined ? @"Determined" : @"NOT determined";
+    NSLog(@"AppDelegate reachability: %@",reachabilityDetermined);
+    if (![_netReachability isNetworkReachable]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Network Status" message:@"Could not connect to the internet. Ad Hawk needs a network connection to submit ad queries." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
 
 @end

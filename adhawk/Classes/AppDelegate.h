@@ -10,7 +10,10 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    RKReachabilityObserver *_netReachability;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
+- (void) handleReachabilityChange;
 @end
