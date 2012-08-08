@@ -225,7 +225,7 @@ extern const char * GetPCMFromFile(char * filename);
     {
         [self setFailState:NO];
 
-        BOOL didRecord = [audioRecorder recordForDuration:(NSTimeInterval)12.0];        
+        BOOL didRecord = [audioRecorder recordForDuration:(NSTimeInterval)15.0];        
         if (didRecord) {
             [self setWorkingState:YES];
         }
