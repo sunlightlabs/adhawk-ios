@@ -14,6 +14,7 @@
 @implementation SimpleWebViewController
 
 @synthesize webView;
+@synthesize targetURL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,33 +40,16 @@
     }
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-
-- (void) setTargetURLString:(NSString *)p_targetURLString
-{
-    _targetURL = [NSURL URLWithString:p_targetURLString];
-}
-
-- (NSString *) targetURLString
-{
-    return [_targetURL absoluteString];
 }
 
 #pragma mark - UIWebViewDelegate methods
 
 - (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)p_request navigationType:(UIWebViewNavigationType)navigationType
 {
-    _targetURL = (_targetURL != [p_request URL]) ? [p_request URL] : _targetURL;
+    self.targetURL = (self.targetURL != [p_request URL]) ? [p_request URL] : self.targetURL;
     
 //    Check headers for custom x-header
     NSMutableURLRequest *customRequest = [p_request copy];
