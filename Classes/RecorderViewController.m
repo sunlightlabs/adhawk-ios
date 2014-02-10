@@ -145,7 +145,8 @@ extern const char * GetPCMFromFile(char * filename);
 -(void) setFailState:(BOOL)isFail
 {
     if (isFail && failView == nil) {
-        AdhawkErrorViewController *errorVC = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adhawkErrorVC"];
+        AdhawkErrorViewController *errorVC = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil]
+                                              instantiateViewControllerWithIdentifier:@"ErrorViewController"];
         failView = errorVC.view;
         [errorVC.popularResultsButton addTarget:self action:@selector(showBrowseWebView) forControlEvents:UIControlEventTouchUpInside];
         [errorVC.tryAgainButton addTarget:self action:@selector(handleTVButtonTouch) forControlEvents:UIControlEventTouchUpInside];
@@ -203,7 +204,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void)showBrowseWebView
 {
-    InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"internalBrowserVC"];
+    InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"InternalAdBrowserViewController"];
     NSURL *browseURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
     [self.navigationController pushViewController:vc animated:YES];
     [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
@@ -212,7 +213,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void)handleWhyNoResultsTouch
 {
-    SimpleWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"simpleWebVC"];
+    SimpleWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleWebViewController"];
     NSURL *browseURL = [NSURL URLWithString:ADHAWK_TROUBLESHOOTING_URL];
     [self.navigationController pushViewController:vc animated:YES];
     [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
@@ -248,8 +249,7 @@ extern const char * GetPCMFromFile(char * filename);
         NSLog(@"Segue to AdDetailView");
         
         // Pass any objects to the view controller here, like...
-        NSURL *targetURL = [AdHawkAPI sharedInstance].currentAd.resultURL;
-        [vc setTargetURLString:[targetURL absoluteString]];
+        vc.targetURL = [AdHawkAPI sharedInstance].currentAd.resultURL;
     }
 }
 
@@ -278,8 +278,8 @@ extern const char * GetPCMFromFile(char * filename);
 -(void) adHawkAPIDidReturnURL:(NSURL *)url
 {
 //    [self performSegueWithIdentifier:@"adSegue" sender:self];
-    AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adDetailVC"];
-    [vc setTargetURLString:[url absoluteString]];
+    AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AdDetailViewController"];
+    vc.targetURL = url;
     [self.navigationController pushViewController:vc animated:YES];
     [self setWorkingState:NO];
 }

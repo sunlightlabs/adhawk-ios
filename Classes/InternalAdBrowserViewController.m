@@ -49,14 +49,13 @@
 
     if(navigationType == UIWebViewNavigationTypeLinkClicked)
     {
-        AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"adDetailVC"];
+        AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AdDetailViewController"];
         
         AdHawkAd *theAd = [[AdHawkAPI sharedInstance] getAdHawkAdFromURL:[p_request URL]];
         if (theAd != NULL) {
             [p_webView stopLoading];
             _interceptedRequest = YES;
-            NSString *absoluteURLString = [theAd.resultURL absoluteString];
-            [vc setTargetURLString:absoluteURLString];
+            vc.targetURL = theAd.resultURL;
             [self.navigationController pushViewController:vc animated:YES];
         }
 

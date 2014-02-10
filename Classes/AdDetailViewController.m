@@ -11,10 +11,16 @@
 
 @implementation AdDetailViewController
 
-
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (self.targetURL && ![[self.targetURL absoluteString] isEqualToString: @""]) {
+        NSLog(@"Requesting: %@", [self.targetURL absoluteString]);
+        NSURLRequest *req = [NSURLRequest requestWithURL:self.targetURL];
+        [webView loadRequest:req];
+        if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
+    }
+
     [self enableSocial];
 }
 
@@ -23,19 +29,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     webView.delegate = self;
-    
-    if (![[_targetURL absoluteString] isEqualToString: @""]) {
-        NSLog(@"Requesting: %@", [_targetURL absoluteString]);
-        NSURLRequest *req = [NSURLRequest requestWithURL:_targetURL];
-        [webView loadRequest:req];
-        if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
-    }
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

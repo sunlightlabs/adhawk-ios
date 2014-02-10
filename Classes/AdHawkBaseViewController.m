@@ -94,14 +94,14 @@
 - (void) showSettingsView
 {
     NSLog(@"Show settings view");
-    UIViewController *svc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"settingsVC"];
+    UIViewController *svc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"PreferencesViewController"];
     [self.navigationController pushViewController:svc animated:YES];
 }
 
 - (void) showAboutView
 {
     NSLog(@"Show about view");
-    AboutViewController *avc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"aboutAdHawk"];
+    AboutViewController *avc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AboutViewController"];
     [self.navigationController pushViewController:avc animated:YES];
     //    [self performSegueWithIdentifier:@"aboutSegue" sender:self];
 }

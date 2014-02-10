@@ -8,8 +8,8 @@
         <!--About View Controller - About Ad Hawk-->
         <scene sceneID="i8t-LP-Pj0">
             <objects>
-                <viewController storyboardIdentifier="aboutAdHawk" title="About Ad Hawk" id="DZi-N6-eMM" customClass="AboutViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m59-Qg-QOx">
+                <viewController storyboardIdentifier="AboutViewController" title="About Ad Hawk" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DZi-N6-eMM" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="AboutView" id="m59-Qg-QOx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -33,8 +33,8 @@
         <!--Recorder View Controller - Ad Hawk-->
         <scene sceneID="5">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="RecorderViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
+                <viewController storyboardIdentifier="RecorderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="RecorderViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="RecorderView" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -78,8 +78,8 @@
         <!--Adhawk Error View Controller - AdHawk Error-->
         <scene sceneID="wcc-AP-nec">
             <objects>
-                <viewController storyboardIdentifier="adhawkErrorVC" title="AdHawk Error" id="FJu-3N-LzE" customClass="AdhawkErrorViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GWc-G0-llb">
+                <viewController storyboardIdentifier="ErrorViewController" title="AdHawk Error" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FJu-3N-LzE" customClass="AdhawkErrorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ErrorView" id="GWc-G0-llb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -152,13 +152,13 @@
         <!--Ad Detail View Controller - Ad Info-->
         <scene sceneID="ODI-Ts-BFU">
             <objects>
-                <viewController storyboardIdentifier="adDetailVC" id="OhG-d8-01w" customClass="AdDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="deL-sx-TvF">
+                <viewController storyboardIdentifier="AdDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OhG-d8-01w" customClass="AdDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="AdDetailView" id="deL-sx-TvF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="8Oa-CP-NE2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -179,8 +179,8 @@
         <!--Preferences View Controller - Settings-->
         <scene sceneID="zuw-Ga-hn5">
             <objects>
-                <viewController storyboardIdentifier="settingsVC" title="Settings" id="78Y-GP-4cl" customClass="PreferencesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aPv-Vk-KXm">
+                <viewController storyboardIdentifier="PreferencesViewController" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="78Y-GP-4cl" customClass="PreferencesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ErrorView" id="aPv-Vk-KXm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -251,7 +251,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2c9-T8-WGe">
             <objects>
-                <navigationController toolbarHidden="NO" id="Viy-z5-39k" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AppNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="Viy-z5-39k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
@@ -272,36 +272,11 @@
             </objects>
             <point key="canvasLocation" x="265" y="99"/>
         </scene>
-        <!--Auth Handling Web View Controller-->
-        <scene sceneID="Ltw-hP-yUD">
-            <objects>
-                <viewController storyboardIdentifier="genericAuthWebView" id="dBY-as-3xF" customClass="AuthHandlingWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QXG-pA-DQ6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" id="jJz-Cm-YGR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <connections>
-                        <outlet property="webView" destination="jJz-Cm-YGR" id="WVL-OR-vmM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tc0-xd-XiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="799" y="-496"/>
-        </scene>
         <!--Internal Ad Browser View Controller-->
         <scene sceneID="6Ft-PZ-a6C">
             <objects>
-                <viewController storyboardIdentifier="internalBrowserVC" id="mEj-ZN-5SQ" customClass="InternalAdBrowserViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z6j-hr-6oC">
+                <viewController storyboardIdentifier="InternalAdBrowserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mEj-ZN-5SQ" customClass="InternalAdBrowserViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="InternalAdBrowserView" id="z6j-hr-6oC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -325,8 +300,8 @@
         <!--Simple Web View Controller-->
         <scene sceneID="XMb-Wg-hwE">
             <objects>
-                <viewController storyboardIdentifier="simpleWebVC" id="ZcU-MT-4id" customClass="SimpleWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="raF-dv-zfO">
+                <viewController storyboardIdentifier="SimpleWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZcU-MT-4id" customClass="SimpleWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="SimpleWebView" id="raF-dv-zfO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
