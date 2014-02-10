@@ -21,9 +21,7 @@
 		2F4B985C15ACC7F800C5AB4C /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */; };
 		2F4B985D15ACC7F800C5AB4C /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */; };
 		2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */; };
-		2F4B986C15ACC84800C5AB4C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B986A15ACC84800C5AB4C /* MainStoryboard.storyboard */; };
 		2F4B986F15ACC8A700C5AB4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B986E15ACC8A700C5AB4C /* main.m */; };
-		2F4B987815ACCC3500C5AB4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B987615ACCC3500C5AB4C /* InfoPlist.strings */; };
 		2F4B987C15ACCC5000C5AB4C /* adhawkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */; };
 		2F4B988615ACCDDB00C5AB4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */; };
 		2F4B988B15ACD34400C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
@@ -191,6 +189,8 @@
 		2FBFE4C315C2D4F40035C0F6 /* SimpleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */; };
 		2FC0B16915C85F710020CCFC /* AdhawkErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */; };
 		2FD683E815C0505600822ABE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD683E715C0505600822ABE /* AboutViewController.m */; };
+		2FD8C9D618A95B5700820AA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8C9D418A95B5700820AA8 /* InfoPlist.strings */; };
+		2FD8C9D918A95BBB00820AA8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8C9D718A95BBB00820AA8 /* MainStoryboard.storyboard */; };
 		2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */; };
 		2FF8E00415C2109A00D68C84 /* InternalAdBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */; };
 		2FFB537D15ADF6DC0069A722 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFB537C15ADF6DC0069A722 /* Twitter.framework */; };
@@ -228,36 +228,33 @@
 		2F01964A15AE2B9A000542AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F272AF515CC52150029BEB2 /* AdHawkPreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdHawkPreferencesManager.h; sourceTree = "<group>"; };
 		2F272AF615CC52150029BEB2 /* AdHawkPreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdHawkPreferencesManager.m; sourceTree = "<group>"; };
-		2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkBaseViewController.h; path = adhawk/Classes/AdHawkBaseViewController.h; sourceTree = SOURCE_ROOT; };
-		2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkBaseViewController.m; path = adhawk/Classes/AdHawkBaseViewController.m; sourceTree = SOURCE_ROOT; };
+		2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkBaseViewController.h; path = Classes/AdHawkBaseViewController.h; sourceTree = SOURCE_ROOT; };
+		2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkBaseViewController.m; path = Classes/AdHawkBaseViewController.m; sourceTree = SOURCE_ROOT; };
 		2F46044F15C388F7004B2DA9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2F4B984115ACC7AC00C5AB4C /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdDetailViewController.h; path = adhawk/Classes/AdDetailViewController.h; sourceTree = SOURCE_ROOT; };
-		2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdDetailViewController.m; path = adhawk/Classes/AdDetailViewController.m; sourceTree = SOURCE_ROOT; };
-		2F4B984315ACC7AC00C5AB4C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = adhawk/Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = adhawk/Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		2F4B984515ACC7AC00C5AB4C /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecorderViewController.h; path = adhawk/Classes/RecorderViewController.h; sourceTree = SOURCE_ROOT; };
-		2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecorderViewController.m; path = adhawk/Classes/RecorderViewController.m; sourceTree = SOURCE_ROOT; };
-		2F4B984715ACC7AC00C5AB4C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = adhawk/Classes/ViewController.h; sourceTree = SOURCE_ROOT; };
-		2F4B984815ACC7AC00C5AB4C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = adhawk/Classes/ViewController.m; sourceTree = SOURCE_ROOT; };
-		2F4B985315ACC7F800C5AB4C /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = adhawk/Classes/CADebugMacros.h; sourceTree = SOURCE_ROOT; };
-		2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CADebugPrintf.cpp; path = adhawk/Classes/CADebugPrintf.cpp; sourceTree = SOURCE_ROOT; };
-		2F4B985515ACC7F800C5AB4C /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugPrintf.h; path = adhawk/Classes/CADebugPrintf.h; sourceTree = SOURCE_ROOT; };
-		2F4B985615ACC7F800C5AB4C /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = adhawk/Classes/CAStreamBasicDescription.h; sourceTree = SOURCE_ROOT; };
-		2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Codegen_wrapper.cpp; path = adhawk/Classes/Codegen_wrapper.cpp; sourceTree = SOURCE_ROOT; };
-		2F4B985815ACC7F800C5AB4C /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen_wrapper.h; path = adhawk/Classes/Codegen_wrapper.h; sourceTree = SOURCE_ROOT; };
-		2F4B985915ACC7F800C5AB4C /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen.h; path = adhawk/Classes/Codegen.h; sourceTree = SOURCE_ROOT; };
-		2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GetPCMFromFile.cpp; path = adhawk/Classes/GetPCMFromFile.cpp; sourceTree = SOURCE_ROOT; };
-		2F4B985B15ACC7F800C5AB4C /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPCMFromFile.h; path = adhawk/Classes/GetPCMFromFile.h; sourceTree = SOURCE_ROOT; };
-		2F4B985F15ACC80E00C5AB4C /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = echoprint_Prefix.pch; path = adhawk/echoprint_Prefix.pch; sourceTree = SOURCE_ROOT; };
-		2F4B986B15ACC84800C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = adhawk/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
-		2F4B986E15ACC8A700C5AB4C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = adhawk/Classes/main.m; sourceTree = SOURCE_ROOT; };
-		2F4B987715ACCC3500C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = adhawk/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		2F4B984115ACC7AC00C5AB4C /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdDetailViewController.h; path = Classes/AdDetailViewController.h; sourceTree = SOURCE_ROOT; };
+		2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdDetailViewController.m; path = Classes/AdDetailViewController.m; sourceTree = SOURCE_ROOT; };
+		2F4B984315ACC7AC00C5AB4C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		2F4B984515ACC7AC00C5AB4C /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecorderViewController.h; path = Classes/RecorderViewController.h; sourceTree = SOURCE_ROOT; };
+		2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecorderViewController.m; path = Classes/RecorderViewController.m; sourceTree = SOURCE_ROOT; };
+		2F4B984715ACC7AC00C5AB4C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = SOURCE_ROOT; };
+		2F4B984815ACC7AC00C5AB4C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = SOURCE_ROOT; };
+		2F4B985315ACC7F800C5AB4C /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = Vendor/echoprint/CADebugMacros.h; sourceTree = SOURCE_ROOT; };
+		2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CADebugPrintf.cpp; path = Vendor/echoprint/CADebugPrintf.cpp; sourceTree = SOURCE_ROOT; };
+		2F4B985515ACC7F800C5AB4C /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugPrintf.h; path = Vendor/echoprint/CADebugPrintf.h; sourceTree = SOURCE_ROOT; };
+		2F4B985615ACC7F800C5AB4C /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = Vendor/echoprint/CAStreamBasicDescription.h; sourceTree = SOURCE_ROOT; };
+		2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Codegen_wrapper.cpp; path = Vendor/echoprint/Codegen_wrapper.cpp; sourceTree = SOURCE_ROOT; };
+		2F4B985815ACC7F800C5AB4C /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen_wrapper.h; path = Vendor/echoprint/Codegen_wrapper.h; sourceTree = SOURCE_ROOT; };
+		2F4B985915ACC7F800C5AB4C /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen.h; path = Vendor/echoprint/Codegen.h; sourceTree = SOURCE_ROOT; };
+		2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GetPCMFromFile.cpp; path = Vendor/echoprint/GetPCMFromFile.cpp; sourceTree = SOURCE_ROOT; };
+		2F4B985B15ACC7F800C5AB4C /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPCMFromFile.h; path = Vendor/echoprint/GetPCMFromFile.h; sourceTree = SOURCE_ROOT; };
+		2F4B986E15ACC8A700C5AB4C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = SOURCE_ROOT; };
 		2F4B987A15ACCC5000C5AB4C /* adhawkTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adhawkTests.h; path = adhawkTests/adhawkTests.h; sourceTree = SOURCE_ROOT; };
 		2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = adhawkTests.m; path = adhawkTests/adhawkTests.m; sourceTree = SOURCE_ROOT; };
 		2F4B987E15ACCC6A00C5AB4C /* Ad HawkTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "Ad HawkTests-Info.plist"; path = "Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist"; sourceTree = SDKROOT; };
 		2F4B988215ACCC7900C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = adhawkTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = adhawk/Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
-		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = adhawk/Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
+		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
+		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
 		2F673CB515C6FD16004097DF /* Animation_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Animation_1.png; path = ../Resources/animation/Animation_1.png; sourceTree = "<group>"; };
 		2F673CB615C6FD16004097DF /* Animation_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Animation_2.png; path = ../Resources/animation/Animation_2.png; sourceTree = "<group>"; };
 		2F673CB715C6FD16004097DF /* Animation_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Animation_3.png; path = ../Resources/animation/Animation_3.png; sourceTree = "<group>"; };
@@ -408,28 +405,31 @@
 		2F673D9315C6FE87004097DF /* Animation_73@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Animation_73@2x.png"; path = "../Resources/animation/Animation_73@2x.png"; sourceTree = "<group>"; };
 		2F673D9415C6FE87004097DF /* Animation_74@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Animation_74@2x.png"; path = "../Resources/animation/Animation_74@2x.png"; sourceTree = "<group>"; };
 		2F673D9515C6FE87004097DF /* Animation_75@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Animation_75@2x.png"; path = "../Resources/animation/Animation_75@2x.png"; sourceTree = "<group>"; };
-		2F7C97EC15B9AD9400FC8AA1 /* AppMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = adhawk/Classes/Config/AppMacros.h; sourceTree = SOURCE_ROOT; };
-		2F8AD0C915AF11B20004EECD /* AdHawkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkAPI.h; path = adhawk/Classes/Services/AdHawkAPI.h; sourceTree = SOURCE_ROOT; };
-		2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAPI.m; path = adhawk/Classes/Services/AdHawkAPI.m; sourceTree = SOURCE_ROOT; };
-		2F8AD0D215AF22C70004EECD /* AdHawkAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkAd.h; path = adhawk/Classes/Services/AdHawkAd.h; sourceTree = SOURCE_ROOT; };
-		2F8AD0D315AF22C70004EECD /* AdHawkAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAd.m; path = adhawk/Classes/Services/AdHawkAd.m; sourceTree = SOURCE_ROOT; };
-		2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Ad Hawk-Info.plist"; path = "adhawk/Ad Hawk-Info.plist"; sourceTree = SOURCE_ROOT; };
-		2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ad Hawk-Prefix.pch"; path = "adhawk/Ad Hawk-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		2F7C97EC15B9AD9400FC8AA1 /* AppMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = Classes/Config/AppMacros.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0C915AF11B20004EECD /* AdHawkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkAPI.h; path = Classes/Services/AdHawkAPI.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAPI.m; path = Classes/Services/AdHawkAPI.m; sourceTree = SOURCE_ROOT; };
+		2F8AD0D215AF22C70004EECD /* AdHawkAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkAd.h; path = Classes/Services/AdHawkAd.h; sourceTree = SOURCE_ROOT; };
+		2F8AD0D315AF22C70004EECD /* AdHawkAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkAd.m; path = Classes/Services/AdHawkAd.m; sourceTree = SOURCE_ROOT; };
+		2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Ad Hawk-Info.plist"; path = "Resources/Ad Hawk-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ad Hawk-Prefix.pch"; path = "Other Sources/Ad Hawk-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		2FB511F618A92E7100AC4127 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Resources/Images.xcassets; sourceTree = "<group>"; };
 		2FBD846015CB0F37001C128F /* AdHawkLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdHawkLocationManager.h; sourceTree = "<group>"; };
 		2FBD846115CB0F38001C128F /* AdHawkLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdHawkLocationManager.m; sourceTree = "<group>"; };
 		2FBD846315CC1A90001C128F /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
 		2FBD846415CC1A91001C128F /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
-		2FBFE4C115C2D4F40035C0F6 /* SimpleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleWebViewController.h; path = adhawk/Classes/SimpleWebViewController.h; sourceTree = SOURCE_ROOT; };
-		2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleWebViewController.m; path = adhawk/Classes/SimpleWebViewController.m; sourceTree = SOURCE_ROOT; };
-		2FC0B16715C85F710020CCFC /* AdhawkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdhawkErrorViewController.h; path = adhawk/Classes/AdhawkErrorViewController.h; sourceTree = SOURCE_ROOT; };
-		2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdhawkErrorViewController.m; path = adhawk/Classes/AdhawkErrorViewController.m; sourceTree = SOURCE_ROOT; };
-		2FD683E615C0505600822ABE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = adhawk/Classes/AboutViewController.h; sourceTree = SOURCE_ROOT; };
-		2FD683E715C0505600822ABE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = adhawk/Classes/AboutViewController.m; sourceTree = SOURCE_ROOT; };
-		2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthHandlingWebViewController.h; path = adhawk/Classes/AuthHandlingWebViewController.h; sourceTree = SOURCE_ROOT; };
-		2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthHandlingWebViewController.m; path = adhawk/Classes/AuthHandlingWebViewController.m; sourceTree = SOURCE_ROOT; };
-		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = adhawk/Classes/InternalAdBrowserViewController.h; sourceTree = SOURCE_ROOT; };
-		2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternalAdBrowserViewController.m; path = adhawk/Classes/InternalAdBrowserViewController.m; sourceTree = SOURCE_ROOT; };
+		2FBFE4C115C2D4F40035C0F6 /* SimpleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleWebViewController.h; path = Classes/SimpleWebViewController.h; sourceTree = SOURCE_ROOT; };
+		2FBFE4C215C2D4F40035C0F6 /* SimpleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleWebViewController.m; path = Classes/SimpleWebViewController.m; sourceTree = SOURCE_ROOT; };
+		2FC0B16715C85F710020CCFC /* AdhawkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdhawkErrorViewController.h; path = Classes/AdhawkErrorViewController.h; sourceTree = SOURCE_ROOT; };
+		2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdhawkErrorViewController.m; path = Classes/AdhawkErrorViewController.m; sourceTree = SOURCE_ROOT; };
+		2FD683E615C0505600822ABE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = Classes/AboutViewController.h; sourceTree = SOURCE_ROOT; };
+		2FD683E715C0505600822ABE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = Classes/AboutViewController.m; sourceTree = SOURCE_ROOT; };
+		2FD8C9D318A95A4B00820AA8 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
+		2FD8C9D518A95B5700820AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		2FD8C9D818A95BBB00820AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Resources/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthHandlingWebViewController.h; path = Classes/AuthHandlingWebViewController.h; sourceTree = SOURCE_ROOT; };
+		2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthHandlingWebViewController.m; path = Classes/AuthHandlingWebViewController.m; sourceTree = SOURCE_ROOT; };
+		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = Classes/InternalAdBrowserViewController.h; sourceTree = SOURCE_ROOT; };
+		2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternalAdBrowserViewController.m; path = Classes/InternalAdBrowserViewController.m; sourceTree = SOURCE_ROOT; };
 		2FFB537C15ADF6DC0069A722 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		2FFB537E15ADF7200069A722 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		BE0DE852A9FC4A889F69F060 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -503,6 +503,7 @@
 				2F4B98E415ACDC5500C5AB4C /* Settings.m */,
 			);
 			name = config;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		2F673CB415C6FD07004097DF /* animation */ = {
@@ -675,14 +676,25 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		2FD8C9D218A9573C00820AA8 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C39941A7153FA9D500E64F82 /* echoprint */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		C36B3FD315023E5400937C3F = {
 			isa = PBXGroup;
 			children = (
-				C36B3FE815023E5400937C3F /* adhawk */,
 				C36B400615023E5400937C3F /* adhawkTests */,
+				C3C01695153A80C700D56553 /* Classes */,
 				C36B3FE115023E5400937C3F /* Frameworks */,
-				C36B3FDF15023E5400937C3F /* Products */,
 				F2D7A69A16894332B801C8BA /* Pods.xcconfig */,
+				C36B3FDF15023E5400937C3F /* Products */,
+				C3D6DD8615027FBB003F8F6B /* Resources */,
+				C36B3FE915023E5400937C3F /* Other Sources */,
+				2FD8C9D218A9573C00820AA8 /* Vendor */,
 			);
 			sourceTree = "<group>";
 		};
@@ -723,26 +735,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C36B3FE815023E5400937C3F /* adhawk */ = {
-			isa = PBXGroup;
-			children = (
-				2F4B986A15ACC84800C5AB4C /* MainStoryboard.storyboard */,
-				C3C01695153A80C700D56553 /* Classes */,
-				C3D6DD8615027FBB003F8F6B /* Resources */,
-				C36B3FE915023E5400937C3F /* Supporting Files */,
-			);
-			path = adhawk;
-			sourceTree = "<group>";
-		};
-		C36B3FE915023E5400937C3F /* Supporting Files */ = {
+		C36B3FE915023E5400937C3F /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
 				2F4B986E15ACC8A700C5AB4C /* main.m */,
 				2F93476E15AE111500FE5749 /* Ad Hawk-Info.plist */,
 				2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */,
-				2F4B987615ACCC3500C5AB4C /* InfoPlist.strings */,
 			);
-			name = "Supporting Files";
+			path = "Other Sources";
 			sourceTree = "<group>";
 		};
 		C36B400615023E5400937C3F /* adhawkTests */ = {
@@ -768,7 +768,7 @@
 		C39941A7153FA9D500E64F82 /* echoprint */ = {
 			isa = PBXGroup;
 			children = (
-				2F4B985F15ACC80E00C5AB4C /* echoprint_Prefix.pch */,
+				2FD8C9D318A95A4B00820AA8 /* echoprint_Prefix.pch */,
 				2F4B985315ACC7F800C5AB4C /* CADebugMacros.h */,
 				2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */,
 				2F4B985515ACC7F800C5AB4C /* CADebugPrintf.h */,
@@ -780,6 +780,7 @@
 				2F4B985B15ACC7F800C5AB4C /* GetPCMFromFile.h */,
 			);
 			name = echoprint;
+			path = Vendor/echoprint;
 			sourceTree = "<group>";
 		};
 		C3C01695153A80C700D56553 /* Classes */ = {
@@ -797,7 +798,6 @@
 				2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */,
 				2F4B984715ACC7AC00C5AB4C /* ViewController.h */,
 				2F4B984815ACC7AC00C5AB4C /* ViewController.m */,
-				C39941A7153FA9D500E64F82 /* echoprint */,
 				2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */,
 				2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */,
 				2FD683E615C0505600822ABE /* AboutViewController.h */,
@@ -819,10 +819,13 @@
 		C3D6DD8615027FBB003F8F6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2FB511F618A92E7100AC4127 /* Images.xcassets */,
+				2FD8C9D718A95BBB00820AA8 /* MainStoryboard.storyboard */,
 				2F673CB415C6FD07004097DF /* animation */,
+				2FB511F618A92E7100AC4127 /* Images.xcassets */,
+				2FD8C9D418A95B5700820AA8 /* InfoPlist.strings */,
 			);
 			name = Resources;
+			path = adhawk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -876,6 +879,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				TargetAttributes = {
+					C36B3FDD15023E5400937C3F = {
+						DevelopmentTeam = 3A9R2W6JVG;
+					};
+				};
 			};
 			buildConfigurationList = C36B3FD815023E5400937C3F /* Build configuration list for PBXProject "adhawk" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -900,8 +908,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F4B986C15ACC84800C5AB4C /* MainStoryboard.storyboard in Resources */,
-				2F4B987815ACCC3500C5AB4C /* InfoPlist.strings in Resources */,
 				2FB511F718A92E7200AC4127 /* Images.xcassets in Resources */,
 				2F673D0015C6FD16004097DF /* Animation_1.png in Resources */,
 				2F673D0115C6FD16004097DF /* Animation_2.png in Resources */,
@@ -1025,6 +1031,7 @@
 				2F673DC215C6FE87004097DF /* Animation_45@2x.png in Resources */,
 				2F673DC315C6FE87004097DF /* Animation_46@2x.png in Resources */,
 				2F673DC415C6FE87004097DF /* Animation_47@2x.png in Resources */,
+				2FD8C9D618A95B5700820AA8 /* InfoPlist.strings in Resources */,
 				2F673DC515C6FE87004097DF /* Animation_48@2x.png in Resources */,
 				2F673DC615C6FE87004097DF /* Animation_49@2x.png in Resources */,
 				2F673DC715C6FE87004097DF /* Animation_50@2x.png in Resources */,
@@ -1033,6 +1040,7 @@
 				2F673DCA15C6FE87004097DF /* Animation_53@2x.png in Resources */,
 				2F673DCB15C6FE87004097DF /* Animation_54@2x.png in Resources */,
 				2F673DCC15C6FE87004097DF /* Animation_55@2x.png in Resources */,
+				2FD8C9D918A95BBB00820AA8 /* MainStoryboard.storyboard in Resources */,
 				2F673DCD15C6FE87004097DF /* Animation_56@2x.png in Resources */,
 				2F673DCE15C6FE87004097DF /* Animation_57@2x.png in Resources */,
 				2F673DCF15C6FE87004097DF /* Animation_58@2x.png in Resources */,
@@ -1188,28 +1196,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2F4B986A15ACC84800C5AB4C /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F4B986B15ACC84800C5AB4C /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		2F4B987615ACCC3500C5AB4C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F4B987715ACCC3500C5AB4C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2F4B988215ACCC7900C5AB4C /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2FD8C9D418A95B5700820AA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FD8C9D518A95B5700820AA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = "../Other Sources";
+			sourceTree = "<group>";
+		};
+		2FD8C9D718A95BBB00820AA8 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FD8C9D818A95BBB00820AA8 /* en */,
+			);
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1242,7 +1251,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Vendor/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = AppStore;
@@ -1255,11 +1264,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "adhawk/Ad Hawk-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
 				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -1267,7 +1276,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad Hawk";
 				PROVISIONING_PROFILE = "";
@@ -1280,6 +1288,7 @@
 		2F16E3C515D2B83200D7FBA7 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk.app/adhawk";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1292,8 +1301,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Frameworks\"",
-					"\"$(SRCROOT)/Frameworks/TestFlightSDK\"",
-					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad HawkTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1333,7 +1340,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Vendor/**";
 			};
 			name = Debug;
 		};
@@ -1363,7 +1370,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Vendor/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1376,10 +1383,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "adhawk/Ad Hawk-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
 				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -1387,7 +1395,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad Hawk";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1404,11 +1411,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/Ad Hawk-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "adhawk/Ad Hawk-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
 				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -1416,7 +1423,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad Hawk";
 				PROVISIONING_PROFILE = "";
@@ -1430,6 +1436,7 @@
 		C36B401515023E5400937C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk/adhawk";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1442,8 +1449,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Frameworks\"",
-					"\"$(SRCROOT)/Frameworks/TestFlightSDK\"",
-					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad HawkTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1454,6 +1459,7 @@
 		C36B401615023E5400937C3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk.app/adhawk";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1466,8 +1472,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/Frameworks\"",
-					"\"$(SRCROOT)/Frameworks/TestFlightSDK\"",
-					"\"$(SRCROOT)/SDKs/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "Ad HawkTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
