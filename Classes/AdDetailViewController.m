@@ -7,7 +7,6 @@
 //
 
 #import "AdDetailViewController.h"
-#import "AppMacros.h"
 #import "Settings.h"
 
 @implementation AdDetailViewController
@@ -25,7 +24,7 @@
 	// Do any additional setup after loading the view.
     webView.delegate = self;
     
-    if ([_targetURL absoluteString] != @"") {
+    if (![[_targetURL absoluteString] isEqualToString: @""]) {
         NSLog(@"Requesting: %@", [_targetURL absoluteString]);
         NSURLRequest *req = [NSURLRequest requestWithURL:_targetURL];
         [webView loadRequest:req];

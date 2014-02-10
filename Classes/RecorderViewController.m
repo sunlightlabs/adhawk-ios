@@ -293,7 +293,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 -(void) adHawkAPIDidFailWithError:(NSError *) error
 {
-    NSLog(@"Fail error: %@", error.code);
+    NSLog(@"Fail error: %ld", (long)error.code);
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[error.userInfo objectForKey:@"title"] message:[error.userInfo objectForKey:@"message"] 
                                                        delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
     [alertView show];
