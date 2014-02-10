@@ -19,7 +19,7 @@ NSURL *endPointURL(NSString * path)
 
 @implementation AdHawkAPI
 
-@synthesize baseURL, currentAd, currentAdHawkURL, searchDelegate;
+@synthesize baseURL, adhawkAdResponseDescriptor, currentAd, currentAdHawkURL, searchDelegate;
 
 + (AdHawkAPI *) sharedInstance
 {
@@ -45,13 +45,16 @@ NSURL *endPointURL(NSString * path)
 
         // MARK: Set up AdHawkAd mapping
         _adHawkAdMapping = [RKObjectMapping mappingForClass:[AdHawkAd class]];
-        [_adHawkAdMapping addAttributeMappingsFromDictionary:@{@"result_url":@"resultURL", @"share_text":@"shareText"}];
-        [manager addResponseDescriptor:[RKResponseDescriptor
-                                        responseDescriptorWithMapping:_adHawkAdMapping
-                                        method:RKRequestMethodAny
-                                        pathPattern:@""
-                                        keyPath:nil
-                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)]];
+        [_adHawkAdMapping addAttributeMappingsFromDictionary:@{ @"result_url": @"resultURL",
+                                                                @"share_text": @"shareText" }];
+
+        self.adhawkAdResponseDescriptor = [RKResponseDescriptor
+                                           responseDescriptorWithMapping:_adHawkAdMapping
+                                           method:RKRequestMethodAny
+                                           pathPattern:@"ad/"
+                                           keyPath:nil
+                                           statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+        [manager addResponseDescriptor:self.adhawkAdResponseDescriptor];
     }
 
     return self;
@@ -76,7 +79,7 @@ NSURL *endPointURL(NSString * path)
     if (TESTING == YES) [TestFlight passCheckpoint:@"Submitted Fingerprint"];
 
 
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/ad/" parameters:postParams
+    [[RKObjectManager sharedManager] postObject:nil path:@"ad/" parameters:postParams
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSLog(@"It Worked: %@", [mappingResult firstObject]);
         id object = [mappingResult firstObject];
@@ -94,7 +97,7 @@ NSURL *endPointURL(NSString * path)
             }
         }
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        TFLog(@"Got back an object, but it didn't conform to AdHawkAd");
+        TFLog(@"searchForAdWithFingerprint Error: %@", error.localizedDescription);
         [[self searchDelegate] adHawkAPIDidReturnNoResult];
     }];
 

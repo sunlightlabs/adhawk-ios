@@ -27,6 +27,7 @@ RKObjectManager *setUpAPI(void);
 }
 
 @property (nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, strong) RKResponseDescriptor *adhawkAdResponseDescriptor;
 @property (nonatomic, strong) AdHawkAd *currentAd;
 @property (nonatomic, copy) NSURL *currentAdHawkURL;
 @property (readonly, nonatomic) id <AdHawkAPIDelegate> searchDelegate;
