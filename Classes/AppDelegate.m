@@ -13,7 +13,7 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,24 +25,25 @@
     [audioSession setPreferredHardwareSampleRate:44100.0 error:nil];
     [audioSession setActive:YES withFlags:AVAudioSessionInterruptionFlags_ShouldResume error:nil];
 
-    [_window makeKeyAndVisible];
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     // Override point for customization after application launch.
     if (TESTING == YES) {
 #ifdef FLYING
         [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
 #endif
-        [TestFlight takeOff:TESTFLIGHT_TEAM_TOKEN];
+        [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
         NSLog(@"TestFlight run");
     }
     else
     {
         NSLog(@"No testing");
     }
-    
-//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:ADHAWK_APP_USER_AGENT, @"UserAgent", nil];
-//    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];  
-    
+
+    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil]
+                                      instantiateViewControllerWithIdentifier:@"AppNavigationController"];
+
+
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -62,7 +63,6 @@
      */
     [[AVAudioSession sharedInstance] setActive:NO error:nil];
     [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

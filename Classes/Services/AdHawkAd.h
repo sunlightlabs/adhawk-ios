@@ -10,7 +10,7 @@
 
 @interface AdHawkAd : NSObject
 
-@property (nonatomic, retain) NSURL* resultURL;
-@property (nonatomic, retain) NSString* shareText;
+@property (nonatomic, copy) NSURL* resultURL;
+@property (nonatomic, copy) NSString* shareText;
 
 @end
