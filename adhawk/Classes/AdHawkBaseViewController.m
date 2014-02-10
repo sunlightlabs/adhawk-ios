@@ -9,7 +9,6 @@
 #import "AdHawkBaseViewController.h"
 #import "AboutViewController.h"
 #import "Settings.h"
-#import "GigyaService.h"
 #import "AdHawkAPI.h"
 
 
@@ -122,7 +121,7 @@
     NSString *clickedButtonLabel = [actionSheet buttonTitleAtIndex:buttonIndex];
     NSLog(@"Share button clicked: %@", clickedButtonLabel);
     AdHawkAPI *adhawkApi = [AdHawkAPI sharedInstance];
-    NSString *share_text = adhawkApi.currentAd != nil ? adhawkApi.currentAd.share_text : @"";
+    NSString *share_text = adhawkApi.currentAd != nil ? adhawkApi.currentAd.shareText : @"";
 //    GigyaService *gs = [GigyaService sharedInstanceWithViewController:self];
 //    NSString *serviceName = nil;
     if (buttonIndex == 0) {

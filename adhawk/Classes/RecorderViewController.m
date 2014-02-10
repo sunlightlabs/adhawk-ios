@@ -248,7 +248,7 @@ extern const char * GetPCMFromFile(char * filename);
         NSLog(@"Segue to AdDetailView");
         
         // Pass any objects to the view controller here, like...
-        NSURL *targetURL = [AdHawkAPI sharedInstance].currentAd.result_url;
+        NSURL *targetURL = [AdHawkAPI sharedInstance].currentAd.resultURL;
         [vc setTargetURLString:[targetURL absoluteString]];
     }
 }

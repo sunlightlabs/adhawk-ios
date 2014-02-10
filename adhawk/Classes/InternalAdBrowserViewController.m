@@ -55,7 +55,7 @@
         if (theAd != NULL) {
             [p_webView stopLoading];
             _interceptedRequest = YES;
-            NSString *absoluteURLString = [theAd.result_url absoluteString];
+            NSString *absoluteURLString = [theAd.resultURL absoluteString];
             [vc setTargetURLString:absoluteURLString];
             [self.navigationController pushViewController:vc animated:YES];
         }

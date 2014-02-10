@@ -10,7 +10,7 @@
 
 @implementation AdHawkAd
 
-@synthesize result_url;
-@synthesize share_text;
+@synthesize resultURL;
+@synthesize shareText;
 
 @end

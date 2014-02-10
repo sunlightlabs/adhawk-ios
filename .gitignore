@@ -18,3 +18,8 @@ xcuserdata
 profile
 *.moved-aside
 DerivedData
+
+# Cocoapods - ignore Pods dir
+Pods/*
+Podfile.lock
+
