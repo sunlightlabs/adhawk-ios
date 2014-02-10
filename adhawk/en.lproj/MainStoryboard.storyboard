@@ -1,55 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Viy-z5-39k">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--About View Controller - About Ad Hawk-->
         <scene sceneID="i8t-LP-Pj0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb3-3h-Nr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="aboutAdHawk" title="About Ad Hawk" id="DZi-N6-eMM" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m59-Qg-QOx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="LzU-SE-Hhx">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="LzU-SE-Hhx" id="98T-xk-i2p"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb3-3h-Nr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="265" y="-488"/>
         </scene>
         <!--Recorder View Controller - Ad Hawk-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="RecorderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="IDbkgrnd.png" id="Gtw-sY-Nbe">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
+                                <rect key="frame" x="-1336" y="639" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="IDworking.png" id="Clf-oc-QGl">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
+                                <rect key="frame" x="-1336" y="639" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFV-xK-5PI">
-                                <rect key="frame" x="62" y="162" width="159" height="130"/>
+                                <rect key="frame" x="-1336" y="639" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Identify Ad" image="IDbtnup.png">
@@ -73,20 +71,20 @@
                         <segue destination="OhG-d8-01w" kind="push" identifier="adSegue" id="q4Z-7a-U2P"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799" y="99"/>
         </scene>
         <!--Adhawk Error View Controller - AdHawk Error-->
         <scene sceneID="wcc-AP-nec">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ien-pt-Xhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="adhawkErrorVC" title="AdHawk Error" id="FJu-3N-LzE" customClass="AdhawkErrorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GWc-G0-llb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="0bE-5T-fjS">
-                                <rect key="frame" x="0.0" y="-22" width="320" height="480"/>
+                                <rect key="frame" x="-1336" y="57" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qoh-ic-k5d">
@@ -139,28 +137,28 @@
                             </label>
                         </subviews>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="popularResultsButton" destination="Tbi-XE-Xtu" id="ypn-Dt-kyn"/>
                         <outlet property="tryAgainButton" destination="qoh-ic-k5d" id="rMr-C4-g3i"/>
                         <outlet property="whyNoResultsButton" destination="ZI1-Rk-t9z" id="BtC-Qn-1fQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ien-pt-Xhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799" y="681"/>
         </scene>
         <!--Ad Detail View Controller - Ad Info-->
         <scene sceneID="ODI-Ts-BFU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AW8-7q-HKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="adDetailVC" id="OhG-d8-01w" customClass="AdDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deL-sx-TvF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="8Oa-CP-NE2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -169,29 +167,29 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Ad Info" id="6mf-Z3-af6"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="8Oa-CP-NE2" id="zoS-dq-1gc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AW8-7q-HKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1275" y="99"/>
         </scene>
         <!--Preferences View Controller - Settings-->
         <scene sceneID="zuw-Ga-hn5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-1W-is0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="settingsVC" title="Settings" id="78Y-GP-4cl" customClass="PreferencesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aPv-Vk-KXm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bkgrnd.png" id="sdE-ie-cCN">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="480"/>
+                                <rect key="frame" x="-1812" y="60" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eDc-w3-dBy">
-                                <rect key="frame" x="43" y="131" width="79" height="27"/>
+                                <rect key="frame" x="43" y="131" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.81568627449999997" green="0.39607843139999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -213,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="9hK-gx-lsV">
-                                <rect key="frame" x="43" y="77" width="79" height="27"/>
+                                <rect key="frame" x="43" y="77" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.81568627450980391" green="0.396078431372549" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -221,7 +219,7 @@
                                 </connections>
                             </switch>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="xCl-pg-rui">
-                                <rect key="frame" x="43" y="185" width="79" height="27"/>
+                                <rect key="frame" x="43" y="185" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.81568627449999997" green="0.39607843139999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -238,31 +236,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="facebookAccountSwitch" destination="eDc-w3-dBy" id="7Oz-Q5-noo"/>
                         <outlet property="shareLocationSwitch" destination="9hK-gx-lsV" id="6vx-ym-hQZ"/>
                         <outlet property="twitterAccountSwitch" destination="xCl-pg-rui" id="Ja0-lV-Osa"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-1W-is0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1275" y="678"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2c9-T8-WGe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9np-MC-2Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="Viy-z5-39k" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="afs-cC-R4w">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" id="afs-cC-R4w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" barStyle="blackOpaque" id="WZf-f7-I4D">
+                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" barStyle="black" id="WZf-f7-I4D">
                         <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
@@ -270,81 +268,82 @@
                         <segue destination="2" kind="relationship" relationship="rootViewController" id="bwD-QW-CFg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9np-MC-2Fj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="265" y="99"/>
         </scene>
         <!--Auth Handling Web View Controller-->
         <scene sceneID="Ltw-hP-yUD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tc0-xd-XiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="genericAuthWebView" id="dBY-as-3xF" customClass="AuthHandlingWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QXG-pA-DQ6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="jJz-Cm-YGR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="jJz-Cm-YGR" id="WVL-OR-vmM"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tc0-xd-XiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799" y="-496"/>
         </scene>
         <!--Internal Ad Browser View Controller-->
         <scene sceneID="6Ft-PZ-a6C">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ki4-4B-jKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="internalBrowserVC" id="mEj-ZN-5SQ" customClass="InternalAdBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6j-hr-6oC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="NTW-0W-UKp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="NTW-0W-UKp" id="pG2-nb-Wtg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ki4-4B-jKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1275" y="-496"/>
         </scene>
         <!--Simple Web View Controller-->
         <scene sceneID="XMb-Wg-hwE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AHn-a3-5IO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="simpleWebVC" id="ZcU-MT-4id" customClass="SimpleWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raF-dv-zfO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="zfQ-iG-xae">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="zfQ-iG-xae" id="QVu-Ri-ne5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AHn-a3-5IO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-149" y="-488"/>
         </scene>
@@ -358,66 +357,6 @@
         <image name="btndown.png" width="173" height="63"/>
         <image name="btnup.png" width="173" height="63"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="SimpleWebViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-        </class>
-        <class className="AdDetailViewController" superclassName="SimpleWebViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdDetailViewController.h"/>
-        </class>
-        <class className="AdHawkBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdHawkBaseViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showSocialActionSheet:"/>
-            </relationships>
-        </class>
-        <class className="AdhawkErrorViewController" superclassName="AdHawkBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdhawkErrorViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="popularResultsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tryAgainButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="whyNoResultsButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="AuthHandlingWebViewController" superclassName="AdHawkBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AuthHandlingWebViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="InternalAdBrowserViewController" superclassName="SimpleWebViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InternalAdBrowserViewController.h"/>
-        </class>
-        <class className="PreferencesViewController" superclassName="AdHawkBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PreferencesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleFacebookAccountSwitch:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="handleShareLocationSwitch:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="handleTwitterAccountSwitch:" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="facebookAccountSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="shareLocationSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="twitterAccountSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="RecorderViewController" superclassName="AdHawkBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecorderViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleTVButtonTouch"/>
-                <relationship kind="action" name="retryButtonClicked"/>
-                <relationship kind="action" name="showBrowseWebView"/>
-                <relationship kind="action" name="stopRecorder"/>
-                <relationship kind="outlet" name="failView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="workingBackground" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SimpleWebViewController" superclassName="AdHawkBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SimpleWebViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
