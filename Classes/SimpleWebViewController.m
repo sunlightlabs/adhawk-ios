@@ -74,6 +74,7 @@
 
     if ([[self.targetURL host] isEqualToString:@"cdns.gigya.com"]) {
         [p_webView stopLoading];
+        return NO;
     }
 
 //    Check headers for custom x-header
