@@ -11,29 +11,10 @@
 
 @implementation AdDetailViewController
 
--(void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.targetURL && ![[self.targetURL absoluteString] isEqualToString: @""]) {
-        NSLog(@"Requesting: %@", [self.targetURL absoluteString]);
-        NSURLRequest *req = [NSURLRequest requestWithURL:self.targetURL];
-        [self.webView loadRequest:req];
-        if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
-    }
-
     [self enableSocial];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.webView.delegate = self;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -43,18 +24,11 @@
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         [[UIApplication sharedApplication] openURL:[request URL]];
         [p_webView stopLoading];
+
         return NO;
     }
     
     return shouldStartLoad;
 }
 
-- (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-
-
 @end
-
