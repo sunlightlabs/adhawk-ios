@@ -50,7 +50,11 @@
 - (BOOL)webView:(UIWebView *)p_webView shouldStartLoadWithRequest:(NSURLRequest *)p_request navigationType:(UIWebViewNavigationType)navigationType
 {
     self.targetURL = (self.targetURL != [p_request URL]) ? [p_request URL] : self.targetURL;
-    
+
+    if ([[self.targetURL host] isEqualToString:@"cdns.gigya.com"]) {
+        [p_webView stopLoading];
+    }
+
 //    Check headers for custom x-header
     NSMutableURLRequest *customRequest = [p_request copy];
     
@@ -66,24 +70,11 @@
     return YES;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)p_webView
-{
-    NSLog(@"Url: %@", [[p_webView.request URL] absoluteString]);
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)p_webView
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-
-}
-
 - (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"error: %@", [error localizedDescription]);
     UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
     [e_alert show];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 @end

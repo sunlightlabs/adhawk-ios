@@ -80,25 +80,19 @@
     [[self navigationController] setToolbarHidden:NO animated:NO];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void) showSettingsView
+- (void)showSettingsView
 {
     NSLog(@"Show settings view");
     UIViewController *svc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"PreferencesViewController"];
     [self.navigationController pushViewController:svc animated:YES];
 }
 
-- (void) showAboutView
+- (void)showAboutView
 {
     NSLog(@"Show about view");
     AboutViewController *avc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AboutViewController"];
@@ -109,79 +103,11 @@
 #pragma mark - IBActions
 
 -(IBAction)showSocialActionSheet:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share This" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", nil];
-    [actionSheet showFromToolbar:[[self navigationController] toolbar]];
-}
-
-#pragma mark - UIActionSheetDelegate callbacks
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSLog(@"Share Action Click");
-    NSString *clickedButtonLabel = [actionSheet buttonTitleAtIndex:buttonIndex];
-    NSLog(@"Share button clicked: %@", clickedButtonLabel);
     AdHawkAPI *adhawkApi = [AdHawkAPI sharedInstance];
-    NSString *share_text = adhawkApi.currentAd != nil ? adhawkApi.currentAd.shareText : @"";
-//    GigyaService *gs = [GigyaService sharedInstanceWithViewController:self];
-//    NSString *serviceName = nil;
-    if (buttonIndex == 0) {
-        if (TESTING == YES) [TestFlight passCheckpoint:@"Share 'Twitter' clicked"];
-        if ([TWTweetComposeViewController canSendTweet]) {
-            TWTweetComposeViewController *tweetVC = [[TWTweetComposeViewController alloc] init];
-            [tweetVC setInitialText:share_text];
-            [tweetVC setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
-                NSString *output;
-                
-                switch (result) {
-                    case TWTweetComposeViewControllerResultCancelled:
-                        // The cancel button was tapped.
-                        output = @"Tweet cancelled.";
-                        break;
-                    case TWTweetComposeViewControllerResultDone:
-                        // The tweet was sent.
-                        output = @"Tweet sent.";
-                        break;
-                    default:
-                        break;
-                }
-                
-                NSLog(@"Tweet status: %@", output);
-                
-                // Dismiss the tweet composition view controller.
-                [self dismissModalViewControllerAnimated:YES];
-            }];
-            [self presentModalViewController:tweetVC animated:YES];
-        }
-        else{
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Twitter not configured" message:@"Twitter does not appear to be configured on this device" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-            [alertView show];
-        }
-//        serviceName = gs.TWITTER;
-    }
-    else if (buttonIndex == 1) {
-        if (TESTING == YES) [TestFlight passCheckpoint:@"Share 'Facebook' clicked"];
-//        serviceName = gs.FACEBOOK;
-    }
-//    [gs shareMessage:share_text toService:serviceName];
-}
-
-- (void) handleTweetResult:(BOOL)didTweet
-{
-//    NSLog(<#__FORMAT__, ...#>)
-//    switch (didTweet) {
-//        case TWTweetComposeViewControllerResultCancelled:
-//            // The cancel button was tapped.
-//            output = @"Tweet cancelled.";
-//            break;
-//        case TWTweetComposeViewControllerResultDone:
-//            // The tweet was sent.
-//            output = @"Tweet done.";
-//            break;
-//        default:
-//            break;
-//    }
+    NSString *shareText = adhawkApi.currentAd != nil ? adhawkApi.currentAd.shareText : @"";
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[shareText] applicationActivities:nil];
+    [self presentViewController:activityViewController animated:YES completion:NULL];
 
 }
-
 
 @end

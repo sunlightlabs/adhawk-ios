@@ -88,7 +88,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qoh-ic-k5d">
-                                <rect key="frame" x="74" y="195" width="173" height="63"/>
+                                <rect key="frame" x="74" y="253" width="173" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -101,7 +101,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZI1-Rk-t9z">
-                                <rect key="frame" x="74" y="117" width="173" height="63"/>
+                                <rect key="frame" x="74" y="175" width="173" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -114,7 +114,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tbi-XE-Xtu">
-                                <rect key="frame" x="74" y="273" width="173" height="63"/>
+                                <rect key="frame" x="74" y="332" width="173" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <size key="titleShadowOffset" width="-1" height="-1"/>
@@ -127,7 +127,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sorry, Ad Hawk missed that." lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="17" id="WLh-3Y-sXl">
-                                <rect key="frame" x="94" y="46" width="133" height="43"/>
+                                <rect key="frame" x="94" y="104" width="133" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -188,60 +188,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eDc-w3-dBy">
-                                <rect key="frame" x="43" y="131" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.81568627449999997" green="0.39607843139999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="handleFacebookAccountSwitch:" destination="78Y-GP-4cl" eventType="valueChanged" id="xZu-NZ-z0W"/>
-                                </connections>
-                            </switch>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Facebook Sharing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="GBU-GW-96d">
-                                <rect key="frame" x="130" y="134" width="148" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Track Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="T39-3v-akH">
-                                <rect key="frame" x="130" y="80" width="122" height="21"/>
+                                <rect key="frame" x="144" y="149" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="9hK-gx-lsV">
-                                <rect key="frame" x="43" y="77" width="51" height="31"/>
+                                <rect key="frame" x="57" y="146" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.81568627450980391" green="0.396078431372549" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="handleShareLocationSwitch:" destination="78Y-GP-4cl" eventType="valueChanged" id="7yu-XR-okv"/>
                                 </connections>
                             </switch>
-                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="xCl-pg-rui">
-                                <rect key="frame" x="43" y="185" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.81568627449999997" green="0.39607843139999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="handleTwitterAccountSwitch:" destination="78Y-GP-4cl" eventType="valueChanged" id="boe-cU-C8D"/>
-                                </connections>
-                            </switch>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter Sharing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="RXZ-HE-ZJR">
-                                <rect key="frame" x="130" y="188" width="125" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
-                        <outlet property="facebookAccountSwitch" destination="eDc-w3-dBy" id="7Oz-Q5-noo"/>
                         <outlet property="shareLocationSwitch" destination="9hK-gx-lsV" id="6vx-ym-hQZ"/>
-                        <outlet property="twitterAccountSwitch" destination="xCl-pg-rui" id="Ja0-lV-Osa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pV-1W-is0" userLabel="First Responder" sceneMemberID="firstResponder"/>
