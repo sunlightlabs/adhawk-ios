@@ -25,7 +25,7 @@
 	// Do any additional setup after loading the view.
     NSLog(@"AboutView loaded");
     NSMutableURLRequest *_urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:ADHAWK_ABOUT_URL]];
-    [webView loadRequest:_urlReq];
+    [self.webView loadRequest:_urlReq];
 }
 
 #pragma mark - UIWebViewDelegate methods

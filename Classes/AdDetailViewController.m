@@ -17,7 +17,7 @@
     if (self.targetURL && ![[self.targetURL absoluteString] isEqualToString: @""]) {
         NSLog(@"Requesting: %@", [self.targetURL absoluteString]);
         NSURLRequest *req = [NSURLRequest requestWithURL:self.targetURL];
-        [webView loadRequest:req];
+        [self.webView loadRequest:req];
         if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
     }
 
@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    webView.delegate = self;
+    self.webView.delegate = self;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

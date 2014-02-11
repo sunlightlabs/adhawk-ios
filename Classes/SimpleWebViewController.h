@@ -11,12 +11,10 @@
 
 @interface SimpleWebViewController : AdHawkBaseViewController <UIWebViewDelegate>
 {
-    IBOutlet UIWebView *webView;
     BOOL _authed;
-    
 }
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (nonatomic, copy) NSURL *targetURL;
 
 @end
