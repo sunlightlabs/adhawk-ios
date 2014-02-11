@@ -17,7 +17,6 @@
 		2F4B984915ACC7AC00C5AB4C /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */; };
 		2F4B984A15ACC7AC00C5AB4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */; };
 		2F4B984B15ACC7AC00C5AB4C /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */; };
-		2F4B984C15ACC7AC00C5AB4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984815ACC7AC00C5AB4C /* ViewController.m */; };
 		2F4B985C15ACC7F800C5AB4C /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */; };
 		2F4B985D15ACC7F800C5AB4C /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */; };
 		2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */; };
@@ -67,8 +66,6 @@
 		2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		2F4B984515ACC7AC00C5AB4C /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecorderViewController.h; path = Classes/RecorderViewController.h; sourceTree = SOURCE_ROOT; };
 		2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecorderViewController.m; path = Classes/RecorderViewController.m; sourceTree = SOURCE_ROOT; };
-		2F4B984715ACC7AC00C5AB4C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = SOURCE_ROOT; };
-		2F4B984815ACC7AC00C5AB4C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = SOURCE_ROOT; };
 		2F4B985315ACC7F800C5AB4C /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = Vendor/echoprint/CADebugMacros.h; sourceTree = SOURCE_ROOT; };
 		2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CADebugPrintf.cpp; path = Vendor/echoprint/CADebugPrintf.cpp; sourceTree = SOURCE_ROOT; };
 		2F4B985515ACC7F800C5AB4C /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugPrintf.h; path = Vendor/echoprint/CADebugPrintf.h; sourceTree = SOURCE_ROOT; };
@@ -276,8 +273,6 @@
 				2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */,
 				2F4B984515ACC7AC00C5AB4C /* RecorderViewController.h */,
 				2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */,
-				2F4B984715ACC7AC00C5AB4C /* ViewController.h */,
-				2F4B984815ACC7AC00C5AB4C /* ViewController.m */,
 				2FD683E615C0505600822ABE /* AboutViewController.h */,
 				2FD683E715C0505600822ABE /* AboutViewController.m */,
 				2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */,
@@ -441,7 +436,6 @@
 				2F4B984915ACC7AC00C5AB4C /* AdDetailViewController.m in Sources */,
 				2F4B984A15ACC7AC00C5AB4C /* AppDelegate.m in Sources */,
 				2F4B984B15ACC7AC00C5AB4C /* RecorderViewController.m in Sources */,
-				2F4B984C15ACC7AC00C5AB4C /* ViewController.m in Sources */,
 				2F4B985C15ACC7F800C5AB4C /* CADebugPrintf.cpp in Sources */,
 				2F4B985D15ACC7F800C5AB4C /* Codegen_wrapper.cpp in Sources */,
 				2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */,
