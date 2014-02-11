@@ -10,17 +10,27 @@
 #import "Settings.h"
 #import "UIWebView+AFNetworking.h"
 
+@interface SimpleWebViewController ()
+
+- (void)loadTargetURL;
+
+@end
+
 @implementation SimpleWebViewController
 
 @synthesize webView;
+@synthesize activityIndicator;
 @synthesize targetURL;
+@synthesize loadTargetURLonViewWillAppear;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aDecoder];
+
     if (self) {
-        // Custom initialization
+        self.loadTargetURLonViewWillAppear = @YES;
     }
+
     return self;
 }
 
@@ -28,20 +38,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    webView.delegate = self;
-    [webView.scrollView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 44.0, 0.0)];
-    webView.backgroundColor = [UIColor whiteColor];
-    for (UIView* shadowView in [webView.scrollView subviews])
-    {
+    self.webView.delegate = self;
+    [self.webView.scrollView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 44.0, 0.0)];
+    self.webView.backgroundColor = [UIColor whiteColor];
+
+    for (UIView *shadowView in [webView.scrollView subviews]) {
         if ([shadowView isKindOfClass:[UIImageView class]]) {
             [shadowView setHidden:YES];
         }
     }
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)viewWillAppear:(BOOL)animated
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [super viewWillAppear:animated];
+
+    if (self.loadTargetURLonViewWillAppear) {
+        [self loadTargetURL];
+    }
+}
+
+#pragma mark - SimpleWebViewController methods
+
+- (void)setAndLoadTargetURL:(NSURL *)url
+{
+    self.targetURL = url;
+    [self loadTargetURL];
 }
 
 #pragma mark - UIWebViewDelegate methods
@@ -63,6 +85,7 @@
         NSLog(@"Overriding headers");
         [customRequest addValue:CLIENT_APP_HEADER forHTTPHeaderField:@"X-Client-App"];
         [p_webView loadRequest:customRequest];
+
         return NO;
     }
     
@@ -74,6 +97,18 @@
     NSLog(@"error: %@", [error localizedDescription]);
     UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
     [e_alert show];
+}
+
+#pragma mark - Private
+
+- (void)loadTargetURL
+{
+    if (self.targetURL && ![[self.targetURL absoluteString] isEqualToString: @""]) {
+        NSLog(@"Requesting: %@", [self.targetURL absoluteString]);
+        NSURLRequest *req = [NSURLRequest requestWithURL:self.targetURL];
+        [self.webView loadRequest:req];
+        if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
+    }
 }
 
 @end

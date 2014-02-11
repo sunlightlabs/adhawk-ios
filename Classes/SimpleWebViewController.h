@@ -15,7 +15,11 @@
 }
 
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, copy) NSURL *targetURL;
+@property (nonatomic) BOOL loadTargetURLonViewWillAppear;
+
+- (void)setAndLoadTargetURL:(NSURL *)url;
 
 @end
 
