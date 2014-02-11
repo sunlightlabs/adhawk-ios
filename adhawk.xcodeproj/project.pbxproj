@@ -35,7 +35,6 @@
 		2FD683E815C0505600822ABE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD683E715C0505600822ABE /* AboutViewController.m */; };
 		2FD8C9D618A95B5700820AA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8C9D418A95B5700820AA8 /* InfoPlist.strings */; };
 		2FD8C9D918A95BBB00820AA8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8C9D718A95BBB00820AA8 /* MainStoryboard.storyboard */; };
-		2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */; };
 		2FF8E00415C2109A00D68C84 /* InternalAdBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */; };
 		2FFB537D15ADF6DC0069A722 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFB537C15ADF6DC0069A722 /* Twitter.framework */; };
 		2FFB537F15ADF7200069A722 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFB537E15ADF7200069A722 /* Accounts.framework */; };
@@ -103,8 +102,6 @@
 		2FD8C9D318A95A4B00820AA8 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
 		2FD8C9D518A95B5700820AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2FD8C9D818A95BBB00820AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Resources/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
-		2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthHandlingWebViewController.h; path = Classes/AuthHandlingWebViewController.h; sourceTree = SOURCE_ROOT; };
-		2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthHandlingWebViewController.m; path = Classes/AuthHandlingWebViewController.m; sourceTree = SOURCE_ROOT; };
 		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = Classes/InternalAdBrowserViewController.h; sourceTree = SOURCE_ROOT; };
 		2FF8E00315C2109A00D68C84 /* InternalAdBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternalAdBrowserViewController.m; path = Classes/InternalAdBrowserViewController.m; sourceTree = SOURCE_ROOT; };
 		2FFB537C15ADF6DC0069A722 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -281,8 +278,6 @@
 				2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */,
 				2F4B984715ACC7AC00C5AB4C /* ViewController.h */,
 				2F4B984815ACC7AC00C5AB4C /* ViewController.m */,
-				2FF8DFDD15C06E7A00D68C84 /* AuthHandlingWebViewController.h */,
-				2FF8DFDE15C06E7A00D68C84 /* AuthHandlingWebViewController.m */,
 				2FD683E615C0505600822ABE /* AboutViewController.h */,
 				2FD683E715C0505600822ABE /* AboutViewController.m */,
 				2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */,
@@ -456,7 +451,6 @@
 				2F8AD0D415AF22C70004EECD /* AdHawkAd.m in Sources */,
 				2F2F125815BE0C79001A74F5 /* AdHawkBaseViewController.m in Sources */,
 				2FD683E815C0505600822ABE /* AboutViewController.m in Sources */,
-				2FF8DFDF15C06E7A00D68C84 /* AuthHandlingWebViewController.m in Sources */,
 				2FF8E00415C2109A00D68C84 /* InternalAdBrowserViewController.m in Sources */,
 				2FBFE4C315C2D4F40035C0F6 /* SimpleWebViewController.m in Sources */,
 				2FC0B16915C85F710020CCFC /* AdhawkErrorViewController.m in Sources */,
