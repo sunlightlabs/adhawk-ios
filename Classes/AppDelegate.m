@@ -22,17 +22,15 @@
     // Audio Session setup
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
-    [audioSession setPreferredHardwareSampleRate:44100.0 error:nil];
-    [audioSession setActive:YES withFlags:AVAudioSessionInterruptionFlags_ShouldResume error:nil];
+    [audioSession setPreferredSampleRate:44100.0 error:nil];
+    [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
 
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     // Override point for customization after application launch.
     if (TESTING == YES) {
         [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
         NSLog(@"TestFlight run");
-    }
-    else
-    {
+    } else {
         NSLog(@"No testing");
     }
 
@@ -44,6 +42,7 @@
 
 
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
