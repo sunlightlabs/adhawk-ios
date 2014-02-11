@@ -73,12 +73,6 @@
 {
     self.targetURL = (self.targetURL != [p_request URL]) ? [p_request URL] : self.targetURL;
 
-    if ([[self.targetURL host] isEqualToString:@"cdns.gigya.com"]) {
-        [p_webView stopLoading];
-
-        return NO;
-    }
-
 //    Check headers for custom x-header
     NSMutableURLRequest *customRequest = [p_request copy];
     
@@ -120,6 +114,7 @@
         NSLog(@"Requesting: %@", [self.targetURL absoluteString]);
         NSURLRequest *req = [NSURLRequest requestWithURL:self.targetURL];
 
+        [self.activityIndicator startAnimating];
         __weak SimpleWebViewController *weakSelf = self;
         [self.webView loadRequest:req progress:nil
               success:^NSString *(NSHTTPURLResponse *response, NSString *HTML) {
