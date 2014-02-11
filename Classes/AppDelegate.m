@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "Settings.h"
 #import "AdHawkPreferencesManager.h"
-
+#import "AFNetworkActivityIndicatorManager.h"
 
 @implementation AppDelegate
 
@@ -36,6 +36,9 @@
         NSLog(@"No testing");
     }
 
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+
+//    Set up views
     self.window.rootViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil]
                                       instantiateViewControllerWithIdentifier:@"AppNavigationController"];
 

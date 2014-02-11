@@ -11,8 +11,8 @@
 #import "AdHawkLocationManager.h"
 #import "AdHawkAd.h"
 
-NSURL *endPointURL(NSString *path);
-RKObjectManager *setUpAPI(void);
+@class AFHTTPSessionManager;
+@class AFHTTPRequestSerializer;
 
 @protocol AdHawkAPIDelegate <NSObject>
 @required
@@ -22,15 +22,13 @@ RKObjectManager *setUpAPI(void);
 @end
 
 @interface AdHawkAPI : NSObject
-{
-    RKObjectMapping *_adHawkAdMapping;
-}
 
 @property (nonatomic, copy) NSURL *baseURL;
-@property (nonatomic, strong) RKResponseDescriptor *adhawkAdResponseDescriptor;
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) AFHTTPRequestSerializer *requestSerializer;
 @property (nonatomic, strong) AdHawkAd *currentAd;
 @property (nonatomic, copy) NSURL *currentAdHawkURL;
-@property (readonly, nonatomic) id <AdHawkAPIDelegate> searchDelegate;
+@property (weak, readonly, nonatomic) id <AdHawkAPIDelegate> searchDelegate;
 
 + (AdHawkAPI *)sharedInstance;
 - (void)searchForAdWithFingerprint:(NSString*)fingerprint delegate:(id)delegate;

@@ -8,8 +8,7 @@
 
 #import "SimpleWebViewController.h"
 #import "Settings.h"
-
-
+#import "UIWebView+AFNetworking.h"
 
 @implementation SimpleWebViewController
 

@@ -7,19 +7,19 @@
 //
 
 #import "AdHawkAPI.h"
-#import "Settings.h"
 #import "AdHawkAd.h"
+#import <AFNetworking.h>
+#import <UIAlertView+AFNetworking.h>
 
+@interface AdHawkAPI ()
 
-NSURL *endPointURL(NSString * path)
-{
-    return [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:ADHAWK_API_BASE_URL]];
-    
-}
+- (AdHawkAd *)convertResponseToAdHawkAd:(id)responseObject;
+
+@end
 
 @implementation AdHawkAPI
 
-@synthesize baseURL, adhawkAdResponseDescriptor, currentAd, currentAdHawkURL, searchDelegate;
+@synthesize baseURL, manager, requestSerializer, currentAd, currentAdHawkURL, searchDelegate;
 
 + (AdHawkAPI *) sharedInstance
 {
@@ -34,27 +34,12 @@ NSURL *endPointURL(NSString * path)
     if (self) {
         // MARK: Set up object manager baseURL, headers, and mimetypes
         self.baseURL = [NSURL URLWithString:ADHAWK_API_BASE_URL];
-        RKObjectManager* manager = [RKObjectManager managerWithBaseURL:self.baseURL];
-        [manager.HTTPClient setDefaultHeader:@"User-Agent" value:ADHAWK_APP_USER_AGENT];
-        [manager setAcceptHeaderWithMIMEType:RKMIMETypeJSON];
-        manager.requestSerializationMIMEType = RKMIMETypeJSON;
 
-        [RKObjectManager setSharedManager:manager];
+        self.requestSerializer = [AFJSONRequestSerializer serializer];
+        [self.requestSerializer setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
 
-        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-
-        // MARK: Set up AdHawkAd mapping
-        _adHawkAdMapping = [RKObjectMapping mappingForClass:[AdHawkAd class]];
-        [_adHawkAdMapping addAttributeMappingsFromDictionary:@{ @"result_url": @"resultURL",
-                                                                @"share_text": @"shareText" }];
-
-        self.adhawkAdResponseDescriptor = [RKResponseDescriptor
-                                           responseDescriptorWithMapping:_adHawkAdMapping
-                                           method:RKRequestMethodAny
-                                           pathPattern:@"ad/"
-                                           keyPath:nil
-                                           statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-        [manager addResponseDescriptor:self.adhawkAdResponseDescriptor];
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL];
+        manager.requestSerializer = self.requestSerializer;
     }
 
     return self;
@@ -78,64 +63,60 @@ NSURL *endPointURL(NSString * path)
     [postParams setObject:lon forKey:@"lon"];
     if (TESTING == YES) [TestFlight passCheckpoint:@"Submitted Fingerprint"];
 
-
-    [[RKObjectManager sharedManager] postObject:nil path:@"ad/" parameters:postParams
-    success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSLog(@"It Worked: %@", [mappingResult firstObject]);
-        id object = [mappingResult firstObject];
-        if ([object isKindOfClass:[AdHawkAd class]]) {
+    [self.manager POST:@"ad/" parameters:postParams success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"It Worked: %@", responseObject);
+        AdHawkAd *ad = [self convertResponseToAdHawkAd:responseObject];
+        if (ad && ![ad.resultURL isEqual:[NSNull null]]) {
             TFLog(@"Got back an AdHawk ad object!");
-            self.currentAd = (AdHawkAd *)object;
+            self.currentAd = ad;
             self.currentAdHawkURL = self.currentAd.resultURL;
-            if (self.currentAdHawkURL != NULL) {
-                [[self searchDelegate] adHawkAPIDidReturnURL:self.currentAdHawkURL];
-
-            }
-            else {
-                TFLog(@"currentAdHawkURL is null: issue adHawkAPIDidReturnNoResult");
-                [[self searchDelegate] adHawkAPIDidReturnNoResult];
-            }
+            [[self searchDelegate] adHawkAPIDidReturnURL:self.currentAdHawkURL];
         }
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        else {
+            TFLog(@"currentAdHawkURL is null: issue adHawkAPIDidReturnNoResult");
+            [[self searchDelegate] adHawkAPIDidReturnNoResult];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         TFLog(@"searchForAdWithFingerprint Error: %@", error.localizedDescription);
         [[self searchDelegate] adHawkAPIDidReturnNoResult];
     }];
-
 }
 
 - (AdHawkAd *)getAdHawkAdFromURL:(NSURL *)reqURL
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSMutableURLRequest *adhawkRequest = [[[NSMutableURLRequest alloc] initWithURL:reqURL] autorelease];
+    NSMutableURLRequest *adhawkRequest = [[NSMutableURLRequest alloc] initWithURL:reqURL];
     [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"X-Client-App"];
     [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User_Agent"];
     [adhawkRequest setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
     NSLog(@"Requesting: %@", [[adhawkRequest URL] absoluteString]);
 
-    NSURLResponse *the_response = [[NSURLResponse alloc] init];
-    NSError *urlError = nil;
-    NSData *resultData = [NSURLConnection sendSynchronousRequest:adhawkRequest returningResponse:&the_response error:&urlError];
-    
-    if(!urlError)
-    {
-        NSLog(@"Got response");
-        
-        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:resultData options:0 error:nil];
-        AdHawkAd *the_ad = [[AdHawkAd alloc] init];
-        the_ad.resultURL = [NSURL URLWithString:[jsonDict objectForKey:@"result_url"]];
-        the_ad.shareText = (NSString *)[jsonDict objectForKey:@"share_text"];
-        self.currentAd = the_ad; 
-        self.currentAdHawkURL = self.currentAd.resultURL;
-        
-        return the_ad;
-    }
-    else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Ad Hawk encountered an error while trying to load this resource" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-        [alertView show];
-    }
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:adhawkRequest];
+    [UIAlertView showAlertViewForRequestOperationWithErrorOnCompletion:operation delegate:self];
 
-    
-    return NULL;
+    __weak AdHawkAPI *weakSelf = self;
+
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AdHawkAd *ad = [weakSelf convertResponseToAdHawkAd:responseObject];
+        weakSelf.currentAd = ad;
+        weakSelf.currentAdHawkURL = self.currentAd.resultURL;
+    } failure:nil];
+
+    return self.currentAd;
+}
+
+- (AdHawkAd *)convertResponseToAdHawkAd:(id)responseObject
+{
+    AdHawkAd *ad;
+    if ([responseObject respondsToSelector:@selector(valueForKey:)]) {
+        NSString *urlString = [responseObject valueForKey:@"result_url"];
+        NSString *shareText = [responseObject valueForKey:@"share_text"];
+        if (![urlString isEqual:[NSNull null]] || ![shareText isEqual:[NSNull null]]) {
+            ad = [AdHawkAd new];
+            ad.resultURL = [NSURL URLWithString:urlString];
+            ad.shareText = shareText;
+        }
+    }
+    return ad;
 }
 
 @end
