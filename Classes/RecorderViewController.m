@@ -201,18 +201,16 @@ extern const char * GetPCMFromFile(char * filename);
 -(void)showBrowseWebView
 {
     InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"InternalAdBrowserViewController"];
-    NSURL *browseURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
+    vc.targetURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
     [self.navigationController pushViewController:vc animated:YES];
-    [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
 }
 
 
 -(void)handleWhyNoResultsTouch
 {
     SimpleWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleWebViewController"];
-    NSURL *browseURL = [NSURL URLWithString:ADHAWK_TROUBLESHOOTING_URL];
+    vc.targetURL = [NSURL URLWithString:ADHAWK_TROUBLESHOOTING_URL];
     [self.navigationController pushViewController:vc animated:YES];
-    [vc.webView loadRequest:[NSURLRequest requestWithURL:browseURL]];
 }
 
 -(void) recordAudio
@@ -222,7 +220,11 @@ extern const char * GetPCMFromFile(char * filename);
     {
         [self setFailState:NO];
 
-        BOOL didRecord = [audioRecorder recordForDuration:(NSTimeInterval)15.0];        
+#if RECORD_DURATION < 5
+    #warning "Building with a record duration of less than 5.0
+#endif
+
+        BOOL didRecord = [audioRecorder recordForDuration:RECORD_DURATION];
         if (didRecord) {
             [self setWorkingState:YES];
         }

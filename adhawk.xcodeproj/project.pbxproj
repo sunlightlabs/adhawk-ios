@@ -158,14 +158,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F4B98E315ACDC1600C5AB4C /* config */ = {
+		2F4B98E315ACDC1600C5AB4C /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				2F7C97EC15B9AD9400FC8AA1 /* AppMacros.h */,
 				2F4B98E715ACDCEA00C5AB4C /* Settings.h */,
 				2F4B98E415ACDC5500C5AB4C /* Settings.m */,
 			);
-			name = config;
 			path = Config;
 			sourceTree = "<group>";
 		};
@@ -273,7 +272,7 @@
 				2FC0B16715C85F710020CCFC /* AdhawkErrorViewController.h */,
 				2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */,
 				2F8AD0C815AF115C0004EECD /* Services */,
-				2F4B98E315ACDC1600C5AB4C /* config */,
+				2F4B98E315ACDC1600C5AB4C /* Config */,
 				2F4B984115ACC7AC00C5AB4C /* AdDetailViewController.h */,
 				2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */,
 				2F4B984315ACC7AC00C5AB4C /* AppDelegate.h */,
