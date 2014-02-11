@@ -28,9 +28,6 @@
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     // Override point for customization after application launch.
     if (TESTING == YES) {
-#ifdef FLYING
-        [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
-#endif
         [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
         NSLog(@"TestFlight run");
     }
