@@ -95,13 +95,10 @@ extern const char * GetPCMFromFile(char * filename);
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    [audioRecorder release];
     if (_hawktivityAnimatedImageView != nil) {
-        [_hawktivityAnimatedImageView release];
         _hawktivityAnimatedImageView = nil;
     }
     if (failView != nil) {
-        [failView release];
         failView = nil;
     }
 }
@@ -116,7 +113,6 @@ extern const char * GetPCMFromFile(char * filename);
 {
     [self setFailState:NO];
     if (_hawktivityAnimatedImageView != nil) {
-        [_hawktivityAnimatedImageView release];
         _hawktivityAnimatedImageView = nil;
     }
     if (audioRecorder.recording) {
