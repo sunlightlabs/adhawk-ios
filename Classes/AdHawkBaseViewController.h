@@ -18,13 +18,13 @@
     UIBarButtonItem *_aboutButton;
     UIBarButtonItem *_logoItem;
     UIToolbar *_toolbar;
-    BOOL _socialEnabled;
 }
 @property (nonatomic) BOOL socialEnabled;
+@property (nonatomic, copy) NSString *shareText;
 
 - (IBAction)showSocialActionSheet:(id)sender;
-- (void) enableSocial;
-- (void) showSettingsView;
-- (void) showAboutView;
+- (void)enableSocial;
+- (void)showSettingsView;
+- (void)showAboutView;
 
 @end

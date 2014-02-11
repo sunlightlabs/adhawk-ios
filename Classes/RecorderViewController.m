@@ -50,11 +50,7 @@ extern const char * GetPCMFromFile(char * filename);
                                              selector: @selector(handleEnteredBackground:) 
                                                  name: UIApplicationDidEnterBackgroundNotification
                                                object: nil];
-//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
-//    [self setFailState:YES];
-//    [self showSocialActionSheet:self]; // Testing social action sheet
-    
-    
+
     [self setFailState:NO];
     
     [self setWorkingState:NO];
@@ -236,21 +232,6 @@ extern const char * GetPCMFromFile(char * filename);
     }
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    [super prepareForSegue:segue sender:sender];
-    if ([[segue identifier] isEqualToString:@"adSegue"])
-    {
-        // Get reference to the destination view controller
-        AdDetailViewController *vc = [segue destinationViewController];
-        NSLog(@"Segue to AdDetailView");
-        
-        // Pass any objects to the view controller here, like...
-        vc.targetURL = [AdHawkAPI sharedInstance].currentAd.resultURL;
-    }
-}
-
 - (void) stopRecorder
 {
     [audioRecorder stop];
@@ -273,11 +254,11 @@ extern const char * GetPCMFromFile(char * filename);
 }
 
 
--(void) adHawkAPIDidReturnURL:(NSURL *)url
+- (void)adHawkAPIDidReturnAd:(AdHawkAd *)ad
 {
-//    [self performSegueWithIdentifier:@"adSegue" sender:self];
     AdDetailViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AdDetailViewController"];
-    vc.targetURL = url;
+    vc.targetURL = ad.resultURL;
+    vc.shareText = ad.shareText;
     [self.navigationController pushViewController:vc animated:YES];
     [self setWorkingState:NO];
 }

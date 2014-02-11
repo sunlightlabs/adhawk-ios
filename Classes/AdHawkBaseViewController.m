@@ -11,21 +11,12 @@
 #import "Settings.h"
 #import "AdHawkAPI.h"
 
-
-
 @implementation AdHawkBaseViewController
 
-@synthesize socialEnabled = _socialEnabled;
+@synthesize socialEnabled;
+@synthesize shareText;
 
-- (id) initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:(NSCoder *)aDecoder];
-    
-    if (self) {        
-    }
-    return self;
-}
-
-- (void) setupUIElements
+- (void)setupUIElements
 {
     // Prep navigationController buttons. These will be added to navigationController on viewWillAppear.
     _socialButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showSocialActionSheet:)];
@@ -44,23 +35,15 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunlight"]];
     _logoItem = [[UIBarButtonItem alloc] initWithCustomView:imageView];    
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    _toolBarItems = [[NSMutableArray alloc] initWithObjects:flexibleSpace,_logoItem, nil];
+    _toolBarItems = [[NSMutableArray alloc] initWithObjects:flexibleSpace, _logoItem, nil];
 }
 
 // Will add a flexible space and social Button to the toolbaritems.
-- (void) enableSocial
+- (void)enableSocial
 {
     if ([_toolBarItems objectAtIndex:0] != _socialButton) {
         [_toolBarItems insertObject:_socialButton atIndex:0];
     }
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {        
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -70,7 +53,7 @@
     [self setupUIElements];
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self setToolbarItems:_toolBarItems animated:NO];
@@ -78,11 +61,6 @@
     _toolbar.translucent = YES;
     [self.navigationItem setRightBarButtonItems:_navButtons animated:NO];
     [[self navigationController] setToolbarHidden:NO animated:NO];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)showSettingsView
@@ -102,12 +80,10 @@
 
 #pragma mark - IBActions
 
--(IBAction)showSocialActionSheet:(id)sender {
-    AdHawkAPI *adhawkApi = [AdHawkAPI sharedInstance];
-    NSString *shareText = adhawkApi.currentAd != nil ? adhawkApi.currentAd.shareText : @"";
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[shareText] applicationActivities:nil];
+- (IBAction)showSocialActionSheet:(id)sender
+{
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[self.shareText] applicationActivities:nil];
     [self presentViewController:activityViewController animated:YES completion:NULL];
-
 }
 
 @end
