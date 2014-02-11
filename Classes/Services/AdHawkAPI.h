@@ -11,7 +11,7 @@
 #import "AdHawkLocationManager.h"
 #import "AdHawkAd.h"
 
-@class AFHTTPSessionManager;
+@class AFHTTPRequestOperationManager;
 @class AFHTTPRequestSerializer;
 
 @protocol AdHawkAPIDelegate <NSObject>
@@ -24,7 +24,7 @@
 @interface AdHawkAPI : NSObject
 
 @property (nonatomic, copy) NSURL *baseURL;
-@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
 @property (nonatomic, strong) AFHTTPRequestSerializer *requestSerializer;
 @property (weak, readonly, nonatomic) id <AdHawkAPIDelegate> searchDelegate;
 

@@ -33,7 +33,7 @@
         self.requestSerializer = [AFJSONRequestSerializer serializer];
         [self.requestSerializer setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
 
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL];
+        self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:self.baseURL];
         manager.requestSerializer = self.requestSerializer;
     }
 
@@ -60,7 +60,7 @@
 
     if (TESTING == YES) [TestFlight passCheckpoint:@"Submitting Fingerprint"];
 
-    [self.manager POST:@"ad/" parameters:postParams success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.manager POST:@"ad/" parameters:postParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"It Worked: %@", responseObject);
         AdHawkAd *ad = [self convertResponseToAdHawkAd:responseObject];
 
@@ -71,7 +71,7 @@
             TFLog(@"currentAdHawkURL is null: issue adHawkAPIDidReturnNoResult");
             [[self searchDelegate] adHawkAPIDidReturnNoResult];
         }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         TFLog(@"searchForAdWithFingerprint Error: %@", error.localizedDescription);
         [[self searchDelegate] adHawkAPIDidReturnNoResult];
     }];
