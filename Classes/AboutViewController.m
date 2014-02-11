@@ -11,13 +11,12 @@
 
 @implementation AboutViewController
 
-- (void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     // Make sure about button disabled
     [self.navigationItem setRightBarButtonItems:nil animated:YES];
 }
-
 
 - (void)viewDidLoad
 {
@@ -37,17 +36,11 @@
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         [[UIApplication sharedApplication] openURL:[p_request URL]];
         [p_webView stopLoading];
+
         return NO;
     }
 
     return shouldStartLoad;
 }
-
-
-- (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
-{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
 
 @end

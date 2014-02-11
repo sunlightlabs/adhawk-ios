@@ -8,7 +8,8 @@
 
 #import "SimpleWebViewController.h"
 #import "Settings.h"
-#import "UIWebView+AFNetworking.h"
+#import <UIWebView+AFNetworking.h>
+#import <UIAlertView+AFNetworking.h>
 
 @interface SimpleWebViewController ()
 
@@ -74,6 +75,7 @@
 
     if ([[self.targetURL host] isEqualToString:@"cdns.gigya.com"]) {
         [p_webView stopLoading];
+
         return NO;
     }
 
@@ -96,8 +98,18 @@
 - (void)webView:(UIWebView *)p_webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"error: %@", [error localizedDescription]);
-    UIAlertView *e_alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:self cancelButtonTitle:@"I understand" otherButtonTitles:nil];
-    [e_alert show];
+    [self.activityIndicator stopAnimating];
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.activityIndicator startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"webViewDidFinishLoad");
+    [self.activityIndicator stopAnimating];
 }
 
 #pragma mark - Private
@@ -107,7 +119,17 @@
     if (self.targetURL && ![[self.targetURL absoluteString] isEqualToString: @""]) {
         NSLog(@"Requesting: %@", [self.targetURL absoluteString]);
         NSURLRequest *req = [NSURLRequest requestWithURL:self.targetURL];
-        [self.webView loadRequest:req];
+
+        __weak SimpleWebViewController *weakSelf = self;
+        [self.webView loadRequest:req progress:nil
+              success:^NSString *(NSHTTPURLResponse *response, NSString *HTML) {
+                  [weakSelf.activityIndicator stopAnimating];
+
+                  return HTML;
+              } failure:^(NSError *error) {
+                  [weakSelf.activityIndicator stopAnimating];
+              }];
+
         if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
     }
 }
