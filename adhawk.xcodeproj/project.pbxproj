@@ -22,15 +22,9 @@
 		2F4B985D15ACC7F800C5AB4C /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */; };
 		2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */; };
 		2F4B986F15ACC8A700C5AB4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B986E15ACC8A700C5AB4C /* main.m */; };
-		2F4B987C15ACCC5000C5AB4C /* adhawkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */; };
-		2F4B988615ACCDDB00C5AB4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */; };
 		2F4B988B15ACD34400C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
 		2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		2F4B988D15ACD34D00C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
-		2F4B988E15ACD35000C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; };
-		2F4B98B515ACD99700C5AB4C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941A5153FA9A100E64F82 /* libz.dylib */; };
 		2F4B98E515ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
-		2F4B98E615ACDC5500C5AB4C /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B98E415ACDC5500C5AB4C /* Settings.m */; };
 		2F8AD0CB15AF11B20004EECD /* AdHawkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0CA15AF11B20004EECD /* AdHawkAPI.m */; };
 		2F8AD0D415AF22C70004EECD /* AdHawkAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8AD0D315AF22C70004EECD /* AdHawkAd.m */; };
 		2FBD846215CB0F38001C128F /* AdHawkLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD846115CB0F38001C128F /* AdHawkLocationManager.m */; };
@@ -49,9 +43,6 @@
 		C36B3FE315023E5400937C3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE215023E5400937C3F /* UIKit.framework */; };
 		C36B3FE515023E5400937C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE415023E5400937C3F /* Foundation.framework */; };
 		C36B3FE715023E5400937C3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE615023E5400937C3F /* CoreGraphics.framework */; };
-		C36B400115023E5400937C3F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B400015023E5400937C3F /* SenTestingKit.framework */; };
-		C36B400215023E5400937C3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE215023E5400937C3F /* UIKit.framework */; };
-		C36B400315023E5400937C3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3FE415023E5400937C3F /* Foundation.framework */; };
 		C39941A6153FA9A100E64F82 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941A5153FA9A100E64F82 /* libz.dylib */; };
 		C39941B6153FAA8100E64F82 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941B4153FAA7400E64F82 /* MediaPlayer.framework */; };
 		C39941B9153FAAA100E64F82 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941B7153FAA9200E64F82 /* AudioToolbox.framework */; };
@@ -60,16 +51,6 @@
 		C39941BF153FAADF00E64F82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39941BE153FAADF00E64F82 /* SystemConfiguration.framework */; };
 		C3C01699153A80F700D56553 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C01697153A80EB00D56553 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C36B400415023E5400937C3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C36B3FD515023E5400937C3F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C36B3FDD15023E5400937C3F;
-			remoteInfo = whopaid;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2F01964415AE2B72000542AC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -99,10 +80,6 @@
 		2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GetPCMFromFile.cpp; path = Vendor/echoprint/GetPCMFromFile.cpp; sourceTree = SOURCE_ROOT; };
 		2F4B985B15ACC7F800C5AB4C /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPCMFromFile.h; path = Vendor/echoprint/GetPCMFromFile.h; sourceTree = SOURCE_ROOT; };
 		2F4B986E15ACC8A700C5AB4C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = SOURCE_ROOT; };
-		2F4B987A15ACCC5000C5AB4C /* adhawkTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = adhawkTests.h; path = adhawkTests/adhawkTests.h; sourceTree = SOURCE_ROOT; };
-		2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = adhawkTests.m; path = adhawkTests/adhawkTests.m; sourceTree = SOURCE_ROOT; };
-		2F4B987E15ACCC6A00C5AB4C /* Ad HawkTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "Ad HawkTests-Info.plist"; path = "Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist"; sourceTree = SDKROOT; };
-		2F4B988215ACCC7900C5AB4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = adhawkTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
 		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
 		2F7C97EC15B9AD9400FC8AA1 /* AppMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = Classes/Config/AppMacros.h; sourceTree = SOURCE_ROOT; };
@@ -137,7 +114,6 @@
 		C36B3FE215023E5400937C3F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C36B3FE415023E5400937C3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C36B3FE615023E5400937C3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C36B3FFF15023E5400937C3F /* Ad HawkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ad HawkTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36B400015023E5400937C3F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C39941A5153FA9A100E64F82 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C39941B4153FAA7400E64F82 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -179,19 +155,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C36B3FFB15023E5400937C3F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F4B98B515ACD99700C5AB4C /* libz.dylib in Frameworks */,
-				2F4B988D15ACD34D00C5AB4C /* libechoprint-codegen-ios.a in Frameworks */,
-				2F4B988E15ACD35000C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */,
-				C36B400115023E5400937C3F /* SenTestingKit.framework in Frameworks */,
-				C36B400215023E5400937C3F /* UIKit.framework in Frameworks */,
-				C36B400315023E5400937C3F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -230,7 +193,6 @@
 		C36B3FD315023E5400937C3F = {
 			isa = PBXGroup;
 			children = (
-				C36B400615023E5400937C3F /* adhawkTests */,
 				C3C01695153A80C700D56553 /* Classes */,
 				C36B3FE115023E5400937C3F /* Frameworks */,
 				F2D7A69A16894332B801C8BA /* Pods.xcconfig */,
@@ -245,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				C36B3FDE15023E5400937C3F /* Ad Hawk.app */,
-				C36B3FFF15023E5400937C3F /* Ad HawkTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,26 +247,6 @@
 				2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */,
 			);
 			path = "Other Sources";
-			sourceTree = "<group>";
-		};
-		C36B400615023E5400937C3F /* adhawkTests */ = {
-			isa = PBXGroup;
-			children = (
-				2F4B987A15ACCC5000C5AB4C /* adhawkTests.h */,
-				2F4B987B15ACCC5000C5AB4C /* adhawkTests.m */,
-				C36B400715023E5400937C3F /* Supporting Files */,
-			);
-			name = adhawkTests;
-			path = whopaidTests;
-			sourceTree = "<group>";
-		};
-		C36B400715023E5400937C3F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2F4B987E15ACCC6A00C5AB4C /* Ad HawkTests-Info.plist */,
-				2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C39941A7153FA9D500E64F82 /* echoprint */ = {
@@ -394,26 +335,6 @@
 			productReference = C36B3FDE15023E5400937C3F /* Ad Hawk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C36B3FFE15023E5400937C3F /* Ad HawkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "Ad HawkTests" */;
-			buildPhases = (
-				C36B3FFA15023E5400937C3F /* Sources */,
-				C36B3FFB15023E5400937C3F /* Frameworks */,
-				C36B3FFC15023E5400937C3F /* Resources */,
-				C36B3FFD15023E5400937C3F /* ShellScript */,
-				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C36B400515023E5400937C3F /* PBXTargetDependency */,
-			);
-			name = "Ad HawkTests";
-			productName = whopaidTests;
-			productReference = C36B3FFF15023E5400937C3F /* Ad HawkTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -440,7 +361,6 @@
 			projectRoot = "";
 			targets = (
 				C36B3FDD15023E5400937C3F /* Ad Hawk */,
-				C36B3FFE15023E5400937C3F /* Ad HawkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -453,14 +373,6 @@
 				2FD5299D18A97D3E003D0B8D /* Images.xcassets in Resources */,
 				2FD8C9D618A95B5700820AA8 /* InfoPlist.strings in Resources */,
 				2FD8C9D918A95BBB00820AA8 /* MainStoryboard.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C36B3FFC15023E5400937C3F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F4B988615ACCDDB00C5AB4C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,19 +423,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C36B3FFD15023E5400937C3F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,34 +467,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C36B3FFA15023E5400937C3F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F4B987C15ACCC5000C5AB4C /* adhawkTests.m in Sources */,
-				2F4B98E615ACDC5500C5AB4C /* Settings.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		C36B400515023E5400937C3F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C36B3FDD15023E5400937C3F /* Ad Hawk */;
-			targetProxy = C36B400415023E5400937C3F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		2F4B988115ACCC7900C5AB4C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F4B988215ACCC7900C5AB4C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		2FD8C9D418A95B5700820AA8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -675,29 +549,6 @@
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 				WRAPPER_EXTENSION = app;
-			};
-			name = AppStore;
-		};
-		2F16E3C515D2B83200D7FBA7 /* AppStore */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk.app/adhawk";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
-				PRODUCT_NAME = "Ad HawkTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = AppStore;
 		};
@@ -828,52 +679,6 @@
 			};
 			name = Release;
 		};
-		C36B401515023E5400937C3F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk/adhawk";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
-				PRODUCT_NAME = "Ad HawkTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		C36B401615023E5400937C3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/adhawk.app/adhawk";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "adhawk/adhawk-Prefix.pch";
-				INFOPLIST_FILE = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/Users/dcloud/code/objc/adhawk-ios/adhawkTests/Ad HawkTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
-				PRODUCT_NAME = "Ad HawkTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -893,16 +698,6 @@
 				C36B401215023E5400937C3F /* Debug */,
 				C36B401315023E5400937C3F /* Release */,
 				2F16E3C415D2B83200D7FBA7 /* AppStore */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C36B401415023E5400937C3F /* Build configuration list for PBXNativeTarget "Ad HawkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C36B401515023E5400937C3F /* Debug */,
-				C36B401615023E5400937C3F /* Release */,
-				2F16E3C515D2B83200D7FBA7 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
