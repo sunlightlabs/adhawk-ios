@@ -26,13 +26,19 @@
     [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
 
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
-    // Override point for customization after application launch.
-    if (TESTING == YES) {
-        [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
-        NSLog(@"TestFlight run");
-    } else {
-        NSLog(@"No testing");
-    }
+
+#if CONFIGURATION_Beta
+    #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__)
+    [TestFlight takeOff:kTFTeamToken];
+#endif
+
+#if CONFIGURATION_Release
+    #define NSLog(...)
+#endif
+
+#if CONFIGURATION_Debug
+    NSLog(@"Running in debug configuration");
+#endif
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
