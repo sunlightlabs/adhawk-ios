@@ -23,3 +23,5 @@ DerivedData
 Pods/*
 Podfile.lock
 
+# ignore generated buildnumber.xcconfig
+Resources/buildnumber.xcconfig

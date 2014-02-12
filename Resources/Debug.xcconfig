@@ -1,0 +1,11 @@
+//
+//  Debug.xcconfig
+//  adhawk
+//
+//  Created by Daniel Cloud on 2/12/14.
+//
+//
+#include "Common.xcconfig"
+
+BUNDLE_DISPLAY_NAME_SUFFIX=∆
+BUNDLE_ID_SUFFIX=.dev

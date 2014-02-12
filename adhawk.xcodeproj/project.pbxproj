@@ -15,6 +15,8 @@
 		2F2E013518AAF8A700C5E2A0 /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E012C18AAF8A700C5E2A0 /* CADebugPrintf.cpp */; };
 		2F2E013618AAF8A700C5E2A0 /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E013018AAF8A700C5E2A0 /* Codegen_wrapper.cpp */; };
 		2F2E013718AAF8A700C5E2A0 /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E013318AAF8A700C5E2A0 /* GetPCMFromFile.cpp */; };
+		2F2E013A18ABDDB900C5E2A0 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E013918ABDDB900C5E2A0 /* Debug.xcconfig */; };
+		2F2E013C18ABDDCD00C5E2A0 /* Beta.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E013B18ABDDCD00C5E2A0 /* Beta.xcconfig */; };
 		2F2F125815BE0C79001A74F5 /* AdHawkBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */; };
 		2F46045015C388F7004B2DA9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F46044F15C388F7004B2DA9 /* CoreLocation.framework */; };
 		2F4B984915ACC7AC00C5AB4C /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */; };
@@ -67,6 +69,10 @@
 		2F2E013218AAF8A700C5E2A0 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
 		2F2E013318AAF8A700C5E2A0 /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GetPCMFromFile.cpp; sourceTree = "<group>"; };
 		2F2E013418AAF8A700C5E2A0 /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPCMFromFile.h; sourceTree = "<group>"; };
+		2F2E013918ABDDB900C5E2A0 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Resources/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		2F2E013B18ABDDCD00C5E2A0 /* Beta.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Beta.xcconfig; path = Resources/Beta.xcconfig; sourceTree = SOURCE_ROOT; };
+		2F2E013D18ABDDDF00C5E2A0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Resources/Release.xcconfig; sourceTree = SOURCE_ROOT; };
+		2F2E013E18ABDEA100C5E2A0 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Resources/Common.xcconfig; sourceTree = SOURCE_ROOT; };
 		2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkBaseViewController.h; path = Classes/AdHawkBaseViewController.h; sourceTree = SOURCE_ROOT; };
 		2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkBaseViewController.m; path = Classes/AdHawkBaseViewController.m; sourceTree = SOURCE_ROOT; };
 		2F46044F15C388F7004B2DA9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -295,6 +301,10 @@
 				2FB511F618A92E7100AC4127 /* Images.xcassets */,
 				2FD8C9D418A95B5700820AA8 /* InfoPlist.strings */,
 				2FD8C9D718A95BBB00820AA8 /* MainStoryboard.storyboard */,
+				2F2E013918ABDDB900C5E2A0 /* Debug.xcconfig */,
+				2F2E013B18ABDDCD00C5E2A0 /* Beta.xcconfig */,
+				2F2E013D18ABDDDF00C5E2A0 /* Release.xcconfig */,
+				2F2E013E18ABDEA100C5E2A0 /* Common.xcconfig */,
 			);
 			name = Resources;
 			path = adhawk;
@@ -359,9 +369,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2E013A18ABDDB900C5E2A0 /* Debug.xcconfig in Resources */,
 				2FD5299D18A97D3E003D0B8D /* Images.xcassets in Resources */,
 				2FD8C9D618A95B5700820AA8 /* InfoPlist.strings in Resources */,
 				2FD8C9D918A95BBB00820AA8 /* MainStoryboard.storyboard in Resources */,
+				2F2E013C18ABDDCD00C5E2A0 /* Beta.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,8 +391,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n#\ngit=`sh /etc/profile; which git`\n## For the App Store, instead use: git describe ‚Äìabbrev=0 ‚Äìtags\nversion=`$git describe --abbrev=0 --tags --always`\ncount=`$git rev-list --all | wc -l`\nrevision=`$git rev-parse --short HEAD`\necho -e \"#define GIT_VERSION $version\\n#define GIT_COMMIT_COUNT $count\\n#define GIT_SHORT_REVISION $revision\" > Resources/InfoPlist.h";
-			showEnvVarsInLog = 0;
+			shellScript = "#!/bin/sh\n#\ngit=`sh /etc/profile; which git`\ncount=`$git rev-list  --all --count`\necho \"BUILD_NUMBER=$count\" > Resources/buildnumber.xcconfig";
 		};
 		875B413664D34B2A9097A3A2 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -477,8 +488,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2F16E3C315D2B83200D7FBA7 /* AppStore */ = {
+		2F16E3C315D2B83200D7FBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2E013D18ABDDDF00C5E2A0 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -486,10 +498,11 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "$(inherted)";
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -504,16 +517,15 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "Ad Hawk";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "6A377E52-C711-4E12-B7F6-192E375B7D5F";
 				SDKROOT = iphoneos;
-				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_INSTALLED_PRODUCT = YES;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Vendor/**";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = AppStore;
+			name = Release;
 		};
-		2F16E3C415D2B83200D7FBA7 /* AppStore */ = {
+		2F16E3C415D2B83200D7FBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2D7A69A16894332B801C8BA /* Pods.xcconfig */;
 			buildSettings = {
@@ -522,11 +534,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
-				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
+				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -535,15 +548,16 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "Ad Hawk";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "A1BAA6BC-35BE-494D-A2A6-E9E766E652F0";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 				WRAPPER_EXTENSION = app;
 			};
-			name = AppStore;
+			name = Release;
 		};
 		C36B400F15023E5400937C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2E013918ABDDB900C5E2A0 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -552,10 +566,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -575,15 +591,16 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "Ad Hawk";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6A377E52-C711-4E12-B7F6-192E375B7D5F";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Vendor/**";
 			};
 			name = Debug;
 		};
-		C36B401015023E5400937C3F /* Release */ = {
+		C36B401015023E5400937C3F /* Beta */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2E013B18ABDDCD00C5E2A0 /* Beta.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -595,6 +612,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "$(inherted)";
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -609,13 +627,13 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "Ad Hawk";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6A377E52-C711-4E12-B7F6-192E375B7D5F";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Vendor/**";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Beta;
 		};
 		C36B401215023E5400937C3F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -626,11 +644,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
-				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
+				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -639,13 +658,14 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = "Ad Hawk";
+				PROVISIONING_PROFILE = "519D47CB-CA42-4EA4-BCE4-50C5E8A206A2";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		C36B401315023E5400937C3F /* Release */ = {
+		C36B401315023E5400937C3F /* Beta */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2D7A69A16894332B801C8BA /* Pods.xcconfig */;
 			buildSettings = {
@@ -654,11 +674,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
-				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
+				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -673,7 +694,7 @@
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
-			name = Release;
+			name = Beta;
 		};
 /* End XCBuildConfiguration section */
 
@@ -682,8 +703,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36B400F15023E5400937C3F /* Debug */,
-				C36B401015023E5400937C3F /* Release */,
-				2F16E3C315D2B83200D7FBA7 /* AppStore */,
+				C36B401015023E5400937C3F /* Beta */,
+				2F16E3C315D2B83200D7FBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -692,8 +713,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C36B401215023E5400937C3F /* Debug */,
-				C36B401315023E5400937C3F /* Release */,
-				2F16E3C415D2B83200D7FBA7 /* AppStore */,
+				C36B401315023E5400937C3F /* Beta */,
+				2F16E3C415D2B83200D7FBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

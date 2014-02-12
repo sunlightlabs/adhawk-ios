@@ -1,0 +1,11 @@
+//
+//  Release.xcconfig
+//  adhawk
+//
+//  Created by Daniel Cloud on 2/12/14.
+//
+//
+
+#include "Common.xcconfig"
+// Exclude TestFlight
+EXCLUDED_SOURCE_FILE_NAMES=*libTestFlight.a
