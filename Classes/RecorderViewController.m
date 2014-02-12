@@ -16,40 +16,33 @@
 #import "AdHawkAd.h"
 
 
-extern const char * GetPCMFromFile(char * filename);
+extern const char *GetPCMFromFile(char *filename);
 
 @implementation RecorderViewController
 
 @synthesize recordButton, workingBackground, failView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (NSString *)getAudioFilePath
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-
-- (NSString*) getAudioFilePath {
-
-    NSArray * dirPaths = NSSearchPathForDirectoriesInDomains(
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(
                                                    NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsDir = [dirPaths objectAtIndex:0];
     NSString *soundFilePath = [docsDir
                                stringByAppendingPathComponent:@"sound.caf"];
+
     return soundFilePath;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     failView = nil;
     _hawktivityAnimatedImageView = nil;
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(handleEnteredBackground:) 
-                                                 name: UIApplicationDidEnterBackgroundNotification
-                                               object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleEnteredBackground:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
 
     [self setFailState:NO];
     
@@ -78,8 +71,7 @@ extern const char * GetPCMFromFile(char * filename);
                      error:&error];
     audioRecorder.delegate = self;
     
-    if (error)
-    {
+    if (error) {
         NSLog(@"error: %@", [error localizedDescription]);
         
     } else {
@@ -94,23 +86,26 @@ extern const char * GetPCMFromFile(char * filename);
     if (_hawktivityAnimatedImageView != nil) {
         _hawktivityAnimatedImageView = nil;
     }
+
     if (failView != nil) {
         failView = nil;
     }
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     recordButton.hidden = NO;
 }
 
-- (void) viewDidDisappear:(BOOL)animated
+- (void)viewDidDisappear:(BOOL)animated
 {
     [self setFailState:NO];
+
     if (_hawktivityAnimatedImageView != nil) {
         _hawktivityAnimatedImageView = nil;
     }
+
     if (audioRecorder.recording) {
         [audioRecorder stop];
     }
@@ -122,19 +117,19 @@ extern const char * GetPCMFromFile(char * filename);
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void) handleEnteredBackground:(NSNotification *)notification
+- (void)handleEnteredBackground:(NSNotification *)notification
 {
     [self setFailState:NO];
 }
 
-- (void) retryButtonClicked
+- (void)retryButtonClicked
 {
     [self setFailState:NO];
     [self setWorkingState:YES];
     [self recordAudio];
 }
 
--(void) setFailState:(BOOL)isFail
+- (void)setFailState:(BOOL)isFail
 {
     if (isFail && failView == nil) {
         AdhawkErrorViewController *errorVC = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil]
@@ -144,11 +139,11 @@ extern const char * GetPCMFromFile(char * filename);
         [errorVC.tryAgainButton addTarget:self action:@selector(handleTVButtonTouch) forControlEvents:UIControlEventTouchUpInside];
         [errorVC.whyNoResultsButton addTarget:self action:@selector(handleWhyNoResultsTouch) forControlEvents:UIControlEventTouchUpInside];
     }
+
     if (isFail) {
         [self.view addSubview:failView];
         failView.frame = self.view.frame;
-    }
-    else {
+    } else {
         if ([failView isDescendantOfView:self.view]) {
             [failView removeFromSuperview];
         }
@@ -158,20 +153,19 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)setWorkingState:(BOOL)isWorking
 {
-    if(_hawktivityAnimatedImageView == nil)
-    {
+    if (_hawktivityAnimatedImageView == nil) {
         UIImage *animImage = [UIImage animatedImageNamed:@"Animation_" duration:3.125];  
         _hawktivityAnimatedImageView = [[UIImageView alloc] initWithImage:animImage];
         _hawktivityAnimatedImageView.layer.position = recordButton.layer.position;
     }
+
     if (isWorking) {
         [self.view addSubview:_hawktivityAnimatedImageView];
         workingBackground.hidden = NO;
         recordButton.hidden = YES;
         recordButton.enabled = NO; 
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    }
-    else {
+    } else {
         [_hawktivityAnimatedImageView removeFromSuperview];
         workingBackground.hidden = YES;
         recordButton.hidden = NO;
@@ -182,7 +176,7 @@ extern const char * GetPCMFromFile(char * filename);
 
 #pragma mark button touches
 
--(void)handleTVButtonTouch
+- (void)handleTVButtonTouch
 {
     NSLog(@"handleTVButtonTouch run");
     
@@ -193,27 +187,25 @@ extern const char * GetPCMFromFile(char * filename);
     [self recordAudio];
 }
 
-
--(void)showBrowseWebView
+- (void)showBrowseWebView
 {
     InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"InternalAdBrowserViewController"];
     vc.targetURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
--(void)handleWhyNoResultsTouch
+- (void)handleWhyNoResultsTouch
 {
     SimpleWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleWebViewController"];
     vc.targetURL = [NSURL URLWithString:ADHAWK_TROUBLESHOOTING_URL];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void) recordAudio
+- (void)recordAudio
 {
     NSLog(@"Start recording audio");
-    if (!audioRecorder.recording)
-    {
+
+    if (!audioRecorder.recording) {
         [self setFailState:NO];
 
 #if RECORD_DURATION < 5
@@ -221,10 +213,10 @@ extern const char * GetPCMFromFile(char * filename);
 #endif
 
         BOOL didRecord = [audioRecorder recordForDuration:RECORD_DURATION];
+
         if (didRecord) {
             [self setWorkingState:YES];
-        }
-        else{
+        } else {
             NSLog(@"audioRecorder failed to start recording");
         }
 
@@ -232,27 +224,25 @@ extern const char * GetPCMFromFile(char * filename);
     }
 }
 
-- (void) stopRecorder
+- (void)stopRecorder
 {
     [audioRecorder stop];
     [self handleRecordingFinished];
 }
 
--(void)handleRecordingFinished
+- (void)handleRecordingFinished
 {    
     NSLog(@"Handle recording finished. Recorder %@ recording", (audioRecorder.recording ? @"IS" : @"IS NOT"));
     if (audioRecorder.recording) [audioRecorder stop]; else NSLog(@"Audio recorder stopped already, as expected");
     NSString *soundFilePath = [self getAudioFilePath];
-    const char * fpCode = GetPCMFromFile((char*) [soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
+    const char *fpCode = GetPCMFromFile((char *)[soundFilePath cStringUsingEncoding:NSASCIIStringEncoding]);
     NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
     NSLog(@"Fingerprint generated");
     
 //    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
     [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
     [audioRecorder deleteRecording];
-
 }
-
 
 - (void)adHawkAPIDidReturnAd:(AdHawkAd *)ad
 {
@@ -263,32 +253,31 @@ extern const char * GetPCMFromFile(char * filename);
     [self setWorkingState:NO];
 }
 
--(void) adHawkAPIDidReturnNoResult
+- (void)adHawkAPIDidReturnNoResult
 {
     NSLog(@"No results for search");
     [self setWorkingState:NO];
     [self setFailState:YES];
 }
 
--(void) adHawkAPIDidFailWithError:(NSError *) error
+- (void)adHawkAPIDidFailWithError:(NSError *)error
 {
     NSLog(@"Fail error: %ld", (long)error.code);
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[error.userInfo objectForKey:@"title"] message:[error.userInfo objectForKey:@"message"] 
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error.userInfo objectForKey:@"title"] message:[error.userInfo objectForKey:@"message"]
                                                        delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil]; 
     [alertView show];
     [self setWorkingState:NO];
 }
 
-
 #pragma mark AudioRecorderDelegate message handlers
 
--(void)audioRecorderDidFinishRecording: (AVAudioRecorder *)recorder successfully:(BOOL)flag
+- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
 {
     NSLog(@"audioRecorderDidFinishRecording successully: %@", flag ? @"True" : @"False");
     [self handleRecordingFinished];
 }
 
--(void)audioRecorderEncodeErrorDidOccur: (AVAudioRecorder *)recorder error:(NSError *)error
+- (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
 {
     NSLog(@"Encode Error occurred");
 }
@@ -298,7 +287,7 @@ extern const char * GetPCMFromFile(char * filename);
     TFLog(@"Audio recording interrupted. Should only happen during a call or something.");
 }
 
--(void)audioRecorderEndInterruption:(AVAudioRecorder *)recorder
+- (void)audioRecorderEndInterruption:(AVAudioRecorder *)recorder
 {
     TFLog(@"Audio recording resumed.");
 }

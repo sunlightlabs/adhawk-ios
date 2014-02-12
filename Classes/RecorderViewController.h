@@ -12,11 +12,6 @@
 #import "AdHawkBaseViewController.h"
 #import "AdHawkAPI.h"
 
-//@protocol RecorderViewDelegate <NSObject>
-//@required
-//- (void) recorderDidGenerateFingerPrint:(NSString *)fingerprint;
-//@end
-
 @interface RecorderViewController : AdHawkBaseViewController
 <AVAudioRecorderDelegate, AdHawkAPIDelegate>
 {
@@ -30,12 +25,12 @@
 @property (nonatomic, strong) IBOutlet UIImageView *workingBackground;
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
 @property (nonatomic, strong) IBOutlet UIView *failView;
--(IBAction) handleTVButtonTouch;
--(IBAction) retryButtonClicked;
--(IBAction) stopRecorder;
--(IBAction) showBrowseWebView;
+- (IBAction)handleTVButtonTouch;
+- (IBAction)retryButtonClicked;
+- (IBAction)stopRecorder;
+- (IBAction)showBrowseWebView;
 
--(void)setFailState:(BOOL)isFail;
--(void)setWorkingState:(BOOL)isWorking;
+- (void)setFailState:(BOOL)isFail;
+- (void)setWorkingState:(BOOL)isWorking;
 
 @end

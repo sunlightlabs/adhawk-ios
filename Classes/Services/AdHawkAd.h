@@ -10,8 +10,8 @@
 
 @interface AdHawkAd : NSObject
 
-@property (nonatomic, copy) NSURL* resultURL;
-@property (nonatomic, copy) NSString* shareText;
+@property (nonatomic, copy) NSURL *resultURL;
+@property (nonatomic, copy) NSString *shareText;
 
 + (instancetype)objectFromDictionary:(NSDictionary *)dictionary;
 

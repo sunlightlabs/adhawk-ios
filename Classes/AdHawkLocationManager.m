@@ -13,34 +13,35 @@
 
 @synthesize lastBestLocation;
 
-+ (AdHawkLocationManager *) sharedInstance
++ (AdHawkLocationManager *)sharedInstance
 {
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
         return [[self alloc] init];
     });
 }
 
-- (id) init
+- (id)init
 {
     self = [super init];
     self.lastBestLocation = nil;
     self->_manager = [[CLLocationManager alloc] init];
     self->_manager.desiredAccuracy = kCLLocationAccuracyKilometer;
     self->_manager.distanceFilter = 500;
+
     return self;
 }
 
-- (void) attempLocationUpdateOver:(NSTimeInterval)attemptTime
+- (void)attempLocationUpdateOver:(NSTimeInterval)attemptTime
 {
     BOOL locationServicesEnabled = [CLLocationManager locationServicesEnabled];
     BOOL hasNotDeterminedAuth = [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined ? YES : NO;
     BOOL locationPrefEnabled = [AdHawkPreferencesManager sharedInstance].locationEnabled;
+
     if (locationServicesEnabled == YES && (hasNotDeterminedAuth || locationPrefEnabled)) {
         NSLog(@"startUpdatingLocation");
         self->_manager.delegate = self;
         [self->_manager startUpdatingLocation];
-    }
-    else {
+    } else {
         NSLog(@"Can't start updating location: location services is %@ and user pref is %@. Auth status is: %@", 
               (locationServicesEnabled ? @"ENABLED" : @"DISABLED"),
               (locationPrefEnabled ? @"ENABLED" : @"DISABLED"),
@@ -49,7 +50,7 @@
     [self performSelector:@selector(stopUpdatingLocation:) withObject:@"Timed Out" afterDelay:attemptTime];
 }
 
--(void) stopUpdatingLocation:(NSString *)state
+- (void)stopUpdatingLocation:(NSString *)state
 {
     NSLog(@"Stop updating location: %@", state);
     [self->_manager stopUpdatingLocation];
@@ -75,8 +76,7 @@
               self.self.lastBestLocation.coordinate.latitude,
               lastBestLocation.coordinate.longitude);
         
-        if(self.lastBestLocation.horizontalAccuracy <= manager.desiredAccuracy)
-        {
+        if (self.lastBestLocation.horizontalAccuracy <= manager.desiredAccuracy) {
             [self stopUpdatingLocation:@"Acquired Location"];
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopUpdatingLocation:) object:nil];
         }
@@ -86,6 +86,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"Location update failed: %@", [error localizedDescription]);
+    
     if ([error code] != kCLErrorLocationUnknown) {
         [self stopUpdatingLocation:NSLocalizedString(@"Error", @"Error")];
     }

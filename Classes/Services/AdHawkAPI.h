@@ -19,6 +19,7 @@
 - (void)adHawkAPIDidReturnAd:(AdHawkAd *)ad;
 - (void)adHawkAPIDidReturnNoResult;
 - (void)adHawkAPIDidFailWithError:(NSError *)error;
+
 @end
 
 @interface AdHawkAPI : NSObject

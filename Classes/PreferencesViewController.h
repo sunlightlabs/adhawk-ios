@@ -17,6 +17,6 @@
 
 @property (nonatomic, strong) IBOutlet UISwitch *shareLocationSwitch;
 
--(IBAction)handleShareLocationSwitch:(UISwitch *)p_shareLocationSwitch;
+- (IBAction)handleShareLocationSwitch:(UISwitch *)p_shareLocationSwitch;
 
 @end

@@ -12,15 +12,6 @@
 
 @synthesize shareLocationSwitch;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,7 +38,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(IBAction)handleShareLocationSwitch:(UISwitch *)p_shareLocationSwitch
+- (IBAction)handleShareLocationSwitch:(UISwitch *)p_shareLocationSwitch
 {
     self->_prefMan.locationEnabled = p_shareLocationSwitch.on;
     NSLog(@"handleShareLocationSwitch state: %@", self->_prefMan.locationEnabled ? @"ON" : @"OFF");

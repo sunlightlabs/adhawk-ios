@@ -17,6 +17,7 @@ extern NSString *const kAdHawkLocationEnabled;
 @property (nonatomic) BOOL locationEnabled;
 
 + (AdHawkPreferencesManager *)sharedInstance;
-- (void) setupPreferences;
-- (void) updateStoredPreferences;
+- (void)setupPreferences;
+- (void)updateStoredPreferences;
+
 @end

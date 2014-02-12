@@ -16,8 +16,8 @@
 
 @property (nonatomic, strong) CLLocation *lastBestLocation;
 
-+ (AdHawkLocationManager *) sharedInstance;
-- (void) attempLocationUpdateOver:(NSTimeInterval)attemptTime;
--(void) stopUpdatingLocation:(NSString *)state;
++ (AdHawkLocationManager *)sharedInstance;
+- (void)attempLocationUpdateOver:(NSTimeInterval)attemptTime;
+- (void)stopUpdatingLocation:(NSString *)state;
 
 @end

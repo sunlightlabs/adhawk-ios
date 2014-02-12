@@ -8,31 +8,31 @@
 
 #import "AdHawkPreferencesManager.h"
 
-NSString * const kAdHawkLocationEnabled = @"AdHawkLocationEnabled";
+NSString *const kAdHawkLocationEnabled = @"AdHawkLocationEnabled";
 
 @implementation AdHawkPreferencesManager
 
 @synthesize locationEnabled;
 
-+ (AdHawkPreferencesManager *) sharedInstance
++ (AdHawkPreferencesManager *)sharedInstance
 {
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
         return [[self alloc] init];
     });
 }
 
-- (id) init
+- (id)init
 {
     self = [super init];
     self->_userDefaults = [NSUserDefaults standardUserDefaults];
+
     return self;
 }
 
-// NSUserDefaultsDidChangeNotification
-
-- (void) setupPreferences
+- (void)setupPreferences
 {
     NSArray *testValue = [self->_userDefaults arrayForKey:@"SettingsList"];
+
     if (testValue == nil) {
         NSArray *settingsList = [NSArray arrayWithObjects:kAdHawkLocationEnabled, nil];
         NSDictionary *appDefaults = @{ @"SettingsList" : settingsList,
@@ -45,13 +45,13 @@ NSString * const kAdHawkLocationEnabled = @"AdHawkLocationEnabled";
     locationEnabled = [self->_userDefaults boolForKey:kAdHawkLocationEnabled];
 }
 
-- (void) setLocationEnabled:(BOOL)isOn
+- (void)setLocationEnabled:(BOOL)isOn
 {
     locationEnabled = isOn;
     [self->_userDefaults setBool:isOn forKey:kAdHawkLocationEnabled];
 }
 
-- (void) updateStoredPreferences
+- (void)updateStoredPreferences
 {
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
