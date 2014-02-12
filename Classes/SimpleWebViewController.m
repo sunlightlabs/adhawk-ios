@@ -18,6 +18,9 @@
 @end
 
 @implementation SimpleWebViewController
+{
+    BOOL _targetURLLoaded;
+}
 
 @synthesize webView;
 @synthesize activityIndicator;
@@ -29,7 +32,8 @@
     self = [super initWithCoder:aDecoder];
 
     if (self) {
-        self.loadTargetURLonViewWillAppear = @YES;
+        self.loadTargetURLonViewWillAppear = YES;
+        _targetURLLoaded = NO;
     }
 
     return self;
@@ -54,7 +58,7 @@
 {
     [super viewWillAppear:animated];
 
-    if (self.loadTargetURLonViewWillAppear) {
+    if (self.loadTargetURLonViewWillAppear && !_targetURLLoaded) {
         [self loadTargetURL];
     }
 }
@@ -119,6 +123,7 @@
         [self.webView loadRequest:req progress:nil
               success:^NSString *(NSHTTPURLResponse *response, NSString *HTML) {
                   [weakSelf.activityIndicator stopAnimating];
+                  _targetURLLoaded = YES;
 
                   return HTML;
               } failure:^(NSError *error) {
