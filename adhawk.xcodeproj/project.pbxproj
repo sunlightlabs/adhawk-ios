@@ -535,6 +535,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "\"$(PODS_ROOT)/Reveal-iOS-SDK/Reveal-Framework-1.0.3\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
@@ -550,7 +551,7 @@
 				PRODUCT_NAME = "Ad Hawk";
 				PROVISIONING_PROFILE = "A1BAA6BC-35BE-494D-A2A6-E9E766E652F0";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -645,6 +646,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "\"$(PODS_ROOT)/Reveal-iOS-SDK/Reveal-Framework-1.0.3\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
@@ -660,7 +662,7 @@
 				PRODUCT_NAME = "Ad Hawk";
 				PROVISIONING_PROFILE = "519D47CB-CA42-4EA4-BCE4-50C5E8A206A2";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -675,6 +677,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "\"$(PODS_ROOT)/Reveal-iOS-SDK/Reveal-Framework-1.0.3\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Ad Hawk-Prefix.pch";
 				GCC_VERSION = "";
@@ -690,7 +693,7 @@
 				PRODUCT_NAME = "Ad Hawk";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/SDKs/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
