@@ -29,9 +29,6 @@
     _navButtons = [[NSArray alloc] initWithObjects:_settingsButton, _aboutButton, nil];
     
     // Set logo in Toolbar. [self enableSocial] must be run seprately to add the sharing button to the toolbar.
-    UIImage *bgImage = [UIImage imageNamed:@"btm"];
-    [[UIToolbar appearance] setBackgroundImage:bgImage forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
-    [self.navigationController.toolbar setTranslucent:YES]; 
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sunlight"]];
     _logoItem = [[UIBarButtonItem alloc] initWithCustomView:imageView];    
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];

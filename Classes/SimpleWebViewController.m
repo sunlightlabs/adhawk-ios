@@ -44,14 +44,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.webView.delegate = self;
-    [self.webView.scrollView setContentInset:UIEdgeInsetsMake(0.0, 0.0, 44.0, 0.0)];
-    self.webView.backgroundColor = [UIColor whiteColor];
-
-    for (UIView *shadowView in [webView.scrollView subviews]) {
-        if ([shadowView isKindOfClass:[UIImageView class]]) {
-            [shadowView setHidden:YES];
-        }
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

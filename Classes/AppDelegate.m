@@ -25,7 +25,7 @@
     [audioSession setPreferredSampleRate:44100.0 error:nil];
     [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
 
-    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+    [self setupStyle];
 
 #if CONFIGURATION_Beta
     #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__)
@@ -93,6 +93,34 @@
      */
     [[AVAudioSession sharedInstance] setActive:NO error:nil];
     [[AdHawkPreferencesManager sharedInstance] updateStoredPreferences];
+}
+
+- (void)setupStyle
+{
+    UIApplication *app = [UIApplication sharedApplication];
+    app.statusBarStyle = UIStatusBarStyleLightContent;
+
+    UIColor *lightGreyColor = [UIColor colorWithRed:218 green:218 blue:218 alpha:1.0f];
+    UIColor *darkColor = [UIColor colorWithWhite:0.100 alpha:1.000];
+
+    self.window.tintColor = lightGreyColor;
+    self.window.backgroundColor = darkColor;
+
+//    Toolbar appearance
+    UIToolbar *toolBar = [UIToolbar appearance];
+    toolBar.barTintColor = darkColor;
+
+//    UINavigationBar appearance
+    UINavigationBar *navbar = [UINavigationBar appearance];
+    navbar.barTintColor = darkColor;
+
+//    UISwitch appearance
+    UISwitch *uiswitch = [UISwitch appearance];
+    uiswitch.tintColor = lightGreyColor;
+
+    UIWebView *webview = [UIWebView appearance];
+    webview.backgroundColor = lightGreyColor;
+
 }
 
 @end
