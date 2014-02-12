@@ -12,14 +12,14 @@
 		2F01964915AE2B91000542AC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964815AE2B91000542AC /* libxml2.dylib */; };
 		2F01964B15AE2B9A000542AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F01964A15AE2B9A000542AC /* QuartzCore.framework */; };
 		2F272AF715CC52150029BEB2 /* AdHawkPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F272AF615CC52150029BEB2 /* AdHawkPreferencesManager.m */; };
+		2F2E013518AAF8A700C5E2A0 /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E012C18AAF8A700C5E2A0 /* CADebugPrintf.cpp */; };
+		2F2E013618AAF8A700C5E2A0 /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E013018AAF8A700C5E2A0 /* Codegen_wrapper.cpp */; };
+		2F2E013718AAF8A700C5E2A0 /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E013318AAF8A700C5E2A0 /* GetPCMFromFile.cpp */; };
 		2F2F125815BE0C79001A74F5 /* AdHawkBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */; };
 		2F46045015C388F7004B2DA9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F46044F15C388F7004B2DA9 /* CoreLocation.framework */; };
 		2F4B984915ACC7AC00C5AB4C /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984215ACC7AC00C5AB4C /* AdDetailViewController.m */; };
 		2F4B984A15ACC7AC00C5AB4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */; };
 		2F4B984B15ACC7AC00C5AB4C /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */; };
-		2F4B985C15ACC7F800C5AB4C /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */; };
-		2F4B985D15ACC7F800C5AB4C /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */; };
-		2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */; };
 		2F4B986F15ACC8A700C5AB4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B986E15ACC8A700C5AB4C /* main.m */; };
 		2F4B988B15ACD34400C5AB4C /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EA154237DA00F998E6 /* libechoprint-codegen-ios.a */; };
 		2F4B988C15ACD34700C5AB4C /* libechoprint-codegen-ios.sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CE65EB154237DA00F998E6 /* libechoprint-codegen-ios.sim.a */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -57,6 +57,16 @@
 		2F01964A15AE2B9A000542AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F272AF515CC52150029BEB2 /* AdHawkPreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdHawkPreferencesManager.h; sourceTree = "<group>"; };
 		2F272AF615CC52150029BEB2 /* AdHawkPreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdHawkPreferencesManager.m; sourceTree = "<group>"; };
+		2F2E012B18AAF8A700C5E2A0 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		2F2E012C18AAF8A700C5E2A0 /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugPrintf.cpp; sourceTree = "<group>"; };
+		2F2E012D18AAF8A700C5E2A0 /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		2F2E012E18AAF8A700C5E2A0 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		2F2E012F18AAF8A700C5E2A0 /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Codegen.h; sourceTree = "<group>"; };
+		2F2E013018AAF8A700C5E2A0 /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Codegen_wrapper.cpp; sourceTree = "<group>"; };
+		2F2E013118AAF8A700C5E2A0 /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Codegen_wrapper.h; sourceTree = "<group>"; };
+		2F2E013218AAF8A700C5E2A0 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
+		2F2E013318AAF8A700C5E2A0 /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GetPCMFromFile.cpp; sourceTree = "<group>"; };
+		2F2E013418AAF8A700C5E2A0 /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPCMFromFile.h; sourceTree = "<group>"; };
 		2F2F125615BE0C79001A74F5 /* AdHawkBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdHawkBaseViewController.h; path = Classes/AdHawkBaseViewController.h; sourceTree = SOURCE_ROOT; };
 		2F2F125715BE0C79001A74F5 /* AdHawkBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdHawkBaseViewController.m; path = Classes/AdHawkBaseViewController.m; sourceTree = SOURCE_ROOT; };
 		2F46044F15C388F7004B2DA9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -66,15 +76,6 @@
 		2F4B984415ACC7AC00C5AB4C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		2F4B984515ACC7AC00C5AB4C /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecorderViewController.h; path = Classes/RecorderViewController.h; sourceTree = SOURCE_ROOT; };
 		2F4B984615ACC7AC00C5AB4C /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecorderViewController.m; path = Classes/RecorderViewController.m; sourceTree = SOURCE_ROOT; };
-		2F4B985315ACC7F800C5AB4C /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = Vendor/echoprint/CADebugMacros.h; sourceTree = SOURCE_ROOT; };
-		2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CADebugPrintf.cpp; path = Vendor/echoprint/CADebugPrintf.cpp; sourceTree = SOURCE_ROOT; };
-		2F4B985515ACC7F800C5AB4C /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugPrintf.h; path = Vendor/echoprint/CADebugPrintf.h; sourceTree = SOURCE_ROOT; };
-		2F4B985615ACC7F800C5AB4C /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = Vendor/echoprint/CAStreamBasicDescription.h; sourceTree = SOURCE_ROOT; };
-		2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Codegen_wrapper.cpp; path = Vendor/echoprint/Codegen_wrapper.cpp; sourceTree = SOURCE_ROOT; };
-		2F4B985815ACC7F800C5AB4C /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen_wrapper.h; path = Vendor/echoprint/Codegen_wrapper.h; sourceTree = SOURCE_ROOT; };
-		2F4B985915ACC7F800C5AB4C /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen.h; path = Vendor/echoprint/Codegen.h; sourceTree = SOURCE_ROOT; };
-		2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GetPCMFromFile.cpp; path = Vendor/echoprint/GetPCMFromFile.cpp; sourceTree = SOURCE_ROOT; };
-		2F4B985B15ACC7F800C5AB4C /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPCMFromFile.h; path = Vendor/echoprint/GetPCMFromFile.h; sourceTree = SOURCE_ROOT; };
 		2F4B986E15ACC8A700C5AB4C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = SOURCE_ROOT; };
 		2F4B98E415ACDC5500C5AB4C /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Classes/Config/Settings.m; sourceTree = SOURCE_ROOT; };
 		2F4B98E715ACDCEA00C5AB4C /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Classes/Config/Settings.h; sourceTree = SOURCE_ROOT; };
@@ -96,7 +97,6 @@
 		2FC0B16815C85F710020CCFC /* AdhawkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdhawkErrorViewController.m; path = Classes/AdhawkErrorViewController.m; sourceTree = SOURCE_ROOT; };
 		2FD683E615C0505600822ABE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = Classes/AboutViewController.h; sourceTree = SOURCE_ROOT; };
 		2FD683E715C0505600822ABE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = Classes/AboutViewController.m; sourceTree = SOURCE_ROOT; };
-		2FD8C9D318A95A4B00820AA8 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
 		2FD8C9D518A95B5700820AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2FD8C9D818A95BBB00820AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = Resources/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		2FF8E00215C2109A00D68C84 /* InternalAdBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternalAdBrowserViewController.h; path = Classes/InternalAdBrowserViewController.h; sourceTree = SOURCE_ROOT; };
@@ -152,6 +152,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F2E012A18AAF8A700C5E2A0 /* echoprint */ = {
+			isa = PBXGroup;
+			children = (
+				2F2E012B18AAF8A700C5E2A0 /* CADebugMacros.h */,
+				2F2E012C18AAF8A700C5E2A0 /* CADebugPrintf.cpp */,
+				2F2E012D18AAF8A700C5E2A0 /* CADebugPrintf.h */,
+				2F2E012E18AAF8A700C5E2A0 /* CAStreamBasicDescription.h */,
+				2F2E012F18AAF8A700C5E2A0 /* Codegen.h */,
+				2F2E013018AAF8A700C5E2A0 /* Codegen_wrapper.cpp */,
+				2F2E013118AAF8A700C5E2A0 /* Codegen_wrapper.h */,
+				2F2E013218AAF8A700C5E2A0 /* echoprint_Prefix.pch */,
+				2F2E013318AAF8A700C5E2A0 /* GetPCMFromFile.cpp */,
+				2F2E013418AAF8A700C5E2A0 /* GetPCMFromFile.h */,
+			);
+			name = echoprint;
+			path = Vendor/echoprint;
+			sourceTree = "<group>";
+		};
 		2F4B98E315ACDC1600C5AB4C /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +196,7 @@
 		2FD8C9D218A9573C00820AA8 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				C39941A7153FA9D500E64F82 /* echoprint */,
+				2F2E012A18AAF8A700C5E2A0 /* echoprint */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -240,24 +258,6 @@
 				2F93477115AE112100FE5749 /* Ad Hawk-Prefix.pch */,
 			);
 			path = "Other Sources";
-			sourceTree = "<group>";
-		};
-		C39941A7153FA9D500E64F82 /* echoprint */ = {
-			isa = PBXGroup;
-			children = (
-				2FD8C9D318A95A4B00820AA8 /* echoprint_Prefix.pch */,
-				2F4B985315ACC7F800C5AB4C /* CADebugMacros.h */,
-				2F4B985415ACC7F800C5AB4C /* CADebugPrintf.cpp */,
-				2F4B985515ACC7F800C5AB4C /* CADebugPrintf.h */,
-				2F4B985615ACC7F800C5AB4C /* CAStreamBasicDescription.h */,
-				2F4B985715ACC7F800C5AB4C /* Codegen_wrapper.cpp */,
-				2F4B985815ACC7F800C5AB4C /* Codegen_wrapper.h */,
-				2F4B985915ACC7F800C5AB4C /* Codegen.h */,
-				2F4B985A15ACC7F800C5AB4C /* GetPCMFromFile.cpp */,
-				2F4B985B15ACC7F800C5AB4C /* GetPCMFromFile.h */,
-			);
-			name = echoprint;
-			path = Vendor/echoprint;
 			sourceTree = "<group>";
 		};
 		C3C01695153A80C700D56553 /* Classes */ = {
@@ -433,12 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2E013518AAF8A700C5E2A0 /* CADebugPrintf.cpp in Sources */,
 				2F4B984915ACC7AC00C5AB4C /* AdDetailViewController.m in Sources */,
 				2F4B984A15ACC7AC00C5AB4C /* AppDelegate.m in Sources */,
 				2F4B984B15ACC7AC00C5AB4C /* RecorderViewController.m in Sources */,
-				2F4B985C15ACC7F800C5AB4C /* CADebugPrintf.cpp in Sources */,
-				2F4B985D15ACC7F800C5AB4C /* Codegen_wrapper.cpp in Sources */,
-				2F4B985E15ACC7F800C5AB4C /* GetPCMFromFile.cpp in Sources */,
+				2F2E013618AAF8A700C5E2A0 /* Codegen_wrapper.cpp in Sources */,
 				2F4B986F15ACC8A700C5AB4C /* main.m in Sources */,
 				2F4B98E515ACDC5500C5AB4C /* Settings.m in Sources */,
 				2F8AD0CB15AF11B20004EECD /* AdHawkAPI.m in Sources */,
@@ -451,6 +450,7 @@
 				2FBD846215CB0F38001C128F /* AdHawkLocationManager.m in Sources */,
 				2FBD846515CC1A92001C128F /* PreferencesViewController.m in Sources */,
 				2F272AF715CC52150029BEB2 /* AdHawkPreferencesManager.m in Sources */,
+				2F2E013718AAF8A700C5E2A0 /* GetPCMFromFile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,19 +481,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
@@ -525,7 +528,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
 				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -543,13 +546,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -562,7 +568,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -580,19 +586,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
@@ -623,7 +632,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
 				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -651,7 +660,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Ad Hawk-Info.plist";
 				INFOPLIST_PREFIX_HEADER = Resources/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
