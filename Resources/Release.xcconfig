@@ -8,4 +8,4 @@
 
 #include "Common.xcconfig"
 // Exclude TestFlight
-EXCLUDED_SOURCE_FILE_NAMES=*libTestFlight.a
+EXCLUDED_SOURCE_FILE_NAMES=*libTestFlight.a libPods-Reveal-iOS-SDK.a
