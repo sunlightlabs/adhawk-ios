@@ -28,10 +28,10 @@
     
     if (self) {
         // MARK: Set up object manager baseURL, headers, and mimetypes
-        self.baseURL = [NSURL URLWithString:ADHAWK_API_BASE_URL];
+        self.baseURL = [NSURL URLWithString:kAdHawkBaseURL];
 
         self.requestSerializer = [AFJSONRequestSerializer serializer];
-        [self.requestSerializer setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
+        [self.requestSerializer setValue:kAdHawkUserAgent forHTTPHeaderField:@"User-Agent"];
 
         self.manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:self.baseURL];
         manager.requestSerializer = self.requestSerializer;
@@ -58,7 +58,9 @@
                                   @"lon": lon
                                 };
 
-    if (TESTING == YES) [TestFlight passCheckpoint:@"Submitting Fingerprint"];
+#if TESTFLIGHT
+    [TestFlight passCheckpoint:@"Submitting Fingerprint"];
+#endif
 
     [self.manager POST:@"ad/" parameters:postParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"It Worked: %@", responseObject);

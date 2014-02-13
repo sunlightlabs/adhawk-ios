@@ -10,6 +10,7 @@
 #import "Settings.h"
 #import "AdHawkPreferencesManager.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -26,7 +27,8 @@
 
 #if CONFIGURATION_Beta
     #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__)
-    [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
+    #define TESTFLIGHT 1
+    [TestFlight takeOff:kTestFlightAppToken];
     NSLog(@"Running in Beta configuration");
 #endif
 
@@ -39,6 +41,8 @@
 #endif
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+
+    [Crashlytics startWithAPIKey:kCrashlyticsApiKey];
 
 //    Set up views
     self.window.rootViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil]

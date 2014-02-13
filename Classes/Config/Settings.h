@@ -13,31 +13,27 @@
 #endif
 */
 
-FOUNDATION_EXPORT NSString *const TESTFLIGHT_APP_TOKEN;
+FOUNDATION_EXPORT NSString *const kTestFlightAppToken;
 
-FOUNDATION_EXPORT NSString *const ADHAWK_API_BASE_URL;
+FOUNDATION_EXPORT NSString *const kAdHawkBaseURL;
 
-FOUNDATION_EXPORT NSString *const CLIENT_APP_HEADER;
+FOUNDATION_EXPORT NSString *const kClientAppHeader;
 
-FOUNDATION_EXPORT NSString *const ADHAWK_APP_USER_AGENT;
+FOUNDATION_EXPORT NSString *const kAdHawkUserAgent;
 
-FOUNDATION_EXPORT NSString *const ADHAWK_ABOUT_URL;
+FOUNDATION_EXPORT NSString *const kCrashlyticsApiKey;
 
-FOUNDATION_EXPORT NSString *const ADHAWK_BROWSE_URL;
+#pragma mark - Test related
 
-FOUNDATION_EXPORT NSString *const ADHAWK_TROUBLESHOOTING_URL;
+FOUNDATION_EXPORT NSString *const kAdHawkAboutURL;
 
-FOUNDATION_EXPORT NSString *const FACEBOOOK_APP_ID;
+FOUNDATION_EXPORT NSString *const kAdHawkBrowseURL;
 
-FOUNDATION_EXPORT NSString *const TEST_FINGERPRINT;
+FOUNDATION_EXPORT NSString *const kAdHawkTroubleshootingURL;
 
-FOUNDATION_EXPORT NSString *const TEST_SOCIAL_UPDATE;
+FOUNDATION_EXPORT NSString *const kAdHawkFacebookAppId;
 
-FOUNDATION_EXPORT BOOL const TESTING;
+FOUNDATION_EXPORT NSString *const kAdHawkTestFingerprint;
 
-FOUNDATION_EXPORT NSString *const ADHAWK_AUTH_USER;
-
-FOUNDATION_EXPORT NSString *const ADHAWK_AUTH_PASSWORD;
-
-// 15.0 is optimal for RECORD_DURATION NSTimeInterval
-FOUNDATION_EXPORT NSTimeInterval const RECORD_DURATION;
+// 15.0 is optimal for kAdHawkRecordDuration NSTimeInterval
+FOUNDATION_EXPORT NSTimeInterval const kAdHawkRecordDuration;

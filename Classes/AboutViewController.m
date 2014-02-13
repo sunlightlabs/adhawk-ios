@@ -23,7 +23,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"AboutView loaded");
-    NSMutableURLRequest *_urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:ADHAWK_ABOUT_URL]];
+    NSMutableURLRequest *_urlReq = [NSURLRequest requestWithURL:[NSURL URLWithString:kAdHawkAboutURL]];
     [self.webView loadRequest:_urlReq];
 }
 

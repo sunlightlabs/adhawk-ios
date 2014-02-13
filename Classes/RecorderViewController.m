@@ -195,14 +195,14 @@
 - (void)showBrowseWebView
 {
     InternalAdBrowserViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"InternalAdBrowserViewController"];
-    vc.targetURL = [NSURL URLWithString:ADHAWK_BROWSE_URL];
+    vc.targetURL = [NSURL URLWithString:kAdHawkBrowseURL];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)handleWhyNoResultsTouch
 {
     SimpleWebViewController *vc = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleWebViewController"];
-    vc.targetURL = [NSURL URLWithString:ADHAWK_TROUBLESHOOTING_URL];
+    vc.targetURL = [NSURL URLWithString:kAdHawkTroubleshootingURL];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -213,11 +213,11 @@
     if (!audioRecorder.recording) {
         [self setFailState:NO];
 
-#if RECORD_DURATION < 5
+#if kAdHawkRecordDuration < 5
     #warning "Building with a record duration of less than 5.0
 #endif
 
-        BOOL didRecord = [audioRecorder recordForDuration:RECORD_DURATION];
+        BOOL didRecord = [audioRecorder recordForDuration:kAdHawkRecordDuration];
 
         if (didRecord) {
             [self setWorkingState:YES];
@@ -244,7 +244,7 @@
     NSString *fpCodeString = [NSString stringWithCString:fpCode encoding:NSASCIIStringEncoding];
     NSLog(@"Fingerprint generated");
     
-//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:TEST_FINGERPRINT delegate:self];
+//    [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:kAdHawkTestFingerprint delegate:self];
     [[AdHawkAPI sharedInstance] searchForAdWithFingerprint:fpCodeString delegate:self];
     [audioRecorder deleteRecording];
 }

@@ -33,9 +33,9 @@
     if (!self.sessionManager) {
         self.sessionManager = [AFHTTPRequestOperationManager manager];
         AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
-        [requestSerializer setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"X-Client-App"];
-        [requestSerializer setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User-Agent"];
-        [requestSerializer setValue:ADHAWK_APP_USER_AGENT forHTTPHeaderField:@"User_Agent"];
+        [requestSerializer setValue:kAdHawkUserAgent forHTTPHeaderField:@"X-Client-App"];
+        [requestSerializer setValue:kAdHawkUserAgent forHTTPHeaderField:@"User-Agent"];
+        [requestSerializer setValue:kAdHawkUserAgent forHTTPHeaderField:@"User_Agent"];
         self.sessionManager.requestSerializer = requestSerializer;
     }
 }

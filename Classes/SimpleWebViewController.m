@@ -76,7 +76,7 @@
     
     if (needRequestOverride) {
         NSLog(@"Overriding headers");
-        [customRequest addValue:CLIENT_APP_HEADER forHTTPHeaderField:@"X-Client-App"];
+        [customRequest addValue:kClientAppHeader forHTTPHeaderField:@"X-Client-App"];
         [p_webView loadRequest:customRequest];
 
         return NO;
@@ -122,7 +122,9 @@
                   [weakSelf.activityIndicator stopAnimating];
               }];
 
+#if TESTFLIGHT
         if (TESTING == YES) [TestFlight passCheckpoint:@"Requested Ad detail page"];
+#endif
     }
 }
 
