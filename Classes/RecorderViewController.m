@@ -14,9 +14,7 @@
 #import "Settings.h"
 #import "AdHawkAPI.h"
 #import "AdHawkAd.h"
-
-
-extern const char *GetPCMFromFile(char *filename);
+#import "GetPCMFromFile.h"
 
 @implementation RecorderViewController
 

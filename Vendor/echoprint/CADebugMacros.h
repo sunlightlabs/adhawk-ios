@@ -91,7 +91,7 @@
 	
 	//	basic debugging print routines
 	#if	TARGET_OS_MAC && !TARGET_API_MAC_CARBON
-		extern void DebugStr(const unsigned char* debuggerMsg);
+		extern void DebugStr(const unsigned char *debuggerMsg);
 		#define	DebugMessage(msg)	DebugStr("\p"msg)
 		#define DebugMessageN1(msg, N1)
 		#define DebugMessageN2(msg, N1, N2)

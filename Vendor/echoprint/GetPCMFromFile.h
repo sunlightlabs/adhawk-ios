@@ -6,3 +6,4 @@
  *
  */
 
+extern const char *GetPCMFromFile(char *filename);

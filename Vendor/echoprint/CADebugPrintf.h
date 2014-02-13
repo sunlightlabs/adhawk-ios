@@ -82,7 +82,7 @@
 			extern "C"
 			#endif
 			void OpenDebugPrintfSideFile();
-			extern FILE* sDebugPrintfSideFile;
+			extern FILE *sDebugPrintfSideFile;
 			#define	DebugPrintfRtn	fprintf
 			#define	DebugPrintfFile	((sDebugPrintfSideFile != NULL) ? sDebugPrintfSideFile : stderr)
 			#define	DebugPrintfLineEnding	"\n"
