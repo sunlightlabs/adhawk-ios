@@ -17,19 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[AdHawkPreferencesManager sharedInstance] setupPreferences];
-    
-    // Audio Session setup
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
-    [audioSession setPreferredSampleRate:44100.0 error:nil];
-    [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[AdHawkPreferencesManager sharedInstance] setupPreferences];
+    });
 
     [self setupStyle];
 
 #if CONFIGURATION_Beta
     #define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ## __VA_ARGS__)
-    [TestFlight takeOff:kTFTeamToken];
+    [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
+    NSLog(@"Running in Beta configuration");
 #endif
 
 #if CONFIGURATION_Release
@@ -37,7 +35,7 @@
 #endif
 
 #if CONFIGURATION_Debug
-    NSLog(@"Running in debug configuration");
+    NSLog(@"Running in Debug configuration");
 #endif
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];

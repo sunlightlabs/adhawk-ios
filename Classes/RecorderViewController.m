@@ -37,6 +37,13 @@
     [super viewDidLoad];
     failView = nil;
     _hawktivityAnimatedImageView = nil;
+
+    // Audio Session setup
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
+    [audioSession setPreferredSampleRate:44100.0 error:nil];
+    [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleEnteredBackground:)
                                                  name:UIApplicationDidEnterBackgroundNotification
