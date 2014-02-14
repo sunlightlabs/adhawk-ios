@@ -74,8 +74,7 @@
                      initWithURL:soundFileURL
                      settings:recordSettings
                      error:&error];
-    audioRecorder.delegate = self;
-    
+
     if (error) {
         NSLog(@"error: %@", [error localizedDescription]);
         
@@ -101,18 +100,16 @@
 {
     [super viewWillAppear:animated];
     recordButton.hidden = NO;
+    audioRecorder.delegate = self;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [self setFailState:NO];
 
-    if (_hawktivityAnimatedImageView != nil) {
-        _hawktivityAnimatedImageView = nil;
-    }
-
     if (audioRecorder.recording) {
         [audioRecorder stop];
+        audioRecorder.delegate = nil;
     }
     [self setWorkingState:NO];
 }
@@ -213,9 +210,7 @@
     if (!audioRecorder.recording) {
         [self setFailState:NO];
 
-#if kAdHawkRecordDuration < 5
-    #warning "Building with a record duration of less than 5.0
-#endif
+        NSLog(@"Recording for a duration of %lf", kAdHawkRecordDuration);
 
         BOOL didRecord = [audioRecorder recordForDuration:kAdHawkRecordDuration];
 
