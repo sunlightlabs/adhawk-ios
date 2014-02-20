@@ -12,6 +12,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Wok-0n-VC8" id="Egl-sz-kFI"/>
+                        <outlet property="view" destination="m59-Qg-QOx" id="3SG-vz-grF"/>
                         <outlet property="webView" destination="LzU-SE-Hhx" id="98T-xk-i2p"/>
                     </connections>
                 </viewController>
