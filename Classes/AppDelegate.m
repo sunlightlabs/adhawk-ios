@@ -102,7 +102,7 @@
     UIApplication *app = [UIApplication sharedApplication];
     app.statusBarStyle = UIStatusBarStyleLightContent;
 
-    UIColor *lightGreyColor = [UIColor colorWithWhite:0.874 alpha:1.000];
+    UIColor *lightGreyColor = [UIColor colorWithWhite:0.500 alpha:1.000];
     UIColor *darkColor = [UIColor colorWithWhite:0.100 alpha:1.000];
 
     self.window.tintColor = lightGreyColor;
