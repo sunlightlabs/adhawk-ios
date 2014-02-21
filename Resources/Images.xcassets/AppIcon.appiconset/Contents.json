@@ -39,11 +39,13 @@
     {
       "idiom" : "ipad",
       "size" : "29x29",
+      "filename" : "AppIcon29x29.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
       "size" : "29x29",
+      "filename" : "AppIcon29x29@2x.png",
       "scale" : "2x"
     },
     {
@@ -55,6 +57,7 @@
     {
       "idiom" : "ipad",
       "size" : "40x40",
+      "filename" : "AppIcon40x40@2x.png",
       "scale" : "2x"
     },
     {
