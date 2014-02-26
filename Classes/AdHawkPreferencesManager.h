@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 extern NSString *const kAdHawkLocationEnabled;
+extern NSString *const kAdHawkLocationLastUpdated;
 
-@interface AdHawkPreferencesManager : NSObject{
-    NSUserDefaults *_userDefaults;
-}
+@interface AdHawkPreferencesManager : NSObject
 
 @property (nonatomic) BOOL locationEnabled;
+@property (nonatomic, copy) CLLocation *lastLocation;
 
 + (AdHawkPreferencesManager *)sharedInstance;
 - (void)setupPreferences;

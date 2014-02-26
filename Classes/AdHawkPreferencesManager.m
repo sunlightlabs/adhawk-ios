@@ -9,10 +9,22 @@
 #import "AdHawkPreferencesManager.h"
 
 NSString *const kAdHawkLocationEnabled = @"AdHawkLocationEnabled";
+NSString *const kAdHawkLastLocationLatitude = @"kAdHawkLastLocationLatitude";
+NSString *const kAdHawkLastLocationLongitude = @"kAdHawkLastLocationLongitude";
+NSString *const kAdHawkLastLocationTimestamp = @"kAdHawkLastLocationTimestamp";
+
+@interface AdHawkPreferencesManager ()
+
+@property (nonatomic, weak) NSUserDefaults *userDefaults;
+
+@end
 
 @implementation AdHawkPreferencesManager
 
-@synthesize locationEnabled;
+@synthesize locationEnabled = _locationEnabled;
+@synthesize lastLocation = _lastLocation;
+
+@synthesize userDefaults;
 
 + (AdHawkPreferencesManager *)sharedInstance
 {
@@ -24,31 +36,49 @@ NSString *const kAdHawkLocationEnabled = @"AdHawkLocationEnabled";
 - (id)init
 {
     self = [super init];
-    self->_userDefaults = [NSUserDefaults standardUserDefaults];
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    _locationEnabled = [self.userDefaults boolForKey:kAdHawkLocationEnabled];
+    CLLocationDegrees lat = [self.userDefaults doubleForKey:kAdHawkLastLocationLatitude];
+    CLLocationDegrees lon = [self.userDefaults doubleForKey:kAdHawkLastLocationLongitude];
+    NSDate *timestamp = [self.userDefaults objectForKey:kAdHawkLastLocationTimestamp];
+    _lastLocation = [[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake(lat, lon)
+                                                  altitude:0
+                                        horizontalAccuracy:kCLLocationAccuracyKilometer
+                                          verticalAccuracy:kCLLocationAccuracyKilometer
+                                                 timestamp:timestamp];
 
     return self;
 }
 
 - (void)setupPreferences
 {
-    NSArray *testValue = [self->_userDefaults arrayForKey:@"SettingsList"];
+    NSArray *testValue = [self.userDefaults arrayForKey:@"SettingsList"];
 
     if (testValue == nil) {
-        NSArray *settingsList = [NSArray arrayWithObjects:kAdHawkLocationEnabled, nil];
-        NSDictionary *appDefaults = @{ @"SettingsList" : settingsList,
-                                       kAdHawkLocationEnabled: [NSNumber numberWithBool:NO]
+        NSDictionary *appDefaults = @{
+                                       kAdHawkLocationEnabled: @NO,
+                                       kAdHawkLastLocationLatitude: @NO,
+                                       kAdHawkLastLocationLongitude: @NO,
+                                       kAdHawkLastLocationTimestamp: @NO,
                                        };
 
         [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    locationEnabled = [self->_userDefaults boolForKey:kAdHawkLocationEnabled];
 }
 
 - (void)setLocationEnabled:(BOOL)isOn
 {
-    locationEnabled = isOn;
-    [self->_userDefaults setBool:isOn forKey:kAdHawkLocationEnabled];
+    _locationEnabled = isOn;
+    [self.userDefaults setBool:_locationEnabled forKey:kAdHawkLocationEnabled];
+}
+
+- (void)setLastLocation:(CLLocation *)lastLocation
+{
+    _lastLocation = lastLocation;
+    [self.userDefaults setDouble:_lastLocation.coordinate.latitude forKey:kAdHawkLastLocationLatitude];
+    [self.userDefaults setDouble:_lastLocation.coordinate.longitude forKey:kAdHawkLastLocationLongitude];
+    [self.userDefaults setObject:_lastLocation.timestamp forKey:kAdHawkLastLocationTimestamp];
 }
 
 - (void)updateStoredPreferences

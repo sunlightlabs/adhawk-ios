@@ -52,7 +52,7 @@
     [self setFailState:NO];
     
     [self setWorkingState:NO];
-    
+
     // Recording setup. Audio session set up in AppDelegate
     NSString *soundFilePath = [self getAudioFilePath];                                
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -81,6 +81,8 @@
     } else {
         [audioRecorder prepareToRecord];
     }
+
+    [AdHawkLocationManager sharedInstance];
 }
 
 - (void)viewDidUnload
@@ -181,10 +183,18 @@
 - (void)handleTVButtonTouch
 {
     NSLog(@"handleTVButtonTouch run");
-    
+
     AdHawkLocationManager *locationManager = [AdHawkLocationManager sharedInstance];
-    [locationManager attempLocationUpdateOver:20.0];
-    
+    NSTimeInterval locationUpdateFrequency = 1800; // 30 * 60seconds or 30 minutes
+    NSTimeInterval intervalSinceLastUpdate = -(locationManager.lastBestLocation.timestamp.timeIntervalSinceNow);
+
+    if (intervalSinceLastUpdate >= locationUpdateFrequency || intervalSinceLastUpdate < 0) {
+        NSLog(@"Updating location...");
+        [locationManager attemptLocationUpdateOver:20.0];
+    } else {
+        NSLog(@"Not updating location since locationManager.lastLocationUpdate is less than %f.", locationUpdateFrequency);
+    }
+
     [self setWorkingState:YES];
     [self recordAudio];
 }

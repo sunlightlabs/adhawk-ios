@@ -23,7 +23,7 @@
 - (id)init
 {
     self = [super init];
-    self.lastBestLocation = nil;
+    self.lastBestLocation = [AdHawkPreferencesManager sharedInstance].lastLocation;
     self->_manager = [[CLLocationManager alloc] init];
     self->_manager.desiredAccuracy = kCLLocationAccuracyKilometer;
     self->_manager.distanceFilter = 500;
@@ -31,7 +31,7 @@
     return self;
 }
 
-- (void)attempLocationUpdateOver:(NSTimeInterval)attemptTime
+- (void)attemptLocationUpdateOver:(NSTimeInterval)attemptTime
 {
     BOOL locationServicesEnabled = [CLLocationManager locationServicesEnabled];
     BOOL hasNotDeterminedAuth = [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined ? YES : NO;
@@ -72,10 +72,14 @@
     
     if (self.lastBestLocation == nil || [self.lastBestLocation horizontalAccuracy] > [newLocation horizontalAccuracy]) {
         self.lastBestLocation = newLocation;
+        [AdHawkPreferencesManager sharedInstance].lastLocation = [self.lastBestLocation copy];
+        NSLog(@"Updated location at %@", [NSDateFormatter localizedStringFromDate:self.lastBestLocation.timestamp
+                                                                        dateStyle:NSDateFormatterShortStyle
+                                                                        timeStyle:NSDateFormatterShortStyle]);
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
-              self.self.lastBestLocation.coordinate.latitude,
-              lastBestLocation.coordinate.longitude);
-        
+              self.lastBestLocation.coordinate.latitude,
+              self.lastBestLocation.coordinate.longitude);
+
         if (self.lastBestLocation.horizontalAccuracy <= manager.desiredAccuracy) {
             [self stopUpdatingLocation:@"Acquired Location"];
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopUpdatingLocation:) object:nil];
