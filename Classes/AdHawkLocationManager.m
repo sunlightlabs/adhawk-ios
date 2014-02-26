@@ -23,7 +23,7 @@
 - (id)init
 {
     self = [super init];
-    self.lastBestLocation = [AdHawkPreferencesManager sharedInstance].lastLocation;
+    self.lastBestLocation = nil;
     self->_manager = [[CLLocationManager alloc] init];
     self->_manager.desiredAccuracy = kCLLocationAccuracyKilometer;
     self->_manager.distanceFilter = 500;
@@ -72,7 +72,6 @@
     
     if (self.lastBestLocation == nil || [self.lastBestLocation horizontalAccuracy] > [newLocation horizontalAccuracy]) {
         self.lastBestLocation = newLocation;
-        [AdHawkPreferencesManager sharedInstance].lastLocation = [self.lastBestLocation copy];
         NSLog(@"Updated location at %@", [NSDateFormatter localizedStringFromDate:self.lastBestLocation.timestamp
                                                                         dateStyle:NSDateFormatterShortStyle
                                                                         timeStyle:NSDateFormatterShortStyle]);

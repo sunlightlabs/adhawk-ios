@@ -186,9 +186,10 @@
 
     AdHawkLocationManager *locationManager = [AdHawkLocationManager sharedInstance];
     NSTimeInterval locationUpdateFrequency = 1800; // 30 * 60seconds or 30 minutes
+    BOOL hasLastLocation = [locationManager.lastBestLocation isKindOfClass:CLLocation.class];
     NSTimeInterval intervalSinceLastUpdate = -(locationManager.lastBestLocation.timestamp.timeIntervalSinceNow);
 
-    if (intervalSinceLastUpdate >= locationUpdateFrequency || intervalSinceLastUpdate < 0) {
+    if (intervalSinceLastUpdate >= locationUpdateFrequency || !hasLastLocation) {
         NSLog(@"Updating location...");
         [locationManager attemptLocationUpdateOver:20.0];
     } else {
